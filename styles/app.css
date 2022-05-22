@@ -1,0 +1,34 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* ***REMOVED***
+    box-sizing: border-box;
+***REMOVED***
+
+body, html***REMOVED***
+    padding: 0;
+    margin: 0;
+    min-width: 100% !important;
+    width: 100%;
+    min-height: 100% !important;
+    height: 100%;
+***REMOVED***
+
+.body-bg ***REMOVED***
+    /* background: linear-gradient(90deg, #d53369 0%, #daae51 100%); */
+    background-image: url("../images/bookb.jpg");
+    background-size: cover;
+***REMOVED***
+
+.filter ***REMOVED***
+    filter: blur(5px);
+***REMOVED***
+
+.border-danger ***REMOVED***
+    border-color: rgb(221, 18, 18);
+***REMOVED***
+
+.border-primary ***REMOVED***
+    border-color: rgb(6, 187, 0);
+***REMOVED***

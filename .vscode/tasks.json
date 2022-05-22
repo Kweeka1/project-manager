@@ -1,0 +1,41 @@
+***REMOVED***
+    "version": "2.0.0",
+    "tasks": [
+        ***REMOVED***
+            "label": "build",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "build",
+                "$***REMOVED***workspaceFolder***REMOVED***/mvc.csproj",
+                "/property:GenerateFullPaths=true",
+                "/consoleloggerparameters:NoSummary"
+            ],
+            "problemMatcher": "$msCompile"
+    ***REMOVED***,
+        ***REMOVED***
+            "label": "publish",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "publish",
+                "$***REMOVED***workspaceFolder***REMOVED***/mvc.csproj",
+                "/property:GenerateFullPaths=true",
+                "/consoleloggerparameters:NoSummary"
+            ],
+            "problemMatcher": "$msCompile"
+    ***REMOVED***,
+        ***REMOVED***
+            "label": "watch",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "watch",
+                "run",
+                "--project",
+                "$***REMOVED***workspaceFolder***REMOVED***/mvc.csproj"
+            ],
+            "problemMatcher": "$msCompile"
+    ***REMOVED***
+    ]
+***REMOVED***

@@ -1,0 +1,1304 @@
+/*
+! tailwindcss v3.0.24 | MIT License | https://tailwindcss.com
+*/
+
+/*
+1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
+2. Allow adding a border to an element by just adding a border-width. (https://github.com/tailwindcss/tailwindcss/pull/116)
+*/
+
+*,
+::before,
+::after ***REMOVED***
+  box-sizing: border-box;
+  /* 1 */
+  border-width: 0;
+  /* 2 */
+  border-style: solid;
+  /* 2 */
+  border-color: #e5e7eb;
+  /* 2 */
+***REMOVED***
+
+::before,
+::after ***REMOVED***
+  --tw-content: '';
+***REMOVED***
+
+/*
+1. Use a consistent sensible line-height in all browsers.
+2. Prevent adjustments of font size after orientation changes in iOS.
+3. Use a more readable tab size.
+4. Use the user's configured `sans` font-family by default.
+*/
+
+html ***REMOVED***
+  line-height: 1.5;
+  /* 1 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
+  -moz-tab-size: 4;
+  /* 3 */
+  -o-tab-size: 4;
+     tab-size: 4;
+  /* 3 */
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  /* 4 */
+***REMOVED***
+
+/*
+1. Remove the margin in all browsers.
+2. Inherit line-height from `html` so users can set them as a class directly on the `html` element.
+*/
+
+body ***REMOVED***
+  margin: 0;
+  /* 1 */
+  line-height: inherit;
+  /* 2 */
+***REMOVED***
+
+/*
+1. Add the correct height in Firefox.
+2. Correct the inheritance of border color in Firefox. (https://bugzilla.mozilla.org/show_bug.cgi?id=190655)
+3. Ensure horizontal rules are visible by default.
+*/
+
+hr ***REMOVED***
+  height: 0;
+  /* 1 */
+  color: inherit;
+  /* 2 */
+  border-top-width: 1px;
+  /* 3 */
+***REMOVED***
+
+/*
+Add the correct text decoration in Chrome, Edge, and Safari.
+*/
+
+abbr:where([title]) ***REMOVED***
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted;
+***REMOVED***
+
+/*
+Remove the default font size and weight for headings.
+*/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 ***REMOVED***
+  font-size: inherit;
+  font-weight: inherit;
+***REMOVED***
+
+/*
+Reset links to optimize for opt-in styling instead of opt-out.
+*/
+
+a ***REMOVED***
+  color: inherit;
+  text-decoration: inherit;
+***REMOVED***
+
+/*
+Add the correct font weight in Edge and Safari.
+*/
+
+b,
+strong ***REMOVED***
+  font-weight: bolder;
+***REMOVED***
+
+/*
+1. Use the user's configured `mono` font family by default.
+2. Correct the odd `em` font sizing in all browsers.
+*/
+
+code,
+kbd,
+samp,
+pre ***REMOVED***
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */
+***REMOVED***
+
+/*
+Add the correct font size in all browsers.
+*/
+
+small ***REMOVED***
+  font-size: 80%;
+***REMOVED***
+
+/*
+Prevent `sub` and `sup` elements from affecting the line height in all browsers.
+*/
+
+sub,
+sup ***REMOVED***
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+***REMOVED***
+
+sub ***REMOVED***
+  bottom: -0.25em;
+***REMOVED***
+
+sup ***REMOVED***
+  top: -0.5em;
+***REMOVED***
+
+/*
+1. Remove text indentation from table contents in Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=999088, https://bugs.webkit.org/show_bug.cgi?id=201297)
+2. Correct table border color inheritance in all Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=935729, https://bugs.webkit.org/show_bug.cgi?id=195016)
+3. Remove gaps between table borders by default.
+*/
+
+table ***REMOVED***
+  text-indent: 0;
+  /* 1 */
+  border-color: inherit;
+  /* 2 */
+  border-collapse: collapse;
+  /* 3 */
+***REMOVED***
+
+/*
+1. Change the font styles in all browsers.
+2. Remove the margin in Firefox and Safari.
+3. Remove default padding in all browsers.
+*/
+
+button,
+input,
+optgroup,
+select,
+textarea ***REMOVED***
+  font-family: inherit;
+  /* 1 */
+  font-size: 100%;
+  /* 1 */
+  line-height: inherit;
+  /* 1 */
+  color: inherit;
+  /* 1 */
+  margin: 0;
+  /* 2 */
+  padding: 0;
+  /* 3 */
+***REMOVED***
+
+/*
+Remove the inheritance of text transform in Edge and Firefox.
+*/
+
+button,
+select ***REMOVED***
+  text-transform: none;
+***REMOVED***
+
+/*
+1. Correct the inability to style clickable types in iOS and Safari.
+2. Remove default button styles.
+*/
+
+button,
+[type='button'],
+[type='reset'],
+[type='submit'] ***REMOVED***
+  -webkit-appearance: button;
+  /* 1 */
+  background-color: transparent;
+  /* 2 */
+  background-image: none;
+  /* 2 */
+***REMOVED***
+
+/*
+Use the modern Firefox focus style for all focusable elements.
+*/
+
+:-moz-focusring ***REMOVED***
+  outline: auto;
+***REMOVED***
+
+/*
+Remove the additional `:invalid` styles in Firefox. (https://github.com/mozilla/gecko-dev/blob/2f9eacd9d3d995c937b4251a5557d95d494c9be1/layout/style/res/forms.css#L728-L737)
+*/
+
+:-moz-ui-invalid ***REMOVED***
+  box-shadow: none;
+***REMOVED***
+
+/*
+Add the correct vertical alignment in Chrome and Firefox.
+*/
+
+progress ***REMOVED***
+  vertical-align: baseline;
+***REMOVED***
+
+/*
+Correct the cursor style of increment and decrement buttons in Safari.
+*/
+
+::-webkit-inner-spin-button,
+::-webkit-outer-spin-button ***REMOVED***
+  height: auto;
+***REMOVED***
+
+/*
+1. Correct the odd appearance in Chrome and Safari.
+2. Correct the outline style in Safari.
+*/
+
+[type='search'] ***REMOVED***
+  -webkit-appearance: textfield;
+  /* 1 */
+  outline-offset: -2px;
+  /* 2 */
+***REMOVED***
+
+/*
+Remove the inner padding in Chrome and Safari on macOS.
+*/
+
+::-webkit-search-decoration ***REMOVED***
+  -webkit-appearance: none;
+***REMOVED***
+
+/*
+1. Correct the inability to style clickable types in iOS and Safari.
+2. Change font properties to `inherit` in Safari.
+*/
+
+::-webkit-file-upload-button ***REMOVED***
+  -webkit-appearance: button;
+  /* 1 */
+  font: inherit;
+  /* 2 */
+***REMOVED***
+
+/*
+Add the correct display in Chrome and Safari.
+*/
+
+summary ***REMOVED***
+  display: list-item;
+***REMOVED***
+
+/*
+Removes the default spacing and border for appropriate elements.
+*/
+
+blockquote,
+dl,
+dd,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+figure,
+p,
+pre ***REMOVED***
+  margin: 0;
+***REMOVED***
+
+fieldset ***REMOVED***
+  margin: 0;
+  padding: 0;
+***REMOVED***
+
+legend ***REMOVED***
+  padding: 0;
+***REMOVED***
+
+ol,
+ul,
+menu ***REMOVED***
+  list-style: none;
+  margin: 0;
+  padding: 0;
+***REMOVED***
+
+/*
+Prevent resizing textareas horizontally by default.
+*/
+
+textarea ***REMOVED***
+  resize: vertical;
+***REMOVED***
+
+/*
+1. Reset the default placeholder opacity in Firefox. (https://github.com/tailwindlabs/tailwindcss/issues/3300)
+2. Set the default placeholder color to the user's configured gray 400 color.
+*/
+
+input::-moz-placeholder, textarea::-moz-placeholder ***REMOVED***
+  opacity: 1;
+  /* 1 */
+  color: #9ca3af;
+  /* 2 */
+***REMOVED***
+
+input:-ms-input-placeholder, textarea:-ms-input-placeholder ***REMOVED***
+  opacity: 1;
+  /* 1 */
+  color: #9ca3af;
+  /* 2 */
+***REMOVED***
+
+input::placeholder,
+textarea::placeholder ***REMOVED***
+  opacity: 1;
+  /* 1 */
+  color: #9ca3af;
+  /* 2 */
+***REMOVED***
+
+/*
+Set the default cursor for buttons.
+*/
+
+button,
+[role="button"] ***REMOVED***
+  cursor: pointer;
+***REMOVED***
+
+/*
+Make sure disabled buttons don't get the pointer cursor.
+*/
+
+:disabled ***REMOVED***
+  cursor: default;
+***REMOVED***
+
+/*
+1. Make replaced elements `display: block` by default. (https://github.com/mozdevs/cssremedy/issues/14)
+2. Add `vertical-align: middle` to align replaced elements more sensibly by default. (https://github.com/jensimmons/cssremedy/issues/14#issuecomment-634934210)
+   This can trigger a poorly considered lint error in some tools but is included by design.
+*/
+
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object ***REMOVED***
+  display: block;
+  /* 1 */
+  vertical-align: middle;
+  /* 2 */
+***REMOVED***
+
+/*
+Constrain images and videos to the parent width and preserve their intrinsic aspect ratio. (https://github.com/mozdevs/cssremedy/issues/14)
+*/
+
+img,
+video ***REMOVED***
+  max-width: 100%;
+  height: auto;
+***REMOVED***
+
+/*
+Ensure the default browser behavior of the `hidden` attribute.
+*/
+
+[hidden] ***REMOVED***
+  display: none;
+***REMOVED***
+
+*, ::before, ::after ***REMOVED***
+  --tw-translate-x: 0;
+  --tw-translate-y: 0;
+  --tw-rotate: 0;
+  --tw-skew-x: 0;
+  --tw-skew-y: 0;
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
+  --tw-pan-x:  ;
+  --tw-pan-y:  ;
+  --tw-pinch-zoom:  ;
+  --tw-scroll-snap-strictness: proximity;
+  --tw-ordinal:  ;
+  --tw-slashed-zero:  ;
+  --tw-numeric-figure:  ;
+  --tw-numeric-spacing:  ;
+  --tw-numeric-fraction:  ;
+  --tw-ring-inset:  ;
+  --tw-ring-offset-width: 0px;
+  --tw-ring-offset-color: #fff;
+  --tw-ring-color: rgb(59 130 246 / 0.5);
+  --tw-ring-offset-shadow: 0 0 #0000;
+  --tw-ring-shadow: 0 0 #0000;
+  --tw-shadow: 0 0 #0000;
+  --tw-shadow-colored: 0 0 #0000;
+  --tw-blur:  ;
+  --tw-brightness:  ;
+  --tw-contrast:  ;
+  --tw-grayscale:  ;
+  --tw-hue-rotate:  ;
+  --tw-invert:  ;
+  --tw-saturate:  ;
+  --tw-sepia:  ;
+  --tw-drop-shadow:  ;
+  --tw-backdrop-blur:  ;
+  --tw-backdrop-brightness:  ;
+  --tw-backdrop-contrast:  ;
+  --tw-backdrop-grayscale:  ;
+  --tw-backdrop-hue-rotate:  ;
+  --tw-backdrop-invert:  ;
+  --tw-backdrop-opacity:  ;
+  --tw-backdrop-saturate:  ;
+  --tw-backdrop-sepia:  ;
+***REMOVED***
+
+.container ***REMOVED***
+  width: 100%;
+***REMOVED***
+
+@media (min-width: 300px) ***REMOVED***
+  .container ***REMOVED***
+    max-width: 300px;
+***REMOVED***
+***REMOVED***
+
+@media (min-width: 600px) ***REMOVED***
+  .container ***REMOVED***
+    max-width: 600px;
+***REMOVED***
+***REMOVED***
+
+@media (min-width: 768px) ***REMOVED***
+  .container ***REMOVED***
+    max-width: 768px;
+***REMOVED***
+***REMOVED***
+
+@media (min-width: 1024px) ***REMOVED***
+  .container ***REMOVED***
+    max-width: 1024px;
+***REMOVED***
+***REMOVED***
+
+@media (min-width: 1200px) ***REMOVED***
+  .container ***REMOVED***
+    max-width: 1200px;
+***REMOVED***
+***REMOVED***
+
+@media (min-width: 1368px) ***REMOVED***
+  .container ***REMOVED***
+    max-width: 1368px;
+***REMOVED***
+***REMOVED***
+
+@media (min-width: 1600px) ***REMOVED***
+  .container ***REMOVED***
+    max-width: 1600px;
+***REMOVED***
+***REMOVED***
+
+.fixed ***REMOVED***
+  position: fixed;
+***REMOVED***
+
+.absolute ***REMOVED***
+  position: absolute;
+***REMOVED***
+
+.relative ***REMOVED***
+  position: relative;
+***REMOVED***
+
+.top-0 ***REMOVED***
+  top: 0px;
+***REMOVED***
+
+.top-12 ***REMOVED***
+  top: 3rem;
+***REMOVED***
+
+.left-0 ***REMOVED***
+  left: 0px;
+***REMOVED***
+
+.right-0 ***REMOVED***
+  right: 0px;
+***REMOVED***
+
+.top-3 ***REMOVED***
+  top: 0.75rem;
+***REMOVED***
+
+.right-2 ***REMOVED***
+  right: 0.5rem;
+***REMOVED***
+
+.z-30 ***REMOVED***
+  z-index: 30;
+***REMOVED***
+
+.z-20 ***REMOVED***
+  z-index: 20;
+***REMOVED***
+
+.z-50 ***REMOVED***
+  z-index: 50;
+***REMOVED***
+
+.z-10 ***REMOVED***
+  z-index: 10;
+***REMOVED***
+
+.m-8 ***REMOVED***
+  margin: 2rem;
+***REMOVED***
+
+.mx-auto ***REMOVED***
+  margin-left: auto;
+  margin-right: auto;
+***REMOVED***
+
+.my-0 ***REMOVED***
+  margin-top: 0px;
+  margin-bottom: 0px;
+***REMOVED***
+
+.my-4 ***REMOVED***
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+***REMOVED***
+
+.my-6 ***REMOVED***
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+***REMOVED***
+
+.my-2 ***REMOVED***
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+***REMOVED***
+
+.my-12 ***REMOVED***
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+***REMOVED***
+
+.my-10 ***REMOVED***
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+***REMOVED***
+
+.mx-3 ***REMOVED***
+  margin-left: 0.75rem;
+  margin-right: 0.75rem;
+***REMOVED***
+
+.mt-0 ***REMOVED***
+  margin-top: 0px;
+***REMOVED***
+
+.mt-2 ***REMOVED***
+  margin-top: 0.5rem;
+***REMOVED***
+
+.mr-3 ***REMOVED***
+  margin-right: 0.75rem;
+***REMOVED***
+
+.mt-4 ***REMOVED***
+  margin-top: 1rem;
+***REMOVED***
+
+.mb-8 ***REMOVED***
+  margin-bottom: 2rem;
+***REMOVED***
+
+.-mt-12 ***REMOVED***
+  margin-top: -3rem;
+***REMOVED***
+
+.mb-4 ***REMOVED***
+  margin-bottom: 1rem;
+***REMOVED***
+
+.mb-3 ***REMOVED***
+  margin-bottom: 0.75rem;
+***REMOVED***
+
+.mt-6 ***REMOVED***
+  margin-top: 1.5rem;
+***REMOVED***
+
+.mb-5 ***REMOVED***
+  margin-bottom: 1.25rem;
+***REMOVED***
+
+.mt-auto ***REMOVED***
+  margin-top: auto;
+***REMOVED***
+
+.mb-12 ***REMOVED***
+  margin-bottom: 3rem;
+***REMOVED***
+
+.mb-6 ***REMOVED***
+  margin-bottom: 1.5rem;
+***REMOVED***
+
+.mr-2 ***REMOVED***
+  margin-right: 0.5rem;
+***REMOVED***
+
+.mt-10 ***REMOVED***
+  margin-top: 2.5rem;
+***REMOVED***
+
+.mb-2 ***REMOVED***
+  margin-bottom: 0.5rem;
+***REMOVED***
+
+.ml-3 ***REMOVED***
+  margin-left: 0.75rem;
+***REMOVED***
+
+.ml-1 ***REMOVED***
+  margin-left: 0.25rem;
+***REMOVED***
+
+.mt-12 ***REMOVED***
+  margin-top: 3rem;
+***REMOVED***
+
+.block ***REMOVED***
+  display: block;
+***REMOVED***
+
+.inline-block ***REMOVED***
+  display: inline-block;
+***REMOVED***
+
+.inline ***REMOVED***
+  display: inline;
+***REMOVED***
+
+.flex ***REMOVED***
+  display: flex;
+***REMOVED***
+
+.hidden ***REMOVED***
+  display: none;
+***REMOVED***
+
+.h-8 ***REMOVED***
+  height: 2rem;
+***REMOVED***
+
+.h-6 ***REMOVED***
+  height: 1.5rem;
+***REMOVED***
+
+.h-1 ***REMOVED***
+  height: 0.25rem;
+***REMOVED***
+
+.w-full ***REMOVED***
+  width: 100%;
+***REMOVED***
+
+.w-6 ***REMOVED***
+  width: 1.5rem;
+***REMOVED***
+
+.w-64 ***REMOVED***
+  width: 16rem;
+***REMOVED***
+
+.w-5\/6 ***REMOVED***
+  width: 83.333333%;
+***REMOVED***
+
+.w-1\/6 ***REMOVED***
+  width: 16.666667%;
+***REMOVED***
+
+.max-w-5xl ***REMOVED***
+  max-width: 64rem;
+***REMOVED***
+
+.max-w-lg ***REMOVED***
+  max-width: 32rem;
+***REMOVED***
+
+.flex-1 ***REMOVED***
+  flex: 1 1 0%;
+***REMOVED***
+
+.flex-none ***REMOVED***
+  flex: none;
+***REMOVED***
+
+.flex-shrink ***REMOVED***
+  flex-shrink: 1;
+***REMOVED***
+
+.flex-grow ***REMOVED***
+  flex-grow: 1;
+***REMOVED***
+
+.scale-110 ***REMOVED***
+  --tw-scale-x: 1.1;
+  --tw-scale-y: 1.1;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+***REMOVED***
+
+.transform ***REMOVED***
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+***REMOVED***
+
+.cursor-pointer ***REMOVED***
+  cursor: pointer;
+***REMOVED***
+
+.flex-col ***REMOVED***
+  flex-direction: column;
+***REMOVED***
+
+.flex-col-reverse ***REMOVED***
+  flex-direction: column-reverse;
+***REMOVED***
+
+.flex-wrap ***REMOVED***
+  flex-wrap: wrap;
+***REMOVED***
+
+.items-start ***REMOVED***
+  align-items: flex-start;
+***REMOVED***
+
+.items-center ***REMOVED***
+  align-items: center;
+***REMOVED***
+
+.justify-start ***REMOVED***
+  justify-content: flex-start;
+***REMOVED***
+
+.justify-end ***REMOVED***
+  justify-content: flex-end;
+***REMOVED***
+
+.justify-center ***REMOVED***
+  justify-content: center;
+***REMOVED***
+
+.justify-between ***REMOVED***
+  justify-content: space-between;
+***REMOVED***
+
+.overflow-hidden ***REMOVED***
+  overflow: hidden;
+***REMOVED***
+
+.overflow-x-hidden ***REMOVED***
+  overflow-x: hidden;
+***REMOVED***
+
+.rounded-full ***REMOVED***
+  border-radius: 9999px;
+***REMOVED***
+
+.rounded-none ***REMOVED***
+  border-radius: 0px;
+***REMOVED***
+
+.rounded-lg ***REMOVED***
+  border-radius: 0.5rem;
+***REMOVED***
+
+.rounded ***REMOVED***
+  border-radius: 0.25rem;
+***REMOVED***
+
+.rounded-t ***REMOVED***
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+***REMOVED***
+
+.rounded-b-none ***REMOVED***
+  border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+***REMOVED***
+
+.rounded-b ***REMOVED***
+  border-bottom-right-radius: 0.25rem;
+  border-bottom-left-radius: 0.25rem;
+***REMOVED***
+
+.rounded-t-none ***REMOVED***
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+***REMOVED***
+
+.border-b ***REMOVED***
+  border-bottom-width: 1px;
+***REMOVED***
+
+.border-b-4 ***REMOVED***
+  border-bottom-width: 4px;
+***REMOVED***
+
+.border-gray-100 ***REMOVED***
+  --tw-border-opacity: 1;
+  border-color: rgb(243 244 246 / var(--tw-border-opacity));
+***REMOVED***
+
+.border-gray-300 ***REMOVED***
+  --tw-border-opacity: 1;
+  border-color: rgb(209 213 219 / var(--tw-border-opacity));
+***REMOVED***
+
+.bg-white ***REMOVED***
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+***REMOVED***
+
+.bg-gray-100 ***REMOVED***
+  --tw-bg-opacity: 1;
+  background-color: rgb(243 244 246 / var(--tw-bg-opacity));
+***REMOVED***
+
+.bg-gray-200 ***REMOVED***
+  --tw-bg-opacity: 1;
+  background-color: rgb(229 231 235 / var(--tw-bg-opacity));
+***REMOVED***
+
+.bg-gray-500 ***REMOVED***
+  --tw-bg-opacity: 1;
+  background-color: rgb(107 114 128 / var(--tw-bg-opacity));
+***REMOVED***
+
+.fill-current ***REMOVED***
+  fill: currentColor;
+***REMOVED***
+
+.p-1 ***REMOVED***
+  padding: 0.25rem;
+***REMOVED***
+
+.p-4 ***REMOVED***
+  padding: 1rem;
+***REMOVED***
+
+.p-6 ***REMOVED***
+  padding: 1.5rem;
+***REMOVED***
+
+.p-8 ***REMOVED***
+  padding: 2rem;
+***REMOVED***
+
+.py-2 ***REMOVED***
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+***REMOVED***
+
+.px-4 ***REMOVED***
+  padding-left: 1rem;
+  padding-right: 1rem;
+***REMOVED***
+
+.py-4 ***REMOVED***
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+***REMOVED***
+
+.px-8 ***REMOVED***
+  padding-left: 2rem;
+  padding-right: 2rem;
+***REMOVED***
+
+.py-0 ***REMOVED***
+  padding-top: 0px;
+  padding-bottom: 0px;
+***REMOVED***
+
+.px-3 ***REMOVED***
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+***REMOVED***
+
+.py-6 ***REMOVED***
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+***REMOVED***
+
+.py-8 ***REMOVED***
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+***REMOVED***
+
+.px-6 ***REMOVED***
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+***REMOVED***
+
+.px-2 ***REMOVED***
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+***REMOVED***
+
+.pl-4 ***REMOVED***
+  padding-left: 1rem;
+***REMOVED***
+
+.pr-4 ***REMOVED***
+  padding-right: 1rem;
+***REMOVED***
+
+.pt-24 ***REMOVED***
+  padding-top: 6rem;
+***REMOVED***
+
+.pt-4 ***REMOVED***
+  padding-top: 1rem;
+***REMOVED***
+
+.pb-12 ***REMOVED***
+  padding-bottom: 3rem;
+***REMOVED***
+
+.pt-12 ***REMOVED***
+  padding-top: 3rem;
+***REMOVED***
+
+.pt-6 ***REMOVED***
+  padding-top: 1.5rem;
+***REMOVED***
+
+.pt-2 ***REMOVED***
+  padding-top: 0.5rem;
+***REMOVED***
+
+.pt-3 ***REMOVED***
+  padding-top: 0.75rem;
+***REMOVED***
+
+.pb-3 ***REMOVED***
+  padding-bottom: 0.75rem;
+***REMOVED***
+
+.text-center ***REMOVED***
+  text-align: center;
+***REMOVED***
+
+.align-middle ***REMOVED***
+  vertical-align: middle;
+***REMOVED***
+
+.text-2xl ***REMOVED***
+  font-size: 1.5rem;
+  line-height: 2rem;
+***REMOVED***
+
+.text-5xl ***REMOVED***
+  font-size: 3rem;
+  line-height: 1;
+***REMOVED***
+
+.text-3xl ***REMOVED***
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+***REMOVED***
+
+.text-xs ***REMOVED***
+  font-size: 0.75rem;
+  line-height: 1rem;
+***REMOVED***
+
+.text-xl ***REMOVED***
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+***REMOVED***
+
+.text-base ***REMOVED***
+  font-size: 1rem;
+  line-height: 1.5rem;
+***REMOVED***
+
+.text-sm ***REMOVED***
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+***REMOVED***
+
+.text-4xl ***REMOVED***
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+***REMOVED***
+
+.font-bold ***REMOVED***
+  font-weight: 700;
+***REMOVED***
+
+.uppercase ***REMOVED***
+  text-transform: uppercase;
+***REMOVED***
+
+.leading-normal ***REMOVED***
+  line-height: 1.5;
+***REMOVED***
+
+.leading-tight ***REMOVED***
+  line-height: 1.25;
+***REMOVED***
+
+.leading-none ***REMOVED***
+  line-height: 1;
+***REMOVED***
+
+.tracking-normal ***REMOVED***
+  letter-spacing: 0em;
+***REMOVED***
+
+.text-white ***REMOVED***
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+***REMOVED***
+
+.text-pink-800 ***REMOVED***
+  --tw-text-opacity: 1;
+  color: rgb(157 23 77 / var(--tw-text-opacity));
+***REMOVED***
+
+.text-black ***REMOVED***
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity));
+***REMOVED***
+
+.text-gray-800 ***REMOVED***
+  --tw-text-opacity: 1;
+  color: rgb(31 41 55 / var(--tw-text-opacity));
+***REMOVED***
+
+.text-gray-600 ***REMOVED***
+  --tw-text-opacity: 1;
+  color: rgb(75 85 99 / var(--tw-text-opacity));
+***REMOVED***
+
+.text-pink-500 ***REMOVED***
+  --tw-text-opacity: 1;
+  color: rgb(236 72 153 / var(--tw-text-opacity));
+***REMOVED***
+
+.text-pink-600 ***REMOVED***
+  --tw-text-opacity: 1;
+  color: rgb(219 39 119 / var(--tw-text-opacity));
+***REMOVED***
+
+.text-gray-500 ***REMOVED***
+  --tw-text-opacity: 1;
+  color: rgb(107 114 128 / var(--tw-text-opacity));
+***REMOVED***
+
+.text-gray-700 ***REMOVED***
+  --tw-text-opacity: 1;
+  color: rgb(55 65 81 / var(--tw-text-opacity));
+***REMOVED***
+
+.text-red-700 ***REMOVED***
+  --tw-text-opacity: 1;
+  color: rgb(185 28 28 / var(--tw-text-opacity));
+***REMOVED***
+
+.text-blue-700 ***REMOVED***
+  --tw-text-opacity: 1;
+  color: rgb(29 78 216 / var(--tw-text-opacity));
+***REMOVED***
+
+.underline ***REMOVED***
+  -webkit-text-decoration-line: underline;
+          text-decoration-line: underline;
+***REMOVED***
+
+.no-underline ***REMOVED***
+  -webkit-text-decoration-line: none;
+          text-decoration-line: none;
+***REMOVED***
+
+.opacity-75 ***REMOVED***
+  opacity: 0.75;
+***REMOVED***
+
+.opacity-25 ***REMOVED***
+  opacity: 0.25;
+***REMOVED***
+
+.shadow ***REMOVED***
+  --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+***REMOVED***
+
+.shadow-lg ***REMOVED***
+  --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+***REMOVED***
+
+.shadow-2xl ***REMOVED***
+  --tw-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+  --tw-shadow-colored: 0 25px 50px -12px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+***REMOVED***
+
+.transition ***REMOVED***
+  transition-property: color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+***REMOVED***
+
+.duration-300 ***REMOVED***
+  transition-duration: 300ms;
+***REMOVED***
+
+.duration-500 ***REMOVED***
+  transition-duration: 500ms;
+***REMOVED***
+
+.duration-200 ***REMOVED***
+  transition-duration: 200ms;
+***REMOVED***
+
+.ease-in-out ***REMOVED***
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+***REMOVED***
+
+* ***REMOVED***
+  box-sizing: border-box;
+***REMOVED***
+
+body, html***REMOVED***
+  padding: 0;
+  margin: 0;
+  min-width: 100% !important;
+  width: 100%;
+  min-height: 100% !important;
+  height: 100%;
+***REMOVED***
+
+.body-bg ***REMOVED***
+  /* background: linear-gradient(90deg, #d53369 0%, #daae51 100%); */
+  background-image: url("../images/bookb.jpg");
+  background-size: cover;
+***REMOVED***
+
+.filter ***REMOVED***
+  filter: blur(5px);
+***REMOVED***
+
+.border-danger ***REMOVED***
+  border-color: rgb(221, 18, 18);
+***REMOVED***
+
+.border-primary ***REMOVED***
+  border-color: rgb(6, 187, 0);
+***REMOVED***
+
+.hover\:scale-105:hover ***REMOVED***
+  --tw-scale-x: 1.05;
+  --tw-scale-y: 1.05;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+***REMOVED***
+
+.hover\:bg-gray-600:hover ***REMOVED***
+  --tw-bg-opacity: 1;
+  background-color: rgb(75 85 99 / var(--tw-bg-opacity));
+***REMOVED***
+
+.hover\:text-gray-900:hover ***REMOVED***
+  --tw-text-opacity: 1;
+  color: rgb(17 24 39 / var(--tw-text-opacity));
+***REMOVED***
+
+.hover\:text-gray-800:hover ***REMOVED***
+  --tw-text-opacity: 1;
+  color: rgb(31 41 55 / var(--tw-text-opacity));
+***REMOVED***
+
+.hover\:text-pink-500:hover ***REMOVED***
+  --tw-text-opacity: 1;
+  color: rgb(236 72 153 / var(--tw-text-opacity));
+***REMOVED***
+
+.hover\:underline:hover ***REMOVED***
+  -webkit-text-decoration-line: underline;
+          text-decoration-line: underline;
+***REMOVED***
+
+.hover\:no-underline:hover ***REMOVED***
+  -webkit-text-decoration-line: none;
+          text-decoration-line: none;
+***REMOVED***
+
+.hover\:shadow-xl:hover ***REMOVED***
+  --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+***REMOVED***
+
+.focus\:outline-none:focus ***REMOVED***
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+***REMOVED***
+
+@media (min-width: 300px) ***REMOVED***
+  .phone\:w-\[90vw\] ***REMOVED***
+    width: 90vw;
+***REMOVED***
+
+  .phone\:pt-1 ***REMOVED***
+    padding-top: 0.25rem;
+***REMOVED***
+***REMOVED***
+
+@media (min-width: 600px) ***REMOVED***
+  .tablet\:w-\[65vw\] ***REMOVED***
+    width: 65vw;
+***REMOVED***
+
+  .tablet\:scale-125 ***REMOVED***
+    --tw-scale-x: 1.25;
+    --tw-scale-y: 1.25;
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+***REMOVED***
+***REMOVED***
+
+@media (min-width: 1024px) ***REMOVED***
+  .sm-desk\:w-\[40vw\] ***REMOVED***
+    width: 40vw;
+***REMOVED***
+***REMOVED***
+
+@media (min-width: 1368px) ***REMOVED***
+  .md-desk\:w-\[32vw\] ***REMOVED***
+    width: 32vw;
+***REMOVED***
+***REMOVED***
