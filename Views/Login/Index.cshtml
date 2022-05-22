@@ -1,0 +1,81 @@
+@model mvc.Models.User.Request.AuthRequest
+
+@{
+    Layout = null;
+    ViewData["Title"] = "Login";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/css/app.css" asp-append-version="true">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200&family=Gudea:wght@400;700&family=IBM+Plex+Sans:wght@300;400;500&family=Lato:wght@300;400;700&family=Open+Sans:wght@300;400;500&family=Poppins:wght@300;500;600;700;800&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet"> 
+</head>
+<body class="body-bg overflow-x-hidden">
+    <div class=" tablet:scale-125 scale-110"></div>
+        <div class="absolute mx-auto top-12 left-0 right-0" style="font-family:'Lato',sans-serif;">
+            <header class="max-w-lg mx-auto">
+                <a href="#">
+                    <h1 class="text-4xl font-bold text-white text-center">Startup</h1>
+                </a>
+            </header>
+
+            <main class="bg-white max-w-lg mx-auto p-8 md:p-12 my-10 rounded-lg shadow-2xl md-desk:w-[32vw] phone:w-[90vw] tablet:w-[65vw] sm-desk:w-[40vw] ">
+                <section>
+                    <h3 class="font-bold text-2xl">Welcome to Startup</h3>
+                    <p class="text-gray-600 pt-2">Sign in to your account.</p>
+                </section>
+
+                <section class="mt-10">
+                    @using (Html.BeginForm("Index", "Login", FormMethod.Post, new {  
+                            @id = "form_login", 
+                            @class = "flex flex-col" 
+                        })
+                        ) {
+                        @Html.AntiForgeryToken()
+                        <div id="emailField_container" class="mb-6 pt-3 rounded bg-gray-200 relative">
+                            @Html.LabelFor(x => x.Email, new { @class = "block text-gray-700 text-sm font-bold mb-2 ml-3"})
+                            @Html.TextBoxFor(x => x.Email, new { @id = "email", @class= "focus:outline-none bg-gray-200 rounded w-full text-gray-700 border-b-4 border-gray-300 transition duration-500 px-3 pb-3" })
+                            <div id="InvalidEmail" class="absolute top-3 right-2 text-thin text-red-700 text-center hidden">
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"><style>@('@')keyframes n-info-tri{0%,to{transform:rotate(0deg);transform-origin:center}10%,90%{transform:rotate(2deg)}20%,40%,60%{transform:rotate(-6deg)}30%,50%,70%{transform:rotate(6deg)}80%{transform:rotate(-2deg)}}.prefix__n-info-tri{animation:n-info-tri .8s cubic-bezier(.455,.03,.515,.955) both}</style><path class="prefix__n-info-tri" style="animation-delay:1s; display: inline-block;" stroke="#bc0a0a" stroke-width="1.5" d="M11.134 6.844a1 1 0 011.732 0l5.954 10.312a1 1 0 01-.866 1.5H6.046a1 1 0 01-.866-1.5l5.954-10.312z"/><g class="prefix__n-info-tri"><path stroke="#265BFF" stroke-linecap="round" stroke-width="1.5" d="M12 10.284v3.206"/><circle cx="12" cy="15.605" r=".832" fill="#265BFF"/></g></svg>
+                                <span>Invalid email</span>
+                            </div>
+                        </div>
+                        <div id="passwordField_container" class="mb-6 pt-3 rounded bg-gray-200 relative">
+                            @Html.LabelFor(x => x.Password, new { @class = "block text-gray-700 text-sm font-bold mb-2 ml-3"})
+                            @Html.TextBoxFor(x => x.Password, new { @id = "password", @type = "password", @class = "focus:outline-none bg-gray-200 rounded w-full text-gray-700 border-b-4 border-gray-300 transition duration-500 px-3 pb-3" })
+                            <div id="InvalidPassword" class="absolute top-3 right-2 text-thin text-red-700 text-center hidden">
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"><style>@('@')keyframes n-info-tri{0%,to{transform:rotate(0deg);transform-origin:center}10%,90%{transform:rotate(2deg)}20%,40%,60%{transform:rotate(-6deg)}30%,50%,70%{transform:rotate(6deg)}80%{transform:rotate(-2deg)}}.prefix__n-info-tri{animation:n-info-tri .8s cubic-bezier(.455,.03,.515,.955) both}</style><path class="prefix__n-info-tri" style="animation-delay:1s; display: inline-block;" stroke="#bc0a0a" stroke-width="1.5" d="M11.134 6.844a1 1 0 011.732 0l5.954 10.312a1 1 0 01-.866 1.5H6.046a1 1 0 01-.866-1.5l5.954-10.312z"/><g class="prefix__n-info-tri"><path stroke="#265BFF" stroke-linecap="round" stroke-width="1.5" d="M12 10.284v3.206"/><circle cx="12" cy="15.605" r=".832" fill="#265BFF"/></g></svg>
+                                <span>Invalid password</span>
+                            </div>
+                        </div>
+                        <div class="flex justify-between mb-6">
+                            <div class="">
+                                @Html.CheckBoxFor(x => x.LongSession)
+                                @Html.LabelFor(x => x.LongSession, new { @class = "text-gray-700 text-sm font-bold ml-1 cursor-pointer"})
+                            </div>                
+                            <a href="#" class="phone:pt-1 text-sm text-gray-700 hover:underline">Forgot your password?</a>
+                        </div>
+                        <button id="submit" class="bg-gray-500 hover:bg-gray-600 text-white font-bold py-2 rounded shadow-lg hover:shadow-xl transition duration-200" type="submit">Sign In</button>
+                    }
+                </section>
+            </main>
+
+            <div class="max-w-lg mx-auto text-center mt-12 mb-6">
+                <p class="text-white">Don't have an account? <a href="#" class="font-bold hover:underline text-blue-700">Sign up</a></p>
+            </div>
+
+            <footer class="max-w-lg mx-auto flex justify-center text-white">
+                <a href="#" class="hover:underline">Contact</a>
+                <span class="mx-3">•</span>
+                <a href="#" class="hover:underline">Privacy</a>
+            </footer>
+        </div>
+        <script src="~/lib/jquery/dist/jquery.min.js"></script>
+        <script src="~/js/LoginFormValidation.js" ></script>
+</body>
+</html>
