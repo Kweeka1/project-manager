@@ -1,7 +1,9 @@
 using Tailwind;
 using mvc.Extensions.ExceptionHandler;
+using Microsoft.AspNetCore.Rewrite;
 
 var builder = WebApplication.CreateBuilder(args);
+var rewrite = new RewriteOptions().AddRewrite(@"\/", "/home", true);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
@@ -17,6 +19,7 @@ if (!app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+app.UseRewriter(rewrite);
 app.UseStaticFiles();
 
 app.UseRouting();

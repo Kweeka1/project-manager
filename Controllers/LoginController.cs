@@ -3,7 +3,7 @@ using mvc.Models.User.Request;
 
 namespace mvc.Controllers
 {
-    [Route("login")]
+    [Route("[Controller]")]
     public class LoginController : Controller
     {
         private readonly ILogger<LoginController> _logger;
@@ -21,11 +21,11 @@ namespace mvc.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Index(AuthRequest authRequest)
+        public IActionResult Index(Login login)
         {
             if (ModelState.IsValid)
             {
-                var Email = authRequest.Email;
+                var email = login.Email;
                 return RedirectToAction("Index", "Home");
             }
             return RedirectToAction("Index");
