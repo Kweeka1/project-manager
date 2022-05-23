@@ -13,14 +13,14 @@ $(function() ***REMOVED***
      $("#email").on("input", function(e) ***REMOVED***
         $("#InvalidEmail").attr("style", "display: none")
         isEmailValid(e.target.value)
-            ? $("#email").attr("style", "border-color: rgb(6, 187, 0);") 
+            ? $("#email").attr("style", "border-color: #006613;") 
             : $("#email").attr("style", "border-color: rgb(221, 18, 18);")
          
  ***REMOVED***)
      $("#password").on("input", function(e) ***REMOVED***
         $("#InvalidPassword").attr("style", "display: none")
          isPasswordValid(e.target.value) 
-            ? $("#password").attr("style", "border-color: rgb(6, 187, 0);") 
+            ? $("#password").attr("style", "border-color: #006613") 
             : $("#password").attr("style", "border-color: rgb(221, 18, 18);")
  ***REMOVED***)
     $("#form_login").submit(function(e) ***REMOVED***
