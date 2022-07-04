@@ -153,7 +153,7 @@ namespace mvc.Repositories.Services
             using (var client = new SmtpClient())
             {
                 await client.ConnectAsync("smtp.zoho.com", 587, SecureSocketOptions.StartTls);
-                await client.AuthenticateAsync("procollab@zohomail.com", "cl.i.c.h.e.");
+                await client.AuthenticateAsync("procollab@zohomail.com", "*********");
                 await client.SendAsync(message);
                 await client.DisconnectAsync(true);
             }
