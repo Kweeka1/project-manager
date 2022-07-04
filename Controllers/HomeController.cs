@@ -13,6 +13,12 @@ public class HomeController : Controller
         _logger = logger;
 ***REMOVED***
 
+    [HttpGet("/")]
+    public IActionResult RedirectToHome()
+    ***REMOVED***
+        return Redirect("/home");
+***REMOVED***
+    
     [HttpGet("/home")]
     public IActionResult Index()
     ***REMOVED***
