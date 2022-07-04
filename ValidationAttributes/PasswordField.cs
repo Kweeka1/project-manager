@@ -10,10 +10,8 @@ public class PasswordField : ValidationAttribute
         string? password = (string?)value;
 
         if (string.IsNullOrEmpty(password)) return new ValidationResult("Password field is required");
-
-        Regex passwordPattern = new Regex(@"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.{8,24})");
         
-        return passwordPattern.IsMatch(password) 
+        return Regex.IsMatch(password, @"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.{8,24})") 
             ? ValidationResult.Success 
             : new ValidationResult("Password must contains uppercase and lowercase letters and digits");
     }

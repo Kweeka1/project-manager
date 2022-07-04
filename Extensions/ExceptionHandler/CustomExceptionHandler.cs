@@ -13,7 +13,6 @@ namespace mvc.Extensions.ExceptionHandler
         public CustomExceptionHandler(RequestDelegate next, ILoggerFactory logFactory)
         {
             _next = next;
-
             _logger = logFactory.CreateLogger("CustomExceptionHandler");
         }
 
@@ -27,10 +26,9 @@ namespace mvc.Extensions.ExceptionHandler
             _logger.LogInformation(statusCode.ToString());
             if (statusCode == 404) 
             {
-
                 string? originalPath = httpContext.Request.Path.Value;
-                httpContext.Request.Path = (PathString)"/Error/PageNotFound";
-                httpContext.Items["originalPath"] = originalPath;
+                //httpContext.Request.Path = (PathString)"/Error/PageNotFound";
+                //httpContext.Items["originalPath"] = originalPath;
                 httpContext.Response.Redirect($"/Error/PageNotFound?path={originalPath}");
             } 
             
