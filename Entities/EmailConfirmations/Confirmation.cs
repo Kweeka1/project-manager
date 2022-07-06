@@ -25,18 +25,9 @@ public class ToConfirm
     
     [Required]
     public string LastName ***REMOVED*** get; set; ***REMOVED***
-    
-    [Required]
-    public DateTime IssuedAt ***REMOVED*** get; set; ***REMOVED***
-    
-    [Required]
-    public DateTime ExpiresAt ***REMOVED*** get; set; ***REMOVED***
-
-    [Required] 
-    public bool IsExpired => DateTime.UtcNow > ExpiresAt;
 
     [Required]
     [StringLength(88)]
-    public string Hash ***REMOVED*** get; set; ***REMOVED***
+    public string Token ***REMOVED*** get; set; ***REMOVED***
     
 ***REMOVED***

@@ -11,5 +11,4 @@ public class ProjectContext : DbContext
         
 ***REMOVED***
     public DbSet<User> Users ***REMOVED*** get; set; ***REMOVED***
-    public DbSet<ToConfirm> EmailConfirmations ***REMOVED*** get; set; ***REMOVED***
 ***REMOVED***

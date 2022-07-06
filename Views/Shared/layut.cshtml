@@ -12,31 +12,31 @@
     @* <script src="/js/layut.js"></script> *@
 </head>
 <body class="bg-slate-100">
-    <div class="h-[3.5rem] w-[100vw] shadow-md flex flex-row py-[0.5rem] px-4 justify-between bg-slate-200">
+    <div class="h-[3.5rem] w-[100vw] flex flex-row py-[0.5rem] px-4 justify-between header z-10 absolute">
         <div class="flex flex-row cursor-pointer pl-4">
-            <img src="/images/logo4.svg">
-            <h1 class="text-[#385e72] font-medium text-lg font-roboto p-[0.5rem]">Pro Collab</h1>
+            <img src="/images/logo4.svg" class="w-[3rem]">
+            <h1 class="text-[#f1f1f1] font-medium text-lg font-roboto p-[0.5rem]">Pro Collab</h1>
         </div>
         <div class="flex flex-row gap-6 relative menu-container">
             <div class="begin py-[0.5rem] relative cursor-pointer getstarted w-[6rem]">
                 <span class="circle"></span>
                 <span class="chevron-right"></span>
                 @Html.ActionLink("Get Started", "Lobby", "Main", 
-                    htmlAttributes: new ***REMOVED*** @class="text-[#385e72] font-medium text-md font-roboto cursor-pointer getstarted__link" ***REMOVED*** )
+                    htmlAttributes: new ***REMOVED*** @class="text-[#fff] font-small text-md font-roboto cursor-pointer getstarted__link" ***REMOVED*** )
             </div>
             <div class="flex flex-row gap-8 relative links__contaier">
-                <span class="line absolute h-1 w-0 bg-slate-600 top-8 left-0 menu-transition"></span>
+                <span class="line absolute h-1 w-0 bg-slate-600 top-11 left-0 menu-transition"></span>
                 @Html.ActionLink("Contact", "Lobby", "Main", 
-                    htmlAttributes: new ***REMOVED*** @class="py-[0.5rem] text-[#385e72] font-medium text-md font-roboto cursor-pointer" ***REMOVED*** )
+                    htmlAttributes: new ***REMOVED*** @class="py-[0.5rem] text-[#fff] font-small text-md font-roboto cursor-pointer" ***REMOVED*** )
                 @Html.ActionLink("Features", "Lobby", "Main", 
-                    htmlAttributes: new ***REMOVED*** @class="py-[0.5rem] text-[#385e72] font-medium text-md font-roboto cursor-pointer" ***REMOVED*** )
+                    htmlAttributes: new ***REMOVED*** @class="py-[0.5rem] text-[#fff] font-small text-md font-roboto cursor-pointer" ***REMOVED*** )
                 @Html.ActionLink("About", "Lobby", "Main", 
-                    htmlAttributes: new ***REMOVED*** @class="py-[0.5rem] text-[#385e72] font-medium text-md font-roboto cursor-pointer" ***REMOVED*** )
+                    htmlAttributes: new ***REMOVED*** @class="py-[0.5rem] text-[#fff] font-small text-md font-roboto cursor-pointer" ***REMOVED*** )
             </div>
         </div>
-        <div class="flex flex-row cursor-pointer gap-4 pr-6">
-            <button class="text-zinc-200 font-medium text-md transition font-roboto bg-[#489dd1] px-5 rounded-3xl hover:bg-[#0067b3]">Sign Up</button> 
-            <button class="text-zinc-200 font-medium text-md font-roboto transition bg-[#489dd1] px-5 rounded-3xl hover:bg-[#0067b3]">Login</button>
+        <div class="flex flex-row cursor-pointer gap-4 pr-2">
+            <button onclick="window.location.href = '/signup'" class="text-zinc-200 font-medium text-md transition font-roboto bg-[#2C85EF] px-5 rounded-3xl hover:bg-[#0067b3]">Sign Up</button>
+            <button onclick="window.location.href = '/login'" class="text-zinc-200 font-medium text-md font-roboto transition bg-[#2C85EF] px-5 rounded-3xl hover:bg-[#0067b3]">Login</button>
         </div>
     </div>
     <main role="main" class="pb-3">
@@ -46,7 +46,7 @@
         $(function() ***REMOVED***
             $(".links__contaier a").each(function(index, elem) ***REMOVED***
                 $(elem).on("mouseenter", function() ***REMOVED***
-                    $(".line").css(***REMOVED***opacity: 1, width: elem.offsetWidth + 8, left: elem.offsetLeft - 5***REMOVED***)
+                    $(".line").css(***REMOVED***opacity: 1, width: elem.offsetWidth + 13, left: elem.offsetLeft - 6***REMOVED***)
             ***REMOVED***)
         ***REMOVED***)
             $(".menu-container").on("mouseleave", function() ***REMOVED***

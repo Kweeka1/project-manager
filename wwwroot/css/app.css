@@ -520,10 +520,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 ***REMOVED***
 ***REMOVED***
 
-.fixed ***REMOVED***
-  position: fixed;
-***REMOVED***
-
 .absolute ***REMOVED***
   position: absolute;
 ***REMOVED***
@@ -534,6 +530,22 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .top-0 ***REMOVED***
   top: 0px;
+***REMOVED***
+
+.top-\[10rem\] ***REMOVED***
+  top: 10rem;
+***REMOVED***
+
+.left-16 ***REMOVED***
+  left: 4rem;
+***REMOVED***
+
+.top-\[5rem\] ***REMOVED***
+  top: 5rem;
+***REMOVED***
+
+.right-16 ***REMOVED***
+  right: 4rem;
 ***REMOVED***
 
 .top-12 ***REMOVED***
@@ -556,58 +568,29 @@ Ensure the default browser behavior of the `hidden` attribute.
   right: 0.5rem;
 ***REMOVED***
 
-.top-8 ***REMOVED***
-  top: 2rem;
+.top-11 ***REMOVED***
+  top: 2.75rem;
 ***REMOVED***
 
-.z-30 ***REMOVED***
-  z-index: 30;
+.top-16 ***REMOVED***
+  top: 4rem;
 ***REMOVED***
 
-.z-20 ***REMOVED***
-  z-index: 20;
+.top-20 ***REMOVED***
+  top: 5rem;
 ***REMOVED***
 
-.z-50 ***REMOVED***
-  z-index: 50;
+.z-0 ***REMOVED***
+  z-index: 0;
 ***REMOVED***
 
 .z-10 ***REMOVED***
   z-index: 10;
 ***REMOVED***
 
-.m-8 ***REMOVED***
-  margin: 2rem;
-***REMOVED***
-
 .mx-auto ***REMOVED***
   margin-left: auto;
   margin-right: auto;
-***REMOVED***
-
-.my-0 ***REMOVED***
-  margin-top: 0px;
-  margin-bottom: 0px;
-***REMOVED***
-
-.my-4 ***REMOVED***
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-***REMOVED***
-
-.my-6 ***REMOVED***
-  margin-top: 1.5rem;
-  margin-bottom: 1.5rem;
-***REMOVED***
-
-.my-2 ***REMOVED***
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
-***REMOVED***
-
-.my-12 ***REMOVED***
-  margin-top: 3rem;
-  margin-bottom: 3rem;
 ***REMOVED***
 
 .my-10 ***REMOVED***
@@ -625,64 +608,12 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-bottom: 2rem;
 ***REMOVED***
 
-.mt-0 ***REMOVED***
-  margin-top: 0px;
-***REMOVED***
-
-.mt-2 ***REMOVED***
-  margin-top: 0.5rem;
-***REMOVED***
-
-.mr-3 ***REMOVED***
-  margin-right: 0.75rem;
-***REMOVED***
-
-.mt-4 ***REMOVED***
-  margin-top: 1rem;
-***REMOVED***
-
-.mb-8 ***REMOVED***
-  margin-bottom: 2rem;
-***REMOVED***
-
-.-mt-12 ***REMOVED***
-  margin-top: -3rem;
-***REMOVED***
-
-.mb-4 ***REMOVED***
-  margin-bottom: 1rem;
-***REMOVED***
-
-.mb-3 ***REMOVED***
-  margin-bottom: 0.75rem;
-***REMOVED***
-
-.mt-6 ***REMOVED***
-  margin-top: 1.5rem;
-***REMOVED***
-
-.mb-5 ***REMOVED***
-  margin-bottom: 1.25rem;
-***REMOVED***
-
-.mt-auto ***REMOVED***
-  margin-top: auto;
-***REMOVED***
-
-.mb-12 ***REMOVED***
-  margin-bottom: 3rem;
+.mt-10 ***REMOVED***
+  margin-top: 2.5rem;
 ***REMOVED***
 
 .mb-6 ***REMOVED***
   margin-bottom: 1.5rem;
-***REMOVED***
-
-.mr-2 ***REMOVED***
-  margin-right: 0.5rem;
-***REMOVED***
-
-.mt-10 ***REMOVED***
-  margin-top: 2.5rem;
 ***REMOVED***
 
 .mb-2 ***REMOVED***
@@ -697,16 +628,24 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-left: 0.25rem;
 ***REMOVED***
 
+.mb-4 ***REMOVED***
+  margin-bottom: 1rem;
+***REMOVED***
+
+.mb-3 ***REMOVED***
+  margin-bottom: 0.75rem;
+***REMOVED***
+
+.mb-8 ***REMOVED***
+  margin-bottom: 2rem;
+***REMOVED***
+
+.mb-10 ***REMOVED***
+  margin-bottom: 2.5rem;
+***REMOVED***
+
 .block ***REMOVED***
   display: block;
-***REMOVED***
-
-.inline-block ***REMOVED***
-  display: inline-block;
-***REMOVED***
-
-.inline ***REMOVED***
-  display: inline;
 ***REMOVED***
 
 .flex ***REMOVED***
@@ -717,40 +656,24 @@ Ensure the default browser behavior of the `hidden` attribute.
   display: none;
 ***REMOVED***
 
-.h-8 ***REMOVED***
-  height: 2rem;
-***REMOVED***
-
-.h-6 ***REMOVED***
-  height: 1.5rem;
-***REMOVED***
-
-.h-1 ***REMOVED***
-  height: 0.25rem;
+.h-\[40rem\] ***REMOVED***
+  height: 40rem;
 ***REMOVED***
 
 .h-\[3\.5rem\] ***REMOVED***
   height: 3.5rem;
 ***REMOVED***
 
+.h-1 ***REMOVED***
+  height: 0.25rem;
+***REMOVED***
+
 .w-full ***REMOVED***
   width: 100%;
 ***REMOVED***
 
-.w-6 ***REMOVED***
-  width: 1.5rem;
-***REMOVED***
-
-.w-64 ***REMOVED***
-  width: 16rem;
-***REMOVED***
-
-.w-5\/6 ***REMOVED***
-  width: 83.333333%;
-***REMOVED***
-
-.w-1\/6 ***REMOVED***
-  width: 16.666667%;
+.w-\[35\%\] ***REMOVED***
+  width: 35%;
 ***REMOVED***
 
 .w-2\/4 ***REMOVED***
@@ -771,6 +694,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 100vw;
 ***REMOVED***
 
+.w-\[3rem\] ***REMOVED***
+  width: 3rem;
+***REMOVED***
+
 .w-\[6rem\] ***REMOVED***
   width: 6rem;
 ***REMOVED***
@@ -779,37 +706,13 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 0px;
 ***REMOVED***
 
-.max-w-5xl ***REMOVED***
-  max-width: 64rem;
-***REMOVED***
-
 .max-w-lg ***REMOVED***
   max-width: 32rem;
-***REMOVED***
-
-.flex-1 ***REMOVED***
-  flex: 1 1 0%;
-***REMOVED***
-
-.flex-none ***REMOVED***
-  flex: none;
-***REMOVED***
-
-.flex-shrink ***REMOVED***
-  flex-shrink: 1;
-***REMOVED***
-
-.flex-grow ***REMOVED***
-  flex-grow: 1;
 ***REMOVED***
 
 .scale-110 ***REMOVED***
   --tw-scale-x: 1.1;
   --tw-scale-y: 1.1;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-***REMOVED***
-
-.transform ***REMOVED***
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 ***REMOVED***
 
@@ -823,30 +726,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .flex-col ***REMOVED***
   flex-direction: column;
-***REMOVED***
-
-.flex-col-reverse ***REMOVED***
-  flex-direction: column-reverse;
-***REMOVED***
-
-.flex-wrap ***REMOVED***
-  flex-wrap: wrap;
-***REMOVED***
-
-.items-start ***REMOVED***
-  align-items: flex-start;
-***REMOVED***
-
-.items-center ***REMOVED***
-  align-items: center;
-***REMOVED***
-
-.justify-start ***REMOVED***
-  justify-content: flex-start;
-***REMOVED***
-
-.justify-end ***REMOVED***
-  justify-content: flex-end;
 ***REMOVED***
 
 .justify-center ***REMOVED***
@@ -881,24 +760,12 @@ Ensure the default browser behavior of the `hidden` attribute.
   justify-self: center;
 ***REMOVED***
 
-.overflow-hidden ***REMOVED***
-  overflow: hidden;
-***REMOVED***
-
 .overflow-visible ***REMOVED***
   overflow: visible;
 ***REMOVED***
 
 .overflow-x-hidden ***REMOVED***
   overflow-x: hidden;
-***REMOVED***
-
-.rounded-full ***REMOVED***
-  border-radius: 9999px;
-***REMOVED***
-
-.rounded-none ***REMOVED***
-  border-radius: 0px;
 ***REMOVED***
 
 .rounded-lg ***REMOVED***
@@ -909,28 +776,12 @@ Ensure the default browser behavior of the `hidden` attribute.
   border-radius: 0.25rem;
 ***REMOVED***
 
+.rounded-full ***REMOVED***
+  border-radius: 9999px;
+***REMOVED***
+
 .rounded-3xl ***REMOVED***
   border-radius: 1.5rem;
-***REMOVED***
-
-.rounded-t ***REMOVED***
-  border-top-left-radius: 0.25rem;
-  border-top-right-radius: 0.25rem;
-***REMOVED***
-
-.rounded-b-none ***REMOVED***
-  border-bottom-right-radius: 0px;
-  border-bottom-left-radius: 0px;
-***REMOVED***
-
-.rounded-b ***REMOVED***
-  border-bottom-right-radius: 0.25rem;
-  border-bottom-left-radius: 0.25rem;
-***REMOVED***
-
-.rounded-t-none ***REMOVED***
-  border-top-left-radius: 0px;
-  border-top-right-radius: 0px;
 ***REMOVED***
 
 .rounded-r-lg ***REMOVED***
@@ -942,17 +793,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   border-width: 2px;
 ***REMOVED***
 
-.border-b ***REMOVED***
-  border-bottom-width: 1px;
-***REMOVED***
-
 .border-b-4 ***REMOVED***
   border-bottom-width: 4px;
-***REMOVED***
-
-.border-gray-100 ***REMOVED***
-  --tw-border-opacity: 1;
-  border-color: rgb(243 244 246 / var(--tw-border-opacity));
 ***REMOVED***
 
 .border-gray-300 ***REMOVED***
@@ -965,16 +807,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   border-color: rgb(226 232 240 / var(--tw-border-opacity));
 ***REMOVED***
 
-.bg-white ***REMOVED***
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-***REMOVED***
-
-.bg-gray-100 ***REMOVED***
-  --tw-bg-opacity: 1;
-  background-color: rgb(243 244 246 / var(--tw-bg-opacity));
-***REMOVED***
-
 .bg-slate-300 ***REMOVED***
   --tw-bg-opacity: 1;
   background-color: rgb(203 213 225 / var(--tw-bg-opacity));
@@ -985,14 +817,19 @@ Ensure the default browser behavior of the `hidden` attribute.
   background-color: rgb(226 232 240 / var(--tw-bg-opacity));
 ***REMOVED***
 
-.bg-\[\#0067b3\] ***REMOVED***
+.bg-\[\#0058cc\] ***REMOVED***
   --tw-bg-opacity: 1;
-  background-color: rgb(0 103 179 / var(--tw-bg-opacity));
+  background-color: rgb(0 88 204 / var(--tw-bg-opacity));
 ***REMOVED***
 
 .bg-slate-500 ***REMOVED***
   --tw-bg-opacity: 1;
   background-color: rgb(100 116 139 / var(--tw-bg-opacity));
+***REMOVED***
+
+.bg-white ***REMOVED***
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 ***REMOVED***
 
 .bg-slate-100 ***REMOVED***
@@ -1005,40 +842,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   background-color: rgb(71 85 105 / var(--tw-bg-opacity));
 ***REMOVED***
 
-.bg-\[\#489dd1\] ***REMOVED***
+.bg-\[\#2C85EF\] ***REMOVED***
   --tw-bg-opacity: 1;
-  background-color: rgb(72 157 209 / var(--tw-bg-opacity));
+  background-color: rgb(44 133 239 / var(--tw-bg-opacity));
 ***REMOVED***
 
-.bg-\[\#0096c7\] ***REMOVED***
+.bg-\[\#4097F5\] ***REMOVED***
   --tw-bg-opacity: 1;
-  background-color: rgb(0 150 199 / var(--tw-bg-opacity));
-***REMOVED***
-
-.bg-\[\#023e8a\] ***REMOVED***
-  --tw-bg-opacity: 1;
-  background-color: rgb(2 62 138 / var(--tw-bg-opacity));
-***REMOVED***
-
-.bg-\[\#0058cc\] ***REMOVED***
-  --tw-bg-opacity: 1;
-  background-color: rgb(0 88 204 / var(--tw-bg-opacity));
-***REMOVED***
-
-.fill-current ***REMOVED***
-  fill: currentColor;
-***REMOVED***
-
-.p-1 ***REMOVED***
-  padding: 0.25rem;
-***REMOVED***
-
-.p-4 ***REMOVED***
-  padding: 1rem;
-***REMOVED***
-
-.p-6 ***REMOVED***
-  padding: 1.5rem;
+  background-color: rgb(64 151 245 / var(--tw-bg-opacity));
 ***REMOVED***
 
 .p-8 ***REMOVED***
@@ -1049,7 +860,22 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding: 0.5rem;
 ***REMOVED***
 
+.px-3 ***REMOVED***
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+***REMOVED***
+
 .py-2 ***REMOVED***
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+***REMOVED***
+
+.px-6 ***REMOVED***
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+***REMOVED***
+
+.py-\[0\.5rem\] ***REMOVED***
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
 ***REMOVED***
@@ -1059,78 +885,9 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-right: 1rem;
 ***REMOVED***
 
-.py-4 ***REMOVED***
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-***REMOVED***
-
-.px-8 ***REMOVED***
-  padding-left: 2rem;
-  padding-right: 2rem;
-***REMOVED***
-
-.py-0 ***REMOVED***
-  padding-top: 0px;
-  padding-bottom: 0px;
-***REMOVED***
-
-.px-3 ***REMOVED***
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
-***REMOVED***
-
-.py-6 ***REMOVED***
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
-***REMOVED***
-
-.py-8 ***REMOVED***
-  padding-top: 2rem;
-  padding-bottom: 2rem;
-***REMOVED***
-
-.px-6 ***REMOVED***
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-***REMOVED***
-
-.px-2 ***REMOVED***
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
-***REMOVED***
-
-.py-\[0\.5rem\] ***REMOVED***
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-***REMOVED***
-
 .px-5 ***REMOVED***
   padding-left: 1.25rem;
   padding-right: 1.25rem;
-***REMOVED***
-
-.pl-4 ***REMOVED***
-  padding-left: 1rem;
-***REMOVED***
-
-.pr-4 ***REMOVED***
-  padding-right: 1rem;
-***REMOVED***
-
-.pt-24 ***REMOVED***
-  padding-top: 6rem;
-***REMOVED***
-
-.pt-4 ***REMOVED***
-  padding-top: 1rem;
-***REMOVED***
-
-.pb-12 ***REMOVED***
-  padding-bottom: 3rem;
-***REMOVED***
-
-.pt-12 ***REMOVED***
-  padding-top: 3rem;
 ***REMOVED***
 
 .pt-6 ***REMOVED***
@@ -1173,8 +930,12 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-right: 2.5rem;
 ***REMOVED***
 
-.pr-6 ***REMOVED***
-  padding-right: 1.5rem;
+.pl-4 ***REMOVED***
+  padding-left: 1rem;
+***REMOVED***
+
+.pr-2 ***REMOVED***
+  padding-right: 0.5rem;
 ***REMOVED***
 
 .text-center ***REMOVED***
@@ -1189,24 +950,13 @@ Ensure the default browser behavior of the `hidden` attribute.
   font-family: Roboto, sans-serif;
 ***REMOVED***
 
-.text-2xl ***REMOVED***
-  font-size: 1.5rem;
-  line-height: 2rem;
+.font-poppins ***REMOVED***
+  font-family: Poppins, sans-serif;
 ***REMOVED***
 
-.text-5xl ***REMOVED***
-  font-size: 3rem;
-  line-height: 1;
-***REMOVED***
-
-.text-3xl ***REMOVED***
-  font-size: 1.875rem;
-  line-height: 2.25rem;
-***REMOVED***
-
-.text-xs ***REMOVED***
-  font-size: 0.75rem;
-  line-height: 1rem;
+.text-4xl ***REMOVED***
+  font-size: 2.25rem;
+  line-height: 2.5rem;
 ***REMOVED***
 
 .text-xl ***REMOVED***
@@ -1214,19 +964,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   line-height: 1.75rem;
 ***REMOVED***
 
-.text-base ***REMOVED***
-  font-size: 1rem;
-  line-height: 1.5rem;
+.text-2xl ***REMOVED***
+  font-size: 1.5rem;
+  line-height: 2rem;
 ***REMOVED***
 
 .text-sm ***REMOVED***
   font-size: 0.875rem;
   line-height: 1.25rem;
-***REMOVED***
-
-.text-4xl ***REMOVED***
-  font-size: 2.25rem;
-  line-height: 2.5rem;
 ***REMOVED***
 
 .text-lg ***REMOVED***
@@ -1242,64 +987,17 @@ Ensure the default browser behavior of the `hidden` attribute.
   font-weight: 500;
 ***REMOVED***
 
-.uppercase ***REMOVED***
-  text-transform: uppercase;
+.leading-\[50px\] ***REMOVED***
+  line-height: 50px;
 ***REMOVED***
 
-.leading-normal ***REMOVED***
-  line-height: 1.5;
+.leading-8 ***REMOVED***
+  line-height: 2rem;
 ***REMOVED***
 
-.leading-tight ***REMOVED***
-  line-height: 1.25;
-***REMOVED***
-
-.leading-none ***REMOVED***
-  line-height: 1;
-***REMOVED***
-
-.tracking-normal ***REMOVED***
-  letter-spacing: 0em;
-***REMOVED***
-
-.text-white ***REMOVED***
+.text-\[\#f1f1f1\] ***REMOVED***
   --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
-***REMOVED***
-
-.text-pink-800 ***REMOVED***
-  --tw-text-opacity: 1;
-  color: rgb(157 23 77 / var(--tw-text-opacity));
-***REMOVED***
-
-.text-black ***REMOVED***
-  --tw-text-opacity: 1;
-  color: rgb(0 0 0 / var(--tw-text-opacity));
-***REMOVED***
-
-.text-gray-800 ***REMOVED***
-  --tw-text-opacity: 1;
-  color: rgb(31 41 55 / var(--tw-text-opacity));
-***REMOVED***
-
-.text-gray-600 ***REMOVED***
-  --tw-text-opacity: 1;
-  color: rgb(75 85 99 / var(--tw-text-opacity));
-***REMOVED***
-
-.text-pink-500 ***REMOVED***
-  --tw-text-opacity: 1;
-  color: rgb(236 72 153 / var(--tw-text-opacity));
-***REMOVED***
-
-.text-pink-600 ***REMOVED***
-  --tw-text-opacity: 1;
-  color: rgb(219 39 119 / var(--tw-text-opacity));
-***REMOVED***
-
-.text-gray-500 ***REMOVED***
-  --tw-text-opacity: 1;
-  color: rgb(107 114 128 / var(--tw-text-opacity));
+  color: rgb(241 241 241 / var(--tw-text-opacity));
 ***REMOVED***
 
 .text-\[\#385e72\] ***REMOVED***
@@ -1315,6 +1013,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 .text-red-700 ***REMOVED***
   --tw-text-opacity: 1;
   color: rgb(185 28 28 / var(--tw-text-opacity));
+***REMOVED***
+
+.text-white ***REMOVED***
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
 ***REMOVED***
 
 .text-slate-200 ***REMOVED***
@@ -1337,39 +1040,29 @@ Ensure the default browser behavior of the `hidden` attribute.
   color: rgb(71 85 105 / var(--tw-text-opacity));
 ***REMOVED***
 
+.text-gray-600 ***REMOVED***
+  --tw-text-opacity: 1;
+  color: rgb(75 85 99 / var(--tw-text-opacity));
+***REMOVED***
+
+.text-\[\#fff\] ***REMOVED***
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+***REMOVED***
+
 .text-zinc-200 ***REMOVED***
   --tw-text-opacity: 1;
   color: rgb(228 228 231 / var(--tw-text-opacity));
 ***REMOVED***
 
-.underline ***REMOVED***
-  -webkit-text-decoration-line: underline;
-          text-decoration-line: underline;
+.text-\[\#27628C\] ***REMOVED***
+  --tw-text-opacity: 1;
+  color: rgb(39 98 140 / var(--tw-text-opacity));
 ***REMOVED***
 
-.no-underline ***REMOVED***
-  -webkit-text-decoration-line: none;
-          text-decoration-line: none;
-***REMOVED***
-
-.opacity-75 ***REMOVED***
-  opacity: 0.75;
-***REMOVED***
-
-.opacity-25 ***REMOVED***
-  opacity: 0.25;
-***REMOVED***
-
-.shadow ***REMOVED***
-  --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
-  --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-***REMOVED***
-
-.shadow-lg ***REMOVED***
-  --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-  --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+.text-\[\#2C85EF\] ***REMOVED***
+  --tw-text-opacity: 1;
+  color: rgb(44 133 239 / var(--tw-text-opacity));
 ***REMOVED***
 
 .shadow-2xl ***REMOVED***
@@ -1378,9 +1071,9 @@ Ensure the default browser behavior of the `hidden` attribute.
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 ***REMOVED***
 
-.shadow-md ***REMOVED***
-  --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-  --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
+.shadow-lg ***REMOVED***
+  --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 ***REMOVED***
 
@@ -1392,20 +1085,12 @@ Ensure the default browser behavior of the `hidden` attribute.
   transition-duration: 150ms;
 ***REMOVED***
 
-.duration-300 ***REMOVED***
-  transition-duration: 300ms;
-***REMOVED***
-
 .duration-500 ***REMOVED***
   transition-duration: 500ms;
 ***REMOVED***
 
 .duration-200 ***REMOVED***
   transition-duration: 200ms;
-***REMOVED***
-
-.ease-in-out ***REMOVED***
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 ***REMOVED***
 
 * ***REMOVED***
@@ -1524,7 +1209,7 @@ body, html ***REMOVED***
   top: 0rem;
   left: -2.8rem;
   height: 2.2rem;
-  background-color: #0067b3;
+  background-color: #2C85EF;
   padding: 1.2rem;
   z-index: 0;
   border-radius: 1.625rem;
@@ -1546,6 +1231,7 @@ body, html ***REMOVED***
 
 .getstarted .getstarted__link ***REMOVED***
   position: absolute;
+  transition: all 0.35s cubic-bezier(0.65, 0, 0.076, 1);
 ***REMOVED***
 
 .getstarted:hover .circle ***REMOVED***
@@ -1557,10 +1243,14 @@ body, html ***REMOVED***
 ***REMOVED***
 
 .getstarted:hover .getstarted__link ***REMOVED***
-  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  transition: all 0.35s cubic-bezier(0.65, 0, 0.076, 1);
   z-index: 10;
   color: #f1f1f1;
   transform: translateX(-1.5rem);
+***REMOVED***
+
+.home__gradient ***REMOVED***
+  background: linear-gradient(140deg, #5EB0FC 0%, #736EFE 100%);
 ***REMOVED***
 
 .menu-transition ***REMOVED***
@@ -1579,7 +1269,7 @@ a ***REMOVED***
 
 .blue_gradient ***REMOVED***
   padding: 0;
-  background: linear-gradient(45deg, #00b4d8 0%, #005f73 100%);
+  background: linear-gradient(45deg, #5EB0FC 0%, #736EFE 100%);
 ***REMOVED***
 
 .filter ***REMOVED***
@@ -1592,12 +1282,6 @@ a ***REMOVED***
 
 .border-primary ***REMOVED***
   border-color: rgb(6, 187, 0);
-***REMOVED***
-
-.hover\:scale-105:hover ***REMOVED***
-  --tw-scale-x: 1.05;
-  --tw-scale-y: 1.05;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 ***REMOVED***
 
 .hover\:bg-slate-600:hover ***REMOVED***
@@ -1615,24 +1299,14 @@ a ***REMOVED***
   background-color: rgb(0 103 179 / var(--tw-bg-opacity));
 ***REMOVED***
 
-.hover\:text-gray-900:hover ***REMOVED***
-  --tw-text-opacity: 1;
-  color: rgb(17 24 39 / var(--tw-text-opacity));
+.hover\:bg-\[\#72A7EF\]:hover ***REMOVED***
+  --tw-bg-opacity: 1;
+  background-color: rgb(114 167 239 / var(--tw-bg-opacity));
 ***REMOVED***
 
-.hover\:text-gray-800:hover ***REMOVED***
-  --tw-text-opacity: 1;
-  color: rgb(31 41 55 / var(--tw-text-opacity));
-***REMOVED***
-
-.hover\:text-pink-500:hover ***REMOVED***
-  --tw-text-opacity: 1;
-  color: rgb(236 72 153 / var(--tw-text-opacity));
-***REMOVED***
-
-.hover\:text-slate-600:hover ***REMOVED***
-  --tw-text-opacity: 1;
-  color: rgb(71 85 105 / var(--tw-text-opacity));
+.hover\:bg-\[\#2C85EF\]:hover ***REMOVED***
+  --tw-bg-opacity: 1;
+  background-color: rgb(44 133 239 / var(--tw-bg-opacity));
 ***REMOVED***
 
 .hover\:text-\[\#385e72\]:hover ***REMOVED***
@@ -1640,14 +1314,19 @@ a ***REMOVED***
   color: rgb(56 94 114 / var(--tw-text-opacity));
 ***REMOVED***
 
+.hover\:text-\[\#5EB0FC\]:hover ***REMOVED***
+  --tw-text-opacity: 1;
+  color: rgb(94 176 252 / var(--tw-text-opacity));
+***REMOVED***
+
+.hover\:text-\[\#72A7EF\]:hover ***REMOVED***
+  --tw-text-opacity: 1;
+  color: rgb(114 167 239 / var(--tw-text-opacity));
+***REMOVED***
+
 .hover\:underline:hover ***REMOVED***
   -webkit-text-decoration-line: underline;
           text-decoration-line: underline;
-***REMOVED***
-
-.hover\:no-underline:hover ***REMOVED***
-  -webkit-text-decoration-line: none;
-          text-decoration-line: none;
 ***REMOVED***
 
 .hover\:shadow-xl:hover ***REMOVED***

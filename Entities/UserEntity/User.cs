@@ -37,6 +37,18 @@ namespace mvc.Entities.UserEntity
         public string Password ***REMOVED*** get; set; ***REMOVED***
         
         [Required]
-        public Boolean IsActive ***REMOVED*** get; set; ***REMOVED***
+        public Boolean IsConfirmed ***REMOVED*** get; set; ***REMOVED***
+
+        [Required] 
+        public bool IsDeactivationRequested ***REMOVED*** get; set; ***REMOVED***
+        
+        [Required]
+        public DateTime DeactivationRequestedOn ***REMOVED*** get; set; ***REMOVED***
+
+        [Required] 
+        public DateTime IsDeactivatedOn => DeactivationRequestedOn.AddDays(14);
+
+        [Required] 
+        public bool Deactivate => IsDeactivationRequested && DateTime.UtcNow > IsDeactivatedOn;
 ***REMOVED***
 ***REMOVED***

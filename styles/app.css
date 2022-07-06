@@ -96,7 +96,7 @@ body, html ***REMOVED***
   top: 0rem;
   left: -2.8rem;
   height: 2.2rem;
-  background-color: #0067b3;
+  background-color: #2C85EF;
   padding: 1.2rem;
   z-index: 0;
   border-radius: 1.625rem;
@@ -116,6 +116,7 @@ body, html ***REMOVED***
 ***REMOVED***
 .getstarted .getstarted__link ***REMOVED***
   position: absolute;
+  transition: all 0.35s cubic-bezier(0.65, 0, 0.076, 1);
 ***REMOVED***
 .getstarted:hover .circle ***REMOVED***
   width: 9rem;
@@ -124,10 +125,14 @@ body, html ***REMOVED***
   transform: translateX(6.5rem) rotate(-45deg);
 ***REMOVED***
 .getstarted:hover .getstarted__link ***REMOVED***
-  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  transition: all 0.35s cubic-bezier(0.65, 0, 0.076, 1);
   z-index: 10;
   color: #f1f1f1;
   transform: translateX(-1.5rem);
+***REMOVED***
+
+.home__gradient ***REMOVED***
+  background: linear-gradient(140deg, #5EB0FC 0%, #736EFE 100%);
 ***REMOVED***
 
 .menu-transition ***REMOVED***
@@ -146,7 +151,7 @@ a ***REMOVED***
 
 .blue_gradient ***REMOVED***
   padding: 0;
-  background: linear-gradient(45deg, #00b4d8 0%, #005f73 100%);
+  background: linear-gradient(45deg, #5EB0FC 0%, #736EFE 100%);
 ***REMOVED***
 
 .filter ***REMOVED***
