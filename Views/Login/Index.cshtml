@@ -18,17 +18,11 @@
 </head>
 <body class="bg-slate-300 overflow-x-hidden">
     <div class=" tablet:scale-125 scale-110"></div>
-        <div class="absolute top-12 left-0 right-0" style="font-family:'Lato',sans-serif;">
-            <div class="max-w-lg mx-auto">
-                <a href="#">
-                    <h1 class="text-4xl font-bold text-[#385e72] text-center">Startup</h1>
-                </a>
-            </div>
-
+        <div class="absolute top-20 left-0 right-0" style="font-family:'Lato',sans-serif;">
             <div class="flex flex-row bg-slate-200 mx-auto md:p-12 my-10 rounded-lg shadow-2xl md-desk:w-[60vw] phone:w-[90vw] tablet:w-[65vw] sm-desk:w-[40vw] ">
                 <div class="w-2/4 p-8">
                     <div class="text-center">
-                        <h3 class="font-bold text-2xl text-[#385e72]">Welcome to Startup</h3>
+                        <h3 class="font-bold text-2xl text-[#385e72]">Welcome to Pro Collab</h3>
                         <p class="text-[#385e72] pt-2">Sign in to your account.</p>
                     </div>
 
@@ -55,14 +49,14 @@
                                     <span>Invalid password</span>
                                 </div>
                             </div>
-                            <div class="flex justify-between mb-6">
+                            <div class="flex justify-between mb-10">
                                 <div class="">
                                     @Html.CheckBoxFor(x => x.LongSession)
                                     @Html.LabelFor(x => x.LongSession, new { @class = "text-gray-700 text-sm font-bold ml-1 cursor-pointer"})
                                 </div>                
                                 <a href="#" class="phone:pt-1 text-sm text-gray-700 hover:underline">Forgot your password?</a>
                             </div>
-                            <button id="submit" class="bg-[#0058cc] hover:bg-slate-600 text-white font-medium font-roboto py-2 rounded shadow-lg hover:shadow-xl transition duration-200" type="submit">Sign In</button>
+                            <button id="submit" class="bg-[#4097F5] hover:bg-[#2C85EF] text-white font-medium font-poppins py-2 rounded shadow-lg hover:shadow-xl transition duration-200" type="submit">Sign In</button>
                         }
                     </div>
                 </div>
@@ -74,7 +68,7 @@
                     <h1 style="font-family:'Lato',sans-serif;" class="font-bold text-2xl text-slate-100 w-max place-self-center">
                         Dont have an account ?
                     </h1>
-                    <button class="self-center font-roboto font-medium border-2 border-slate-200 hover:bg-slate-200 w-2/6 text-slate-200 hover:text-[#385e72] py-2 rounded-full shadow-lg hover:shadow-xl transition duration-200" type="button">Sign Up</button>
+                    <button class="self-center font-roboto font-medium border-2 border-slate-200 hover:bg-slate-200 w-2/6 text-slate-200 hover:text-[#72A7EF] py-2 rounded-full shadow-lg hover:shadow-xl transition duration-200" type="button">Sign Up</button>
                 </div>
             </div>
 

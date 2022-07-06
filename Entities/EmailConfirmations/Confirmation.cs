@@ -25,18 +25,9 @@ public class ToConfirm
     
     [Required]
     public string LastName { get; set; }
-    
-    [Required]
-    public DateTime IssuedAt { get; set; }
-    
-    [Required]
-    public DateTime ExpiresAt { get; set; }
-
-    [Required] 
-    public bool IsExpired => DateTime.UtcNow > ExpiresAt;
 
     [Required]
     [StringLength(88)]
-    public string Hash { get; set; }
+    public string Token { get; set; }
     
 }

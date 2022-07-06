@@ -30,8 +30,6 @@ namespace mvc.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Index(Login request)
         {
-            _logger.LogInformation(request.Email);
-            _logger.LogInformation(request.Password);
             if (!ModelState.IsValid) return RedirectToAction("Index");
             UserDetails? user = await _userServices.AuthenticateUser(request);
             if (user is null) return View();
@@ -51,19 +49,20 @@ namespace mvc.Controllers
             if (!ModelState.IsValid) return View();
             
             string? email = await _userServices.RegisterUser(request);
-
-            if (string.IsNullOrEmpty(email)) return View();
-
+            if (string.IsNullOrEmpty(email))
+            {
+                return View();
+            }
+            
             return Redirect($"/confirm?email={email}");
         }
         
         [HttpGet("confirm")]
-        public async Task<IActionResult> Confirm(string email)
+        public IActionResult Confirm(string email)
         {
-            _logger.LogCritical(email);
             if (string.IsNullOrEmpty(email)) return RedirectToAction("Index", "Home");
             
-            EmailArgs? userDetails = await _userServices.CheckUserForConfirmation(email);
+            ToConfirm? userDetails = _userServices.CheckUserForConfirmation(email);
             
             if (userDetails is null) return RedirectToAction("Signup");
 
@@ -75,7 +74,6 @@ namespace mvc.Controllers
             // );
             
             return View("Confirm");
-            
         }
         
         [HttpGet("activate")]

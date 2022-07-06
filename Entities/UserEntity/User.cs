@@ -37,6 +37,18 @@ namespace mvc.Entities.UserEntity
         public string Password { get; set; }
         
         [Required]
-        public Boolean IsActive { get; set; }
+        public Boolean IsConfirmed { get; set; }
+
+        [Required] 
+        public bool IsDeactivationRequested { get; set; }
+        
+        [Required]
+        public DateTime DeactivationRequestedOn { get; set; }
+
+        [Required] 
+        public DateTime IsDeactivatedOn => DeactivationRequestedOn.AddDays(14);
+
+        [Required] 
+        public bool Deactivate => IsDeactivationRequested && DateTime.UtcNow > IsDeactivatedOn;
     }
 }

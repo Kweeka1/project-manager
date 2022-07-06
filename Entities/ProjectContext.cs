@@ -11,5 +11,4 @@ public class ProjectContext : DbContext
         
     }
     public DbSet<User> Users { get; set; }
-    public DbSet<ToConfirm> EmailConfirmations { get; set; }
 }
