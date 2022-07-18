@@ -23,7 +23,7 @@ namespace mvc.Extensions.ExceptionHandler
             if (httpContext.Response.StatusCode == 404) 
             {
                 string? originalPath = httpContext.Request.Path.Value;
-                httpContext.Response.Redirect($"/Oops/PageNotFound?path={originalPath}");
+                httpContext.Response.Redirect($"/error/PageNotFound?path={originalPath}");
             } 
             
             // calling next middleware
