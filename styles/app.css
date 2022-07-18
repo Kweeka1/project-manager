@@ -12,6 +12,7 @@ body, html ***REMOVED***
   width: 100%;
   min-height: 100% !important;
   height: 100%;
+  scroll-behavior: smooth;
 ***REMOVED***
 
 @-webkit-keyframes shake ***REMOVED***
@@ -128,7 +129,25 @@ body, html ***REMOVED***
   transition: all 0.35s cubic-bezier(0.65, 0, 0.076, 1);
   z-index: 10;
   color: #f1f1f1;
-  transform: translateX(-1.5rem);
+  transform: translateX(-1.8rem);
+***REMOVED***
+
+.sticky__header ***REMOVED***
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  background-color: #F0F3FA;
+  opacity: 0.98;
+***REMOVED***
+.sticky__header a ***REMOVED***
+  color: rgb(51, 65, 85);
+***REMOVED***
+.sticky__header a:hover ***REMOVED***
+  color: "#fff";
+***REMOVED***
+.sticky__header h1 ***REMOVED***
+  color: rgb(71, 85, 105);
+***REMOVED***
+.sticky__header .line ***REMOVED***
+  background-color: #5EB0FC;
 ***REMOVED***
 
 .home__gradient ***REMOVED***
