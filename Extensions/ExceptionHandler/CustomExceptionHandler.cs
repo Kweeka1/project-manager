@@ -23,7 +23,7 @@ namespace mvc.Extensions.ExceptionHandler
             if (httpContext.Response.StatusCode == 404) 
             ***REMOVED***
                 string? originalPath = httpContext.Request.Path.Value;
-                httpContext.Response.Redirect($"/Oops/PageNotFound?path=***REMOVED***originalPath***REMOVED***");
+                httpContext.Response.Redirect($"/error/PageNotFound?path=***REMOVED***originalPath***REMOVED***");
         ***REMOVED*** 
             
             // calling next middleware

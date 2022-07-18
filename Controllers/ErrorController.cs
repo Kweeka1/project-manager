@@ -9,15 +9,16 @@ using Microsoft.Extensions.Logging;
 namespace mvc.Controllers
 ***REMOVED***
     [Route("[controller]")]
-    public class OopsController : Controller
+    public class ErrorController : Controller
     ***REMOVED***
-        private readonly ILogger<OopsController> _logger;
+        private readonly ILogger<ErrorController> _logger;
 
-        public OopsController(ILogger<OopsController> logger)
+        public ErrorController(ILogger<ErrorController> logger)
         ***REMOVED***
             _logger = logger;
     ***REMOVED***
-        [HttpGet("/oops")]
+        
+        [HttpGet("")]
         public IActionResult Index()
         ***REMOVED***
             return View();
