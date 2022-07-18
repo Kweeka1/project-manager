@@ -37,7 +37,7 @@ namespace mvc.Entities.UserEntity
         public string Password { get; set; }
         
         [Required]
-        public Boolean IsConfirmed { get; set; }
+        public bool IsConfirmed { get; set; }
 
         [Required] 
         public bool IsDeactivationRequested { get; set; }
