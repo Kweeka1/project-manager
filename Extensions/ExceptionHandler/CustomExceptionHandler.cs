@@ -8,28 +8,22 @@ namespace mvc.Extensions.ExceptionHandler
     public class CustomExceptionHandler
     ***REMOVED***
         private readonly RequestDelegate _next;
-        private readonly ILogger _logger;
+        private readonly ILogger<CustomExceptionHandler> _logger;
 
-        public CustomExceptionHandler(RequestDelegate next, ILoggerFactory logFactory)
+        public CustomExceptionHandler(RequestDelegate next, ILogger<CustomExceptionHandler> logger)
         ***REMOVED***
             _next = next;
-            _logger = logFactory.CreateLogger("CustomExceptionHandler");
+            _logger = logger;
     ***REMOVED***
 
         public async Task Invoke(HttpContext httpContext)
         ***REMOVED***
             await _next(httpContext);
-            int statusCode = httpContext.Response.StatusCode;
             
-            _logger.LogInformation("reached middleware");
-            
-            _logger.LogInformation(statusCode.ToString());
-            if (statusCode == 404) 
+            if (httpContext.Response.StatusCode == 404) 
             ***REMOVED***
                 string? originalPath = httpContext.Request.Path.Value;
-                //httpContext.Request.Path = (PathString)"/Error/PageNotFound";
-                //httpContext.Items["originalPath"] = originalPath;
-                httpContext.Response.Redirect($"/Error/PageNotFound?path=***REMOVED***originalPath***REMOVED***");
+                httpContext.Response.Redirect($"/Oops/PageNotFound?path=***REMOVED***originalPath***REMOVED***");
         ***REMOVED*** 
             
             // calling next middleware

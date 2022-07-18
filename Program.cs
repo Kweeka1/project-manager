@@ -24,7 +24,6 @@ builder.Services.AddQuartz(q =>
 ***REMOVED***
     q.UseMicrosoftDependencyInjectionJobFactory();
     // Cron Schedule time is in UTC
-    // subtract time by 1 hour -> 10:15 become 09:15
     // "* * * * * ?" -> "seconds minutes hours day month"
     // "0 15 12 15 * ?" -> Fire at 12:15PM at the 15th day of every month
     // "0 15 17 15 6 ?" -> Fire at 17:15PM at the 15th day of the month June

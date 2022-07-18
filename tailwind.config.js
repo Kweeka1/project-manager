@@ -20,7 +20,8 @@ module.exports = ***REMOVED***
         gudea: ["Gudea", "sans-serif"],
         IBMPSans: ["IBM Plex Sans", "sans-serif"],
         opensans: ["Open Sans", "sans-serif"],
-        roboto: ["Roboto", "sans-serif"]
+        roboto: ["Roboto", "sans-serif"],
+        rajdhani: ['Rajdhani', "sans-serif"]
   ***REMOVED***
 ***REMOVED***,
 ***REMOVED***

@@ -37,7 +37,7 @@ namespace mvc.Entities.UserEntity
         public string Password ***REMOVED*** get; set; ***REMOVED***
         
         [Required]
-        public Boolean IsConfirmed ***REMOVED*** get; set; ***REMOVED***
+        public bool IsConfirmed ***REMOVED*** get; set; ***REMOVED***
 
         [Required] 
         public bool IsDeactivationRequested ***REMOVED*** get; set; ***REMOVED***

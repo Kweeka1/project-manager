@@ -1,5 +1,6 @@
 ﻿@***REMOVED***
     Layout = null;
+    ViewData["UnkownPage"] = Context.Items["originalPath"] as String;
 ***REMOVED***
 
 <!doctype html>
@@ -11,7 +12,12 @@
     <title>Document</title>
 </head>
 <body>
-<h1 >Error 404</h1>
-<span>The requested page is not found</span>
+    <div>
+        <h1 >Error 404</h1>
+        <span>The requested page is not found</span>
+        <span>
+            @ViewBag.path
+        </span>
+    </div>
 </body>
 </html>
