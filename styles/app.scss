@@ -13,6 +13,7 @@ body, html{
     width: 100%;
     min-height: 100% !important;
     height: 100%;
+    scroll-behavior: smooth;
 }
 
 @keyframes shake {
@@ -96,8 +97,26 @@ body, html{
             transition: all 0.35s cubic-bezier(0.65, 0, 0.076, 1);
             z-index: 10;
             color: #f1f1f1;
-            transform: translateX(-1.5rem);
+            transform: translateX(-1.8rem);
         }
+    }
+}
+
+.sticky__header {
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    background-color: #F0F3FA;
+    opacity: 0.98;
+    & a {
+        color: rgb(51 65 85);
+        &:hover {
+            color: "#fff";
+        }
+    }
+    & h1 {
+        color: rgb(71 85 105);
+    }
+    & .line {
+        background-color: #5EB0FC;
     }
 }
 
