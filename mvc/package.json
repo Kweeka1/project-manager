@@ -1,0 +1,20 @@
+***REMOVED***
+  "name": "mvc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": ***REMOVED***
+    "tailwind": "cross-env ./node_modules/tailwindcss/lib/cli.js -i ./styles/app.css -o ./wwwroot/css/app.css --watch",
+    "buildcss:dev": "cross-env TAILWIND_MODE=build postcss ./styles/app.css -o ./wwwroot/css/app.css"
+***REMOVED***
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": ***REMOVED***
+    "autoprefixer": "^10.4.7",
+    "cross-env": "^7.0.3",
+    "postcss": "^8.4.14",
+    "postcss-cli": "^9.1.0",
+    "tailwindcss": "^3.0.24"
+***REMOVED***
+***REMOVED***
