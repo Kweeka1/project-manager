@@ -1,0 +1,9 @@
+***REMOVED***
+  "compilerOptions": ***REMOVED***
+    "composite": true,
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "allowSyntheticDefaultImports": true
+***REMOVED***
+  "include": ["vite.config.ts"]
+***REMOVED***

@@ -1,0 +1,25 @@
+***REMOVED***
+  "name": "react",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": ***REMOVED***
+    "dev": "vite --host",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+***REMOVED***
+  "dependencies": ***REMOVED***
+    "@emotion/react": "^11.9.3",
+    "@emotion/styled": "^11.9.3",
+    "@mui/material": "^5.9.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+***REMOVED***
+  "devDependencies": ***REMOVED***
+    "@types/react": "^18.0.15",
+    "@types/react-dom": "^18.0.6",
+    "@vitejs/plugin-react": "^2.0.0",
+    "typescript": "^4.6.4",
+    "vite": "^3.0.0"
+***REMOVED***
+***REMOVED***
