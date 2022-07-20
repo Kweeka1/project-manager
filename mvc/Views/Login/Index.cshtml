@@ -1,0 +1,84 @@
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@model mvc.Models.User.Request.Login
+
+@***REMOVED***
+    Layout = null;
+    ViewData["Title"] = "Login";
+***REMOVED***
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/css/app.css" asp-append-version="true">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200&family=Gudea:wght@400;700&family=IBM+Plex+Sans:wght@300;400;500&family=Lato:wght@300;400;700&family=Open+Sans:wght@300;400;500&family=Poppins:wght@300;500;600;700;800&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet"> 
+</head>
+<body class="bg-slate-300 overflow-x-hidden">
+    <div class=" tablet:scale-125 scale-110"></div>
+        <div class="absolute top-20 left-0 right-0" style="font-family:'Lato',sans-serif;">
+            <div class="flex flex-row bg-slate-200 mx-auto md:p-12 my-10 rounded-lg shadow-2xl md-desk:w-[60vw] phone:w-[90vw] tablet:w-[65vw] sm-desk:w-[40vw] ">
+                <div class="w-2/4 p-8">
+                    <div class="text-center">
+                        <h3 class="font-bold text-2xl text-[#385e72]">Welcome to Pro Collab</h3>
+                        <p class="text-[#385e72] pt-2">Sign in to your account.</p>
+                    </div>
+
+                    <div class="mt-10">
+                        @using (Html.BeginForm("Index", "Login", FormMethod.Post, new ***REMOVED***  
+                                @id = "form_login", 
+                                @class = "flex flex-col" 
+                        ***REMOVED***)
+                            ) ***REMOVED***
+                            @Html.AntiForgeryToken()
+                            <div id="emailField_container" class="mb-6 pt-3 rounded bg-slate-200 relative">
+                                @Html.LabelFor(x => x.Email, new ***REMOVED*** @class = "block text-gray-700 text-sm font-bold mb-2 ml-3"***REMOVED***)
+                                @Html.TextBoxFor(x => x.Email, new ***REMOVED*** @id = "email", @class= "focus:outline-none bg-slate-200 rounded w-full text-gray-700 border-b-4 border-gray-300 transition duration-500 px-3 pb-3" ***REMOVED***)
+                                <div id="InvalidEmail" class="absolute top-3 right-2 text-thin text-red-700 text-center hidden">
+                                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"><style>@('@')keyframes n-info-tri***REMOVED***0%,to***REMOVED***transform:rotate(0deg);transform-origin:center***REMOVED***10%,90%***REMOVED***transform:rotate(2deg)***REMOVED***20%,40%,60%***REMOVED***transform:rotate(-6deg)***REMOVED***30%,50%,70%***REMOVED***transform:rotate(6deg)***REMOVED***80%***REMOVED***transform:rotate(-2deg)***REMOVED******REMOVED***.prefix__n-info-tri***REMOVED***animation:n-info-tri .8s cubic-bezier(.455,.03,.515,.955) both***REMOVED***</style><path class="prefix__n-info-tri" style="animation-delay:1s; display: inline-block;" stroke="#bc0a0a" stroke-width="1.5" d="M11.134 6.844a1 1 0 011.732 0l5.954 10.312a1 1 0 01-.866 1.5H6.046a1 1 0 01-.866-1.5l5.954-10.312z"/><g class="prefix__n-info-tri"><path stroke="#265BFF" stroke-linecap="round" stroke-width="1.5" d="M12 10.284v3.206"/><circle cx="12" cy="15.605" r=".832" fill="#265BFF"/></g></svg>
+                                    <span>Invalid email</span>
+                                </div>
+                            </div>
+                            <div id="passwordField_container" class="mb-6 pt-3 rounded bg-slate-200 relative">
+                                @Html.LabelFor(x => x.Password, new ***REMOVED*** @class = "block text-gray-700 text-sm font-bold mb-2 ml-3"***REMOVED***)
+                                @Html.TextBoxFor(x => x.Password, new ***REMOVED*** @id = "password", @type = "password", @class = "focus:outline-none bg-slate-200 rounded w-full text-gray-700 border-b-4 border-gray-300 transition duration-500 px-3 pb-3" ***REMOVED***)
+                                <div id="InvalidPassword" class="absolute top-3 right-2 text-thin text-red-700 text-center hidden">
+                                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"><style>@('@')keyframes n-info-tri***REMOVED***0%,to***REMOVED***transform:rotate(0deg);transform-origin:center***REMOVED***10%,90%***REMOVED***transform:rotate(2deg)***REMOVED***20%,40%,60%***REMOVED***transform:rotate(-6deg)***REMOVED***30%,50%,70%***REMOVED***transform:rotate(6deg)***REMOVED***80%***REMOVED***transform:rotate(-2deg)***REMOVED******REMOVED***.prefix__n-info-tri***REMOVED***animation:n-info-tri .8s cubic-bezier(.455,.03,.515,.955) both***REMOVED***</style><path class="prefix__n-info-tri" style="animation-delay:1s; display: inline-block;" stroke="#bc0a0a" stroke-width="1.5" d="M11.134 6.844a1 1 0 011.732 0l5.954 10.312a1 1 0 01-.866 1.5H6.046a1 1 0 01-.866-1.5l5.954-10.312z"/><g class="prefix__n-info-tri"><path stroke="#265BFF" stroke-linecap="round" stroke-width="1.5" d="M12 10.284v3.206"/><circle cx="12" cy="15.605" r=".832" fill="#265BFF"/></g></svg>
+                                    <span>Invalid password</span>
+                                </div>
+                            </div>
+                            <div class="flex justify-between mb-10">
+                                <div class="">
+                                    @Html.CheckBoxFor(x => x.LongSession)
+                                    @Html.LabelFor(x => x.LongSession, new ***REMOVED*** @class = "text-gray-700 text-sm font-bold ml-1 cursor-pointer"***REMOVED***)
+                                </div>                
+                                <a href="#" class="phone:pt-1 text-sm text-gray-700 hover:underline">Forgot your password?</a>
+                            </div>
+                            <button id="submit" class="bg-[#4097F5] hover:bg-[#2C85EF] text-white font-medium font-poppins py-2 rounded shadow-lg hover:shadow-xl transition duration-200" type="submit">Sign In</button>
+                    ***REMOVED***
+                    </div>
+                </div>
+                <div class="w-2/4 flex flex-col text-center justify-center align-middle blue_gradient rounded-r-lg gap-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" fill="currentColor" class="self-center text-slate-200" viewBox="0 0 16 16">
+                        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                        <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+                    </svg>
+                    <h1 style="font-family:'Lato',sans-serif;" class="font-bold text-2xl text-slate-100 w-max place-self-center">
+                        Dont have an account ?
+                    </h1>
+                    <button class="self-center font-roboto font-medium border-2 border-slate-200 hover:bg-slate-200 w-2/6 text-slate-200 hover:text-[#72A7EF] py-2 rounded-full shadow-lg hover:shadow-xl transition duration-200" type="button">Sign Up</button>
+                </div>
+            </div>
+
+            <div class="max-w-lg mx-auto pt-10 flex justify-center text-slate-500">
+                <a href="#" class="hover:underline">Contact</a>
+                <span class="mx-3">•</span>
+                <a href="#" class="hover:underline">Privacy</a>
+            </div>
+        </div>
+        <script src="~/lib/jquery/dist/jquery.min.js"></script>
+        <script src="~/js/LoginFormValidation.js" ></script>
+</body>
+</html>
