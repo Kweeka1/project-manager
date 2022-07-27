@@ -1,14 +1,15 @@
-using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
-using Tailwind;
 using Microsoft.EntityFrameworkCore;
 using mvc.BackgroundServices;
-using mvc.Extensions.ExceptionHandler;
+using mvc.BackgroundServices.Jobs;
 using mvc.Entities;
+using mvc.Extensions.ExceptionHandler;
 using mvc.Extensions.MemoryCache.UserCache;
-using mvc.Extensions.ServiceCollection;
 using mvc.Repositories.Interfaces;
 using mvc.Repositories.Services;
 using Quartz;
+using Quartz.Impl;
+using Quartz.Spi;
+using Tailwind;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -18,20 +19,23 @@ var config = builder.Configuration;
 builder.Services.AddDbContext<ProjectContext>(options => options.UseNpgsql(config.GetConnectionString("Npgsql")));
 builder.Services.AddMemoryCache();
 builder.Services.AddSingleton<IUserAccountCache, UserAccountCache>();
+// add cron job with DI as scoped
+builder.Services.AddTransient<RemoveInactiveAccounts>();
+builder.Services.AddTransient<SendConfirmationEmail>();
 builder.Services.AddTransient<IUserServices, UserServices>();
 builder.Services.AddAutoMapper(typeof(Program));
-builder.Services.AddQuartzHostedService(q => q.WaitForJobsToComplete = true);
-builder.Services.AddQuartz(q =>
+
+builder.Services.AddSingleton<IScheduler>(provider =>
 ***REMOVED***
-    q.UseMicrosoftDependencyInjectionJobFactory();
-    // Cron Schedule time is in UTC
-    // "* * * * * ?" -> "seconds minutes hours day month"
-    // "0 15 12 15 * ?" -> Fire at 12:15PM at the 15th day of every month
-    // "0 15 17 15 6 ?" -> Fire at 17:15PM at the 15th day of the month June
-    //https://www.quartz-scheduler.net/documentation/quartz-3.x/tutorial/crontrigger.html#examples
-    q.AddJobWithTrigger<RemoveInactiveAccounts>("0 30 2 * * ?");
+    var factory = new StdSchedulerFactory();
+    var scheduler = factory.GetScheduler().Result;
+
+    scheduler.JobFactory = new JobFactory(provider);
     
+    return scheduler;
 ***REMOVED***);
+
+builder.Services.AddHostedService<QuartzHostedService>();
 
 var app = builder.Build();
 
