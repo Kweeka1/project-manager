@@ -680,6 +680,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 35%;
 ***REMOVED***
 
+.w-\[64\%\] ***REMOVED***
+  width: 64%;
+***REMOVED***
+
 .w-\[150px\] ***REMOVED***
   width: 150px;
 ***REMOVED***
@@ -732,24 +736,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 0px;
 ***REMOVED***
 
-.w-\[60\%\] ***REMOVED***
-  width: 60%;
-***REMOVED***
-
-.w-\[62\%\] ***REMOVED***
-  width: 62%;
-***REMOVED***
-
-.w-\[64\%\] ***REMOVED***
-  width: 64%;
-***REMOVED***
-
 .max-w-lg ***REMOVED***
   max-width: 32rem;
-***REMOVED***
-
-.max-w-\[60\%\] ***REMOVED***
-  max-width: 60%;
 ***REMOVED***
 
 .scale-110 ***REMOVED***
@@ -782,12 +770,12 @@ Ensure the default browser behavior of the `hidden` attribute.
   justify-content: space-between;
 ***REMOVED***
 
-.gap-12 ***REMOVED***
-  gap: 3rem;
-***REMOVED***
-
 .gap-4 ***REMOVED***
   gap: 1rem;
+***REMOVED***
+
+.gap-12 ***REMOVED***
+  gap: 3rem;
 ***REMOVED***
 
 .gap-6 ***REMOVED***
@@ -818,6 +806,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   overflow-x: hidden;
 ***REMOVED***
 
+.rounded-\[0\.25rem\] ***REMOVED***
+  border-radius: 0.25rem;
+***REMOVED***
+
 .rounded-full ***REMOVED***
   border-radius: 9999px;
 ***REMOVED***
@@ -832,26 +824,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .rounded-3xl ***REMOVED***
   border-radius: 1.5rem;
-***REMOVED***
-
-.rounded-sm ***REMOVED***
-  border-radius: 0.125rem;
-***REMOVED***
-
-.rounded-md ***REMOVED***
-  border-radius: 0.375rem;
-***REMOVED***
-
-.rounded-\[\] ***REMOVED***
-  border-radius: ;
-***REMOVED***
-
-.rounded-\[0\.25\] ***REMOVED***
-  border-radius: 0.25;
-***REMOVED***
-
-.rounded-\[0\.25rem\] ***REMOVED***
-  border-radius: 0.25rem;
 ***REMOVED***
 
 .rounded-r-lg ***REMOVED***
@@ -875,6 +847,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 .border-slate-200 ***REMOVED***
   --tw-border-opacity: 1;
   border-color: rgb(226 232 240 / var(--tw-border-opacity));
+***REMOVED***
+
+.bg-blue-500 ***REMOVED***
+  --tw-bg-opacity: 1;
+  background-color: rgb(59 130 246 / var(--tw-bg-opacity));
 ***REMOVED***
 
 .bg-\[\#F0F3FA\] ***REMOVED***
@@ -932,14 +909,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 ***REMOVED***
 
-.bg-sky-500 ***REMOVED***
-  --tw-bg-opacity: 1;
-  background-color: rgb(14 165 233 / var(--tw-bg-opacity));
-***REMOVED***
-
-.bg-blue-500 ***REMOVED***
-  --tw-bg-opacity: 1;
-  background-color: rgb(59 130 246 / var(--tw-bg-opacity));
+.p-3 ***REMOVED***
+  padding: 0.75rem;
 ***REMOVED***
 
 .p-12 ***REMOVED***
@@ -962,8 +933,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding: 0.5rem;
 ***REMOVED***
 
-.p-3 ***REMOVED***
-  padding: 0.75rem;
+.px-3 ***REMOVED***
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+***REMOVED***
+
+.py-3 ***REMOVED***
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
 ***REMOVED***
 
 .py-6 ***REMOVED***
@@ -979,11 +956,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .px-2 ***REMOVED***
   padding-left: 0.5rem;
   padding-right: 0.5rem;
-***REMOVED***
-
-.px-3 ***REMOVED***
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
 ***REMOVED***
 
 .py-2 ***REMOVED***
@@ -1011,25 +983,20 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-right: 1.25rem;
 ***REMOVED***
 
-.py-3 ***REMOVED***
-  padding-top: 0.75rem;
-  padding-bottom: 0.75rem;
+.pt-10 ***REMOVED***
+  padding-top: 2.5rem;
 ***REMOVED***
 
-.pt-6 ***REMOVED***
-  padding-top: 1.5rem;
-***REMOVED***
-
-.pb-6 ***REMOVED***
-  padding-bottom: 1.5rem;
+.pb-10 ***REMOVED***
+  padding-bottom: 2.5rem;
 ***REMOVED***
 
 .pb-2 ***REMOVED***
   padding-bottom: 0.5rem;
 ***REMOVED***
 
-.pt-10 ***REMOVED***
-  padding-top: 2.5rem;
+.pb-6 ***REMOVED***
+  padding-bottom: 1.5rem;
 ***REMOVED***
 
 .pt-2 ***REMOVED***
@@ -1050,10 +1017,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .pl-10 ***REMOVED***
   padding-left: 2.5rem;
-***REMOVED***
-
-.pb-10 ***REMOVED***
-  padding-bottom: 2.5rem;
 ***REMOVED***
 
 .pt-5 ***REMOVED***

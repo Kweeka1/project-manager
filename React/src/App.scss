@@ -13,18 +13,105 @@
 //     filter: drop-shadow(0 0 2em #61dafbaa);
 // ***REMOVED***
 
-.App ***REMOVED***
+.cards__container ***REMOVED***
+    justify-content: flex-start;
+    padding: 1.7rem 1rem;
+    display: inline-flex;
+    gap: 3rem;
+    white-space: nowrap;
+    overflow-x: auto;
+    height: 17rem;
+    align-items: center;
+    background-color: #F2F4F5;
+    .card ***REMOVED***
+        width: 20rem; 
+        height: 12rem; 
+        padding: 0rem 0rem 1rem 0rem; 
+        cursor: pointer;
 
+        .card__header ***REMOVED***
+            .card__menu ***REMOVED***
+                display: flex; 
+                padding: 0.3rem 1rem; 
+                justify-content: space-between; 
+                background-color: #6997ff; 
+                width: 100%;
+        ***REMOVED***
+    ***REMOVED***
+        .card__details ***REMOVED***
+            color: #4f6a8d;
+            border-radius: 0.2rem;
+            padding: 1px 0.3rem;
+            display: inline-block;
+            font-size: 12;
+            margin-left: 0.5rem;
+
+            .event__value ***REMOVED***
+                background-color: #e5f2ff;
+                padding: 0.3rem 0.3rem;
+                margin-left: 0.3rem;
+        ***REMOVED***
+    ***REMOVED***
+***REMOVED***
+***REMOVED***
+
+.menu__items ***REMOVED***
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
+    width: 60%;
+    .active__issues ***REMOVED***
+        font-size: 12;
+        color: #F2F4F5;
+        background-color: #278ae0;
+        padding: 0.5rem;
+        margin-left: 0.5rem;
+        border-radius: 1.625rem;
+***REMOVED***
+***REMOVED***
+
+.project__name ***REMOVED***
+    font-size: 13;
+    color: #040615;
+    font-family: Lato, sans-serif;
+    font-weight: 400;
+    padding: 0.3rem 0rem;
+    .name ***REMOVED***
+        font-size: 14;
+        color: #040615;
+        font-family: Lato, sans-serif;
+        font-weight: 400;
+        padding: 0rem 0.5rem 0rem 0rem
+***REMOVED***
+***REMOVED***
+
+.card__header ***REMOVED***
+    display: flex;
+    span ***REMOVED***
+        line-height: 1.8rem;
+***REMOVED***
+***REMOVED***
+
+.card_1 ***REMOVED***
+    border-left: 10px solid orange;
+***REMOVED***
+
+.card_2 ***REMOVED***
+    border-left: 10px solid green;
+***REMOVED***
+
+.card_3 ***REMOVED***
+    border-left: 10px solid chocolate;
 ***REMOVED***
 
 p ***REMOVED***
-    font-family: "Roboto", sans-serif;
+    font-family: "Open sans", sans-serif;
     margin-bottom: 0.3rem;
     margin-top: 0.3rem;
 ***REMOVED***
 
 span ***REMOVED***
-    font-family: "Roboto", sans-serif;
+    font-family: "Open sans", sans-serif;
 ***REMOVED***
 
 @keyframes logo-spin ***REMOVED***
@@ -42,7 +129,3 @@ span ***REMOVED***
 //        animation: logo-spin infinite 20s linear;
 //***REMOVED***
 //***REMOVED***
-
-.card ***REMOVED***
-    padding: 2em;
-***REMOVED***

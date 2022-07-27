@@ -1,4 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
+using mvc.BackgroundServices;
+using mvc.BackgroundServices.Jobs;
 using mvc.Entities.EmailConfirmations;
 using mvc.Entities.UserEntity;
 using mvc.Models.User;
@@ -6,6 +8,7 @@ using mvc.Models.User.Request;
 using mvc.Models.User.Response;
 using mvc.Repositories.Interfaces;
 using mvc.Repositories.Services;
+using Quartz;
 
 namespace mvc.Controllers
 ***REMOVED***
@@ -13,11 +16,15 @@ namespace mvc.Controllers
     public class LoginController : Controller
     ***REMOVED***
         private readonly ILogger<LoginController> _logger;
+        private readonly IScheduler _scheduler;
+        private readonly IConfiguration _config;
         private readonly IUserServices _userServices;
-        public LoginController(ILogger<LoginController> logger, IUserServices userServices)
+        public LoginController(ILogger<LoginController> logger, IUserServices userServices, IConfiguration config, IScheduler scheduler)
         ***REMOVED***
             _logger = logger;
             _userServices = userServices;
+            _config = config;
+            _scheduler = scheduler;
     ***REMOVED***
 
         [HttpGet("login")]
@@ -58,7 +65,7 @@ namespace mvc.Controllers
     ***REMOVED***
         
         [HttpGet("confirm")]
-        public IActionResult Confirm(string email)
+        public async Task<IActionResult> Confirm(string email)
         ***REMOVED***
             if (string.IsNullOrEmpty(email)) return RedirectToAction("Index", "Home");
             
@@ -66,13 +73,17 @@ namespace mvc.Controllers
             
             if (userDetails is null) return RedirectToAction("Signup");
 
-            // await _userServices.SendConfirmationEmail(
-            //     userDetails.Email, 
-            //     userDetails.FirstName,
-            //     userDetails.LastName, 
-            //     userDetails.Hash
-            // );
+            var job = JobBuilder.Create<SendConfirmationEmail>()
+                .UsingJobData("Email", userDetails.Email)
+                .UsingJobData("FirstName", userDetails.FirstName)
+                .UsingJobData("LastName", userDetails.LastName)
+                .UsingJobData("Token", userDetails.Token)
+                .WithIdentity(nameof(SendConfirmationEmail)).Build();
             
+            var trigger = TriggerBuilder.Create().StartNow().Build();
+            
+            await _scheduler.ScheduleJob(job, trigger);
+
             return View("Confirm");
     ***REMOVED***
         

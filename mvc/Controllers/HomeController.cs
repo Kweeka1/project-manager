@@ -1,16 +1,20 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using mvc.BackgroundServices;
 using mvc.Models;
+using Quartz;
 
 namespace mvc.Controllers;
 public class HomeController : Controller
 ***REMOVED***
     private readonly ILogger<HomeController> _logger;
+    private readonly IScheduler _scheduler;
 
-    public HomeController(ILogger<HomeController> logger)
+    public HomeController(ILogger<HomeController> logger, IScheduler scheduler)
     ***REMOVED***
         _logger = logger;
+        _scheduler = scheduler;
 ***REMOVED***
 
     [HttpGet("/")]
@@ -20,8 +24,11 @@ public class HomeController : Controller
 ***REMOVED***
     
     [HttpGet("/home")]
-    public IActionResult Index()
+    public async Task<IActionResult> Index()
     ***REMOVED***
+        // var job = JobBuilder.Create<AnotherJob>().Build();
+        // var trigger = TriggerBuilder.Create().StartNow().Build();
+        // await _scheduler.ScheduleJob(job, trigger);
         return View();
 ***REMOVED***
 
