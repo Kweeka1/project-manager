@@ -14,6 +14,5 @@ namespace mvc.Repositories.Interfaces
         ToConfirm? CheckUserForConfirmation(string email);
         Task<bool> DeleteUser(Guid userId);
         Task<UserDetails?> UpdateUser(Update request);
-        Task SendConfirmationEmail(string emailAddress, string firstname, string lastname, string hash);
     }
 }

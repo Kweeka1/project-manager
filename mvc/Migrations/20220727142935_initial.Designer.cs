@@ -12,7 +12,7 @@ using mvc.Entities;
 namespace mvc.Migrations
 {
     [DbContext(typeof(ProjectContext))]
-    [Migration("20220705153526_initial")]
+    [Migration("20220727142935_initial")]
     partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

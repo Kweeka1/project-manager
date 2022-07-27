@@ -1,11 +1,107 @@
+.cards__container {
+  justify-content: flex-start;
+  padding: 1.7rem 1rem;
+  display: inline-flex;
+  gap: 3rem;
+  white-space: nowrap;
+  overflow-x: auto;
+  height: 17rem;
+  align-items: center;
+  background-color: #F2F4F5;
+}
+.cards__container .card {
+  width: 20rem;
+  height: 12rem;
+  padding: 0rem 0rem 1rem 0rem;
+  cursor: pointer;
+}
+.cards__container .card .card__header .card__menu {
+  display: flex;
+  padding: 0.3rem 1rem;
+  justify-content: space-between;
+  background-color: #6997ff;
+  width: 100%;
+}
+.cards__container .card .card__details {
+  color: #4f6a8d;
+  border-radius: 0.2rem;
+  padding: 1px 0.3rem;
+  display: inline-block;
+  font-size: 12;
+  margin-left: 0.5rem;
+}
+.cards__container .card .card__details .event__value {
+  background-color: #e5f2ff;
+  padding: 0.3rem 0.3rem;
+  margin-left: 0.3rem;
+}
+
+.menu__items {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 60%;
+}
+.menu__items .active__issues {
+  font-size: 12;
+  color: #F2F4F5;
+  background-color: #278ae0;
+  padding: 0.5rem;
+  margin-left: 0.5rem;
+  border-radius: 1.625rem;
+}
+
+.project__name {
+  font-size: 13;
+  color: #040615;
+  font-family: Lato, sans-serif;
+  font-weight: 400;
+  padding: 0.3rem 0rem;
+}
+.project__name .name {
+  font-size: 14;
+  color: #040615;
+  font-family: Lato, sans-serif;
+  font-weight: 400;
+  padding: 0rem 0.5rem 0rem 0rem;
+}
+
+.card__header {
+  display: flex;
+}
+.card__header span {
+  line-height: 1.8rem;
+}
+
+.card_1 {
+  border-left: 10px solid orange;
+}
+
+.card_2 {
+  border-left: 10px solid green;
+}
+
+.card_3 {
+  border-left: 10px solid chocolate;
+}
+
 p {
-  font-family: "Roboto", sans-serif;
+  font-family: "Open sans", sans-serif;
   margin-bottom: 0.3rem;
   margin-top: 0.3rem;
 }
 
 span {
-  font-family: "Roboto", sans-serif;
+  font-family: "Open sans", sans-serif;
+}
+
+@-webkit-keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 @keyframes logo-spin {
@@ -16,8 +112,3 @@ span {
     transform: rotate(360deg);
   }
 }
-.card {
-  padding: 2em;
-}
-
-/*# sourceMappingURL=App.css.map */

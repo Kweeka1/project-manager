@@ -142,21 +142,5 @@ namespace mvc.Repositories.Services
 
             return _mapper.Map<UserDetails>(newUser);
         }
-
-        public async Task SendConfirmationEmail(string emailAddress, string firstname, string lastname, string hash)
-        {
-            var message = new MimeMessage();
-            message.From.Add(new MailboxAddress("Pro Collab", "procollab@zohomail.com"));
-            message.To.Add(new MailboxAddress($"{firstname} {lastname}", emailAddress));
-            message.Subject = "Confirmation email";
-            message.Body = new TextPart ("plain"){ Text = $"Hey {firstname} {lastname},\nTo start using your account please click the link below:\n\nhttps://localhost:7159/activate?email={emailAddress}&token={hash}\n\nIf you have any questions, please email us at procollab@zohomail.com\n\nHave a nice day!\nPro Collab Team"};
-            using (var client = new SmtpClient())
-            {
-                await client.ConnectAsync(_config["SmtpServer"], int.Parse(_config["SmtpPort"]), SecureSocketOptions.StartTls);
-                await client.AuthenticateAsync(_config["SmtpUsername"], _config["SmtpPassword"]);
-                await client.SendAsync(message);
-                await client.DisconnectAsync(true);
-            }
-        }
     }
 }
