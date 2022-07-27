@@ -1,3 +1,4 @@
+﻿using Microsoft.EntityFrameworkCore;
 using mvc.Entities;
 using Quartz;
 
@@ -12,10 +13,10 @@ public class RemoveInactiveAccounts : IJob
         _context = context;
     }
 
-    public Task Execute(IJobExecutionContext context)
+    public async Task Execute(IJobExecutionContext context)
     {
-        var inactiveUsers = _context.Users.AsQueryable().Where(user => user.Deactivate);
-        _context.Users.RemoveRange(inactiveUsers);
-        return Task.CompletedTask;
+        var users = _context.Users.AsQueryable().Where(user => user.Deactivate);
+        _context.RemoveRange(users);
+        await _context.SaveChangesAsync();
     }
 }
