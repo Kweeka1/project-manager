@@ -1,6 +1,26 @@
+.cards__container__menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem;
+}
+
+.menu__buttons {
+  width: 40%;
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+}
+.menu__buttons .menu__search {
+  height: 2.5rem;
+}
+.menu__buttons .sort__button {
+  height: 2.5rem;
+}
+
 .cards__container {
   justify-content: flex-start;
-  padding: 1.7rem 1rem;
+  padding: 1.7rem 20px;
   display: inline-flex;
   gap: 3rem;
   white-space: nowrap;
@@ -10,30 +30,48 @@
   background-color: #F2F4F5;
 }
 .cards__container .card {
+  overflow: visible;
+  position: relative;
+  border-radius: 0 0.38rem 0.38rem 0;
   width: 20rem;
   height: 12rem;
-  padding: 0rem 0rem 1rem 0rem;
-  cursor: pointer;
+  padding: 0 0 1rem 0;
+}
+.cards__container .card .card__header {
+  border-radius: 0 0.38rem 0 0;
 }
 .cards__container .card .card__header .card__menu {
   display: flex;
-  padding: 0.3rem 1rem;
+  padding: 0.3rem 0.3rem 0.3rem 1rem;
   justify-content: space-between;
-  background-color: #6997ff;
   width: 100%;
 }
 .cards__container .card .card__details {
   color: #4f6a8d;
   border-radius: 0.2rem;
-  padding: 1px 0.3rem;
   display: inline-block;
-  font-size: 12;
-  margin-left: 0.5rem;
+  margin-left: 0.1rem;
 }
 .cards__container .card .card__details .event__value {
   background-color: #e5f2ff;
   padding: 0.3rem 0.3rem;
   margin-left: 0.3rem;
+}
+
+.border__left {
+  position: absolute;
+  border-radius: 0.38rem 0 0 0.38rem;
+  left: -9px;
+  height: 193px;
+  width: 10px;
+}
+
+.active__issues {
+  color: #F2F4F5;
+  background-color: #278ae0;
+  padding: 0.5rem 0.6rem;
+  margin-left: 0.5rem;
+  border-radius: 1.625rem;
 }
 
 .menu__items {
@@ -42,28 +80,24 @@
   align-items: center;
   width: 60%;
 }
-.menu__items .active__issues {
-  font-size: 12;
-  color: #F2F4F5;
-  background-color: #278ae0;
-  padding: 0.5rem;
-  margin-left: 0.5rem;
-  border-radius: 1.625rem;
-}
 
 .project__name {
-  font-size: 13;
   color: #040615;
   font-family: Lato, sans-serif;
   font-weight: 400;
-  padding: 0.3rem 0rem;
+  padding: 0.1rem 0;
 }
 .project__name .name {
-  font-size: 14;
+  font-size: medium;
+  color: #070a25;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  padding: 0 0.5rem 0 0;
+}
+.project__name .project__title {
+  font-size: medium;
   color: #040615;
-  font-family: Lato, sans-serif;
-  font-weight: 400;
-  padding: 0rem 0.5rem 0rem 0rem;
+  font-family: "Open sans";
 }
 
 .card__header {
@@ -71,18 +105,6 @@
 }
 .card__header span {
   line-height: 1.8rem;
-}
-
-.card_1 {
-  border-left: 10px solid orange;
-}
-
-.card_2 {
-  border-left: 10px solid green;
-}
-
-.card_3 {
-  border-left: 10px solid chocolate;
 }
 
 p {
@@ -95,15 +117,6 @@ span {
   font-family: "Open sans", sans-serif;
 }
 
-@-webkit-keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
 @keyframes logo-spin {
   from {
     transform: rotate(0deg);
@@ -112,3 +125,5 @@ span {
     transform: rotate(360deg);
   }
 }
+
+/*# sourceMappingURL=App.css.map */
