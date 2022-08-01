@@ -1,0 +1,2 @@
+export const random = (start: number, end: number) : number => Math.floor(Math.random() * (end - start) + start);
+export const alpha: string = Array.from(Array(26).keys()).map((i, x) => String.fromCharCode(i + 65)).join("")

@@ -13,9 +13,30 @@
 //     filter: drop-shadow(0 0 2em #61dafbaa);
 // ***REMOVED***
 
+.cards__container__menu ***REMOVED***
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+***REMOVED***
+.menu__buttons ***REMOVED***
+    width: 40%;
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+    .menu__search ***REMOVED***
+        height: 2.5rem;
+        //border: 1px rgba(25, 118, 210, 0.5) solid;
+***REMOVED***
+    .sort__button ***REMOVED***
+        height: 2.5rem;
+***REMOVED***
+***REMOVED***
+
+
 .cards__container ***REMOVED***
     justify-content: flex-start;
-    padding: 1.7rem 1rem;
+    padding: 1.7rem 20px;
     display: inline-flex;
     gap: 3rem;
     white-space: nowrap;
@@ -24,27 +45,26 @@
     align-items: center;
     background-color: #F2F4F5;
     .card ***REMOVED***
+        overflow: visible;
+        position: relative;
+        border-radius: 0 0.38rem 0.38rem 0;
         width: 20rem; 
         height: 12rem; 
-        padding: 0rem 0rem 1rem 0rem; 
-        cursor: pointer;
-
+        padding: 0 0 1rem 0;
         .card__header ***REMOVED***
+            border-radius: 0 0.38rem 0 0;
             .card__menu ***REMOVED***
                 display: flex; 
-                padding: 0.3rem 1rem; 
-                justify-content: space-between; 
-                background-color: #6997ff; 
+                padding: 0.3rem 0.3rem 0.3rem 1rem; 
+                justify-content: space-between;
                 width: 100%;
         ***REMOVED***
     ***REMOVED***
         .card__details ***REMOVED***
             color: #4f6a8d;
             border-radius: 0.2rem;
-            padding: 1px 0.3rem;
             display: inline-block;
-            font-size: 12;
-            margin-left: 0.5rem;
+            margin-left: 0.1rem;
 
             .event__value ***REMOVED***
                 background-color: #e5f2ff;
@@ -55,33 +75,45 @@
 ***REMOVED***
 ***REMOVED***
 
+.border__left ***REMOVED***
+    position: absolute;
+    border-radius: 0.38rem 0 0 0.38rem;
+    left: -9px;
+    height: 193px;
+    width: 10px;
+***REMOVED***
+
+.active__issues ***REMOVED***
+    color: #F2F4F5;
+    background-color: #278ae0;
+    padding: 0.5rem 0.6rem;
+    margin-left: 0.5rem;
+    border-radius: 1.625rem;
+***REMOVED***
+
 .menu__items ***REMOVED***
     display: flex; 
     justify-content: space-between;
     align-items: center;
     width: 60%;
-    .active__issues ***REMOVED***
-        font-size: 12;
-        color: #F2F4F5;
-        background-color: #278ae0;
-        padding: 0.5rem;
-        margin-left: 0.5rem;
-        border-radius: 1.625rem;
-***REMOVED***
 ***REMOVED***
 
 .project__name ***REMOVED***
-    font-size: 13;
     color: #040615;
     font-family: Lato, sans-serif;
     font-weight: 400;
-    padding: 0.3rem 0rem;
+    padding: 0.1rem 0;
     .name ***REMOVED***
-        font-size: 14;
+        font-size: medium;
+        color: #070a25;
+        font-family: "Roboto", sans-serif;
+        font-weight: 300;
+        padding: 0 0.5rem 0 0;
+***REMOVED***
+    .project__title ***REMOVED***
+        font-size: medium;
         color: #040615;
-        font-family: Lato, sans-serif;
-        font-weight: 400;
-        padding: 0rem 0.5rem 0rem 0rem
+        font-family: "Open sans";
 ***REMOVED***
 ***REMOVED***
 
@@ -90,18 +122,6 @@
     span ***REMOVED***
         line-height: 1.8rem;
 ***REMOVED***
-***REMOVED***
-
-.card_1 ***REMOVED***
-    border-left: 10px solid orange;
-***REMOVED***
-
-.card_2 ***REMOVED***
-    border-left: 10px solid green;
-***REMOVED***
-
-.card_3 ***REMOVED***
-    border-left: 10px solid chocolate;
 ***REMOVED***
 
 p ***REMOVED***
