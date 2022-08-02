@@ -11,7 +11,7 @@ namespace mvc.Repositories.Interfaces
         Task<string?> RegisterUser(Registration request);
         Task<bool> ActivateAccount(string email, string token);
         Task<UserDetails?> AuthenticateUser(Login request);
-        ToConfirm? CheckUserForConfirmation(string email);
+        Task<ToConfirm?> CheckUserForConfirmation(string email);
         Task<bool> DeleteUser(Guid userId);
         Task<UserDetails?> UpdateUser(Update request);
 ***REMOVED***

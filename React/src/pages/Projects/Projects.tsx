@@ -4,7 +4,7 @@ import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import ***REMOVED***motion***REMOVED*** from "framer-motion";
 import ProjectCard from "./ProjectsComponents/ProjectCard";
 import ***REMOVED***TabContext, TabList, TabPanel***REMOVED*** from "@mui/lab";
-import ***REMOVED***CardDetails***REMOVED*** from "./interface/CardDetails";
+import ***REMOVED***CardDetails, Priority***REMOVED*** from "./interface/CardDetails";
 import ***REMOVED***alpha, random***REMOVED*** from "../../Extensions/UsefulFunctions";
 
 const Projects: FunctionComponent = () => ***REMOVED***
@@ -19,11 +19,20 @@ const Projects: FunctionComponent = () => ***REMOVED***
 
 
   useEffect(() => ***REMOVED***
+    const priority = ["lowest", "low", "medium", "high", "highest"]
+    const projects = ["Wireframe", "NewsApp", "Ecommerce", "Web scraper", "Mario game", "Chat app", "Social app", "Figma plugin", "Android Browser", "Fix security Issue", "Add Newsletter feature"]
+    const Names = ["John Meguel", "Avigar Adrai", "Tarek Ben Ahmed", "Wei Xi Pong", "Barrack Obama", "Naftaly Benett", "Boris Johnson"]
     const items: CardDetails[] = Array.from(Array(10)).map((k, i) => (***REMOVED***
-        CardPriority: random(1, 4),
-        CardTitle: `$***REMOVED***alpha[random(1, 26)]***REMOVED***$***REMOVED***alpha[random(1, 26)]***REMOVED***$***REMOVED***random(1, 10)***REMOVED***`,
-        ActiveItemsNumber: random(1, 30),
-        EventDate: `$***REMOVED***random(1, 32)***REMOVED***/$***REMOVED***random(1, 13)***REMOVED***/20$***REMOVED***random(14, 23)***REMOVED***`
+        Reporter: Names[random(0, Names.length)],
+        Assignees: random(0, 45),
+        BoardNumber: random(0, 5),
+        DoneIssues: random(0, 20),
+        OpenIssues: random(0, 40),
+        ProjectName: projects[random(0, projects.length)],
+        CardPriority: priority[random(0, priority.length)] as keyof Priority,
+        CardTitle: `$***REMOVED***alpha[random(0, 26)]***REMOVED***$***REMOVED***alpha[random(1, 26)]***REMOVED***$***REMOVED***random(1, 10)***REMOVED***`,
+        ActiveItemsNumber: random(0, 30),
+        EventDate: `$***REMOVED***random(0, 32)***REMOVED***/$***REMOVED***random(0, 13)***REMOVED***/20$***REMOVED***random(14, 23)***REMOVED***`
 ***REMOVED***))
     setCards(items)
 ***REMOVED*** [])
@@ -66,13 +75,19 @@ const Projects: FunctionComponent = () => ***REMOVED***
           right: 0,
     ***REMOVED******REMOVED***>
           ***REMOVED***
-            cards.map((card, i) =>
+            cards.map((card, index) =>
               <ProjectCard
-                key=***REMOVED***i***REMOVED***
+                key=***REMOVED***index***REMOVED***
                 CardPriority=***REMOVED***card.CardPriority***REMOVED***
                 ActiveItemsNumber=***REMOVED***card.ActiveItemsNumber***REMOVED***
                 CardTitle=***REMOVED***card.CardTitle***REMOVED***
                 EventDate=***REMOVED***card.EventDate***REMOVED***
+                Assignees=***REMOVED***card.Assignees***REMOVED***
+                BoardNumber=***REMOVED***card.BoardNumber***REMOVED***
+                DoneIssues=***REMOVED***card.DoneIssues***REMOVED***
+                OpenIssues=***REMOVED***card.OpenIssues***REMOVED***
+                ProjectName=***REMOVED***card.ProjectName***REMOVED***
+                Reporter=***REMOVED***card.Reporter***REMOVED***
               />)
       ***REMOVED***
         </motion.div>

@@ -5,11 +5,11 @@ using mvc.Entities.EmailConfirmations;
 
 namespace mvc.Extensions.MemoryCache.UserCache;
 
-public class UserAccountCache : ICacheService
+public class CacheService : ICacheService
 ***REMOVED***
     private readonly IDistributedCache _cache;
 
-    public UserAccountCache(IDistributedCache cache)
+    public CacheService(IDistributedCache cache)
     ***REMOVED***
         _cache = cache;
 ***REMOVED***
@@ -36,5 +36,10 @@ public class UserAccountCache : ICacheService
     ***REMOVED***
 
         await _cache.SetStringAsync(key, JsonSerializer.Serialize(value), options);
+***REMOVED***
+
+    public async Task Remove(string key)
+    ***REMOVED***
+        await _cache.RemoveAsync(key);
 ***REMOVED***
 ***REMOVED***

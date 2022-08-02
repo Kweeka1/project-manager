@@ -7,6 +7,7 @@ import NotificationsIcon from "@mui/icons-material/Notifications";
 import AccountCircle from "@mui/icons-material/AccountCircle";
 import MoreIcon from "@mui/icons-material/MoreVert";
 import MobileMenu from "./HeaderComponents/MobileMenu";
+import ProjectsDropdown from "./HeaderComponents/ProjectsDropdown";
 
 
 
@@ -28,26 +29,6 @@ const Header: FunctionComponent = () => ***REMOVED***
     setAnchorEl(null);
     handleMobileMenuClose();
 ***REMOVED***;
-
-  const renderProjectsDropdown = (
-    <Menu
-      anchorEl=***REMOVED***ProjectsAnchorEl***REMOVED***
-      anchorOrigin=***REMOVED******REMOVED***
-        vertical: 'bottom',
-        horizontal: 'left',
-  ***REMOVED******REMOVED***
-      keepMounted
-      transformOrigin=***REMOVED******REMOVED***
-        vertical: 'top',
-        horizontal: 'left',
-  ***REMOVED******REMOVED***
-      open=***REMOVED***isProjectsDropdownOpen***REMOVED***
-      onClose=***REMOVED***handleProjectsMenuClose***REMOVED***
-    >
-      <MenuItem onClick=***REMOVED***handleProjectsMenuClose***REMOVED***>Profile</MenuItem>
-      <MenuItem onClick=***REMOVED***handleProjectsMenuClose***REMOVED***>My account</MenuItem>
-    </Menu>
-  );
 
   const renderMenu = (
     <Menu
@@ -138,7 +119,10 @@ const Header: FunctionComponent = () => ***REMOVED***
         </Box>
       </Toolbar>
     </AppBar>
-      ***REMOVED***renderProjectsDropdown***REMOVED***
+      ***REMOVED***<ProjectsDropdown
+        handleProjectsMenuClose=***REMOVED***handleProjectsMenuClose***REMOVED***
+        isProjectsDropdownOpen=***REMOVED***isProjectsDropdownOpen***REMOVED***
+        ProjectsAnchorEl=***REMOVED***ProjectsAnchorEl***REMOVED*** />***REMOVED***
       ***REMOVED***<MobileMenu
         handleMobileMenuClose=***REMOVED***handleMobileMenuClose***REMOVED***
         handleProfileMenuOpen=***REMOVED***handleProfileMenuOpen***REMOVED***

@@ -2,9 +2,10 @@ using mvc.Entities.EmailConfirmations;
 
 namespace mvc.Extensions.MemoryCache.UserCache;
 
-public interface IUserAccountCache
+public interface ICacheService
 ***REMOVED***
-     ToConfirm? GetUserFromMemory(string username);
-     void SaveUserInMemory(ToConfirm user); 
-     void RemoveUserCache(string email);
+     Task<T> Get<T>(string key);
+     Task Set<T>(string key, T value);
+
+     Task Remove(string key);
 ***REMOVED***

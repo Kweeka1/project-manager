@@ -22,23 +22,24 @@ namespace mvc.Repositories.Services
     class UserServices : IUserServices
     ***REMOVED***
         private readonly ILogger<UserServices> _logger;
-        private readonly IUserAccountCache _userAccountCache;
+        private readonly ICacheService _cacheService;
         private readonly ProjectContext _context;
         private readonly IMapper _mapper;
         private readonly IConfiguration _config;
-        public UserServices(ILogger<UserServices> logger, ProjectContext context, IMapper mapper, IConfiguration config, IUserAccountCache userAccountCache)
+        public UserServices(ILogger<UserServices> logger, ProjectContext context, IMapper mapper, IConfiguration config,
+            ICacheService cacheService)
         ***REMOVED***
             _context = context;
             _logger = logger;
             _mapper = mapper;
             _config = config.GetSection("EmailConfig");
-            _userAccountCache = userAccountCache;
+            _cacheService = cacheService;
     ***REMOVED***
         public async Task<string?> RegisterUser(Registration request)
         ***REMOVED***
-            User? IsAlreadyRegistered = await _context.Users.FirstOrDefaultAsync(user => user.Email == request.Email);
+            User? isAlreadyRegistered = await _context.Users.FirstOrDefaultAsync(user => user.Email == request.Email);
 
-            if (IsAlreadyRegistered is not null) return null;
+            if (isAlreadyRegistered is not null) return null;
             
             var salt = bcrypt.GenerateSalt();
             var pass1 = bcrypt.HashPassword(request.Password, salt);
@@ -57,14 +58,14 @@ namespace mvc.Repositories.Services
                 UserId = Guid.NewGuid(),
         ***REMOVED***;
             
-            _userAccountCache.SaveUserInMemory(userInfo);
+            await _cacheService.Set(userInfo.Email, userInfo);
             
             return userInfo.Email;
     ***REMOVED***
 
         public async Task<bool> ActivateAccount(string email, string token)
         ***REMOVED***
-            ToConfirm? userInfo = _userAccountCache.GetUserFromMemory(email);
+            ToConfirm? userInfo = await _cacheService.Get<ToConfirm>(email);
 
             if (userInfo is null || userInfo.Token != token) return false;
 
@@ -74,7 +75,7 @@ namespace mvc.Repositories.Services
             newUser.IsConfirmed = true;
             newUser.IsDeactivationRequested = false;
 
-            _userAccountCache.RemoveUserCache(email);
+            await _cacheService.Remove(email);
             await _context.Users.AddAsync(newUser);
             await _context.SaveChangesAsync();
             return true;
@@ -92,9 +93,9 @@ namespace mvc.Repositories.Services
             return null;
     ***REMOVED***
 
-        public ToConfirm? CheckUserForConfirmation(string email)
+        public async Task<ToConfirm?> CheckUserForConfirmation(string email)
         ***REMOVED***
-            ToConfirm? userInfo = _userAccountCache.GetUserFromMemory(email);
+            ToConfirm? userInfo = await _cacheService.Get<ToConfirm>(email);
             _logger.LogInformation($"From check email ***REMOVED***userInfo?.Email***REMOVED***");
             if (userInfo is null) return null;
 
