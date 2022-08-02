@@ -1,6 +1,1 @@
-.idea
-.vs
-.vscode
-bin
-node_modules
-obj
+mvc/appsettings2.json

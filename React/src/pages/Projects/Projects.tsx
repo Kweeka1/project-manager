@@ -4,7 +4,7 @@ import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import {motion} from "framer-motion";
 import ProjectCard from "./ProjectsComponents/ProjectCard";
 import {TabContext, TabList, TabPanel} from "@mui/lab";
-import {CardDetails} from "./interface/CardDetails";
+import {CardDetails, Priority} from "./interface/CardDetails";
 import {alpha, random} from "../../Extensions/UsefulFunctions";
 
 const Projects: FunctionComponent = () => {
@@ -19,11 +19,20 @@ const Projects: FunctionComponent = () => {
 
 
   useEffect(() => {
+    const priority = ["lowest", "low", "medium", "high", "highest"]
+    const projects = ["Wireframe", "NewsApp", "Ecommerce", "Web scraper", "Mario game", "Chat app", "Social app", "Figma plugin", "Android Browser", "Fix security Issue", "Add Newsletter feature"]
+    const Names = ["John Meguel", "Avigar Adrai", "Tarek Ben Ahmed", "Wei Xi Pong", "Barrack Obama", "Naftaly Benett", "Boris Johnson"]
     const items: CardDetails[] = Array.from(Array(10)).map((k, i) => ({
-        CardPriority: random(1, 4),
-        CardTitle: `${alpha[random(1, 26)]}${alpha[random(1, 26)]}${random(1, 10)}`,
-        ActiveItemsNumber: random(1, 30),
-        EventDate: `${random(1, 32)}/${random(1, 13)}/20${random(14, 23)}`
+        Reporter: Names[random(0, Names.length)],
+        Assignees: random(0, 45),
+        BoardNumber: random(0, 5),
+        DoneIssues: random(0, 20),
+        OpenIssues: random(0, 40),
+        ProjectName: projects[random(0, projects.length)],
+        CardPriority: priority[random(0, priority.length)] as keyof Priority,
+        CardTitle: `${alpha[random(0, 26)]}${alpha[random(1, 26)]}${random(1, 10)}`,
+        ActiveItemsNumber: random(0, 30),
+        EventDate: `${random(0, 32)}/${random(0, 13)}/20${random(14, 23)}`
     }))
     setCards(items)
   }, [])
@@ -66,13 +75,19 @@ const Projects: FunctionComponent = () => {
           right: 0,
         }}>
           {
-            cards.map((card, i) =>
+            cards.map((card, index) =>
               <ProjectCard
-                key={i}
+                key={index}
                 CardPriority={card.CardPriority}
                 ActiveItemsNumber={card.ActiveItemsNumber}
                 CardTitle={card.CardTitle}
                 EventDate={card.EventDate}
+                Assignees={card.Assignees}
+                BoardNumber={card.BoardNumber}
+                DoneIssues={card.DoneIssues}
+                OpenIssues={card.OpenIssues}
+                ProjectName={card.ProjectName}
+                Reporter={card.Reporter}
               />)
           }
         </motion.div>

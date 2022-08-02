@@ -17,8 +17,12 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 var config = builder.Configuration;
 builder.Services.AddDbContext<ProjectContext>(options => options.UseNpgsql(config.GetConnectionString("Npgsql")));
-builder.Services.AddMemoryCache();
-builder.Services.AddSingleton<IUserAccountCache, UserAccountCache>();
+builder.Services.AddStackExchangeRedisCache(options =>
+{
+    options.Configuration = $"{config.GetValue<string>("Redis:Server")}:{config.GetValue<string>("Redis:Port")}";
+});
+//builder.Services.AddMemoryCache();
+builder.Services.AddSingleton<ICacheService, CacheService>();
 // add cron job with DI as scoped
 builder.Services.AddTransient<RemoveInactiveAccounts>();
 builder.Services.AddTransient<SendConfirmationEmail>();

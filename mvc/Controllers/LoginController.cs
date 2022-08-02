@@ -69,7 +69,7 @@ namespace mvc.Controllers
         {
             if (string.IsNullOrEmpty(email)) return RedirectToAction("Index", "Home");
             
-            ToConfirm? userDetails = _userServices.CheckUserForConfirmation(email);
+            ToConfirm? userDetails = await _userServices.CheckUserForConfirmation(email);
             
             if (userDetails is null) return RedirectToAction("Signup");
 

@@ -7,6 +7,7 @@ import NotificationsIcon from "@mui/icons-material/Notifications";
 import AccountCircle from "@mui/icons-material/AccountCircle";
 import MoreIcon from "@mui/icons-material/MoreVert";
 import MobileMenu from "./HeaderComponents/MobileMenu";
+import ProjectsDropdown from "./HeaderComponents/ProjectsDropdown";
 
 
 
@@ -28,26 +29,6 @@ const Header: FunctionComponent = () => {
     setAnchorEl(null);
     handleMobileMenuClose();
   };
-
-  const renderProjectsDropdown = (
-    <Menu
-      anchorEl={ProjectsAnchorEl}
-      anchorOrigin={{
-        vertical: 'bottom',
-        horizontal: 'left',
-      }}
-      keepMounted
-      transformOrigin={{
-        vertical: 'top',
-        horizontal: 'left',
-      }}
-      open={isProjectsDropdownOpen}
-      onClose={handleProjectsMenuClose}
-    >
-      <MenuItem onClick={handleProjectsMenuClose}>Profile</MenuItem>
-      <MenuItem onClick={handleProjectsMenuClose}>My account</MenuItem>
-    </Menu>
-  );
 
   const renderMenu = (
     <Menu
@@ -138,7 +119,10 @@ const Header: FunctionComponent = () => {
         </Box>
       </Toolbar>
     </AppBar>
-      {renderProjectsDropdown}
+      {<ProjectsDropdown
+        handleProjectsMenuClose={handleProjectsMenuClose}
+        isProjectsDropdownOpen={isProjectsDropdownOpen}
+        ProjectsAnchorEl={ProjectsAnchorEl} />}
       {<MobileMenu
         handleMobileMenuClose={handleMobileMenuClose}
         handleProfileMenuOpen={handleProfileMenuOpen}

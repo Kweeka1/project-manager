@@ -34,7 +34,7 @@
   position: relative;
   border-radius: 0 0.38rem 0.38rem 0;
   width: 20rem;
-  height: 12rem;
+  height: 13rem;
   padding: 0 0 1rem 0;
 }
 .cards__container .card .card__header {
@@ -49,8 +49,7 @@
 .cards__container .card .card__details {
   color: #4f6a8d;
   border-radius: 0.2rem;
-  display: inline-block;
-  margin-left: 0.1rem;
+  display: flex;
 }
 .cards__container .card .card__details .event__value {
   background-color: #e5f2ff;
@@ -62,13 +61,12 @@
   position: absolute;
   border-radius: 0.38rem 0 0 0.38rem;
   left: -9px;
-  height: 193px;
+  height: 209px;
   width: 10px;
 }
 
 .active__issues {
   color: #F2F4F5;
-  background-color: #278ae0;
   padding: 0.5rem 0.6rem;
   margin-left: 0.5rem;
   border-radius: 1.625rem;
