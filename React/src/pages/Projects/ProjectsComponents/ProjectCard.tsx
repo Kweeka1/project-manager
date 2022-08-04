@@ -3,22 +3,25 @@ import ***REMOVED***Button, Card, IconButton, Typography***REMOVED*** from "@mui
 import MoreIcon from "@mui/icons-material/MoreVert";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
-import ***REMOVED***CardDetails, Priority***REMOVED*** from "../interface/CardDetails";
+import ***REMOVED***IProjectCard, Priority***REMOVED*** from "../interface/IProjectCard";
 import ***REMOVED***useNavigate***REMOVED*** from "react-router-dom";
 
-const ProjectCard: FunctionComponent<CardDetails> = (
-  ***REMOVED***
-    CardPriority,
-    CardTitle,
+interface Props ***REMOVED***
+  projects: IProjectCard;
+***REMOVED***
+
+const ProjectCard: FunctionComponent<Props> = (props) => ***REMOVED***
+  const ***REMOVED***
+    Reporter,
+    EventDate,
     ProjectName,
     ActiveItemsNumber,
-    EventDate,
     Assignees,
+    BoardNumber,
+    CardPriority,
+    CardTitle,
     DoneIssues,
-    OpenIssues,
-    Reporter,
-    BoardNumber
-***REMOVED***) => ***REMOVED***
+    OpenIssues ***REMOVED***: IProjectCard = props.projects;
 
   const priority: Priority = ***REMOVED***
     lowest: ***REMOVED***
