@@ -11,7 +11,13 @@ interface Props ***REMOVED***
   handleProfileMenuOpen: (event: MouseEvent<HTMLElement>) => void;
 ***REMOVED***
 
-const renderMobileMenu: FunctionComponent<Props> = (***REMOVED***mobileMoreAnchorEl, isMobileMenuOpen, handleMobileMenuClose, handleProfileMenuOpen***REMOVED***) => (
+const renderMobileMenu: FunctionComponent<Props> = (
+  ***REMOVED***
+    mobileMoreAnchorEl,
+    isMobileMenuOpen,
+    handleMobileMenuClose,
+    handleProfileMenuOpen
+***REMOVED***) => (
   <Menu
     anchorEl=***REMOVED***mobileMoreAnchorEl***REMOVED***
     anchorOrigin=***REMOVED******REMOVED***
