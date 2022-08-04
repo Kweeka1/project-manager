@@ -1,5 +1,7 @@
 import ***REMOVED***alpha, styled***REMOVED*** from "@mui/material/styles";
-import ***REMOVED***InputBase***REMOVED*** from "@mui/material";
+import ***REMOVED***InputBase, tableCellClasses***REMOVED*** from "@mui/material";
+import TableRow from "@mui/material/TableRow";
+import TableCell from "@mui/material/TableCell";
 
 export const Search = styled('div')((***REMOVED*** theme ***REMOVED***) => (***REMOVED***
   position: 'relative',
@@ -15,6 +17,31 @@ export const Search = styled('div')((***REMOVED*** theme ***REMOVED***) => (***R
     marginLeft: theme.spacing(3),
     width: 'auto',
 ***REMOVED***
+***REMOVED***));
+
+export const StyledTableCell = styled(TableCell)((***REMOVED*** theme ***REMOVED***) => (***REMOVED***
+  [`&.$***REMOVED***tableCellClasses.head***REMOVED***`]: ***REMOVED***
+    backgroundColor: theme.palette.common.black,
+    color: theme.palette.primary,
+    border: 0,
+
+***REMOVED***
+  [`&.$***REMOVED***tableCellClasses.body***REMOVED***`]: ***REMOVED***
+    fontSize: 14,
+    fontFamily: "Open sans",
+    color: "#464646",
+    border: 0,
+***REMOVED***
+***REMOVED***));
+
+export const StyledTableRow = styled(TableRow)((***REMOVED*** theme ***REMOVED***) => (***REMOVED***
+  '&:nth-of-type(odd)': ***REMOVED***
+    backgroundColor: "#fcfcfc",
+***REMOVED***
+  "&:hover": ***REMOVED***
+    backgroundColor: "#cb4d4d",
+***REMOVED***
+  // hide last border
 ***REMOVED***));
 
 export const SearchIconWrapper = styled('div')((***REMOVED*** theme ***REMOVED***) => (***REMOVED***

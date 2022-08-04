@@ -1,51 +1,77 @@
-import React, ***REMOVED***FunctionComponent, MouseEvent, SyntheticEvent, useEffect, useRef, useState***REMOVED*** from "react"
-import ***REMOVED***Box, Button, Tab, Typography***REMOVED*** from "@mui/material";
+import React, ***REMOVED***Fragment, FunctionComponent, MouseEvent, SyntheticEvent, useEffect, useRef, useState***REMOVED*** from "react"
+import ***REMOVED***Button, Typography***REMOVED*** from "@mui/material";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import ***REMOVED***motion***REMOVED*** from "framer-motion";
-import ProjectCard from "./ProjectsComponents/ProjectCard";
-import ***REMOVED***TabContext, TabList, TabPanel***REMOVED*** from "@mui/lab";
-import ***REMOVED***CardDetails, Priority***REMOVED*** from "./interface/CardDetails";
+import ***REMOVED***IProjectCard, Priority***REMOVED*** from "./interface/IProjectCard";
 import ***REMOVED***alpha, random***REMOVED*** from "../../Extensions/UsefulFunctions";
+import Tabs from "./ProjectsComponents/Tabs";
+import WorkedOnTab from "./ProjectsComponents/TabsComponents/WorkedOnTab";
+import ProjectCard from "./ProjectsComponents/ProjectCard";
+import ***REMOVED***Issue, Project***REMOVED*** from "./interface/IProjectTabs";
+import MyIssuesTab from "./ProjectsComponents/TabsComponents/MyIssuesTab";
 
 const Projects: FunctionComponent = () => ***REMOVED***
   const [ProjectsAnchorEl, setProjectsAnchorEl] = useState<null | HTMLElement>(null);
-  const [value, setValue] = useState('1');
-  const [cards, setCards] = useState<CardDetails[]>([]);
+  const [cards, setCards] = useState<IProjectCard[]>([]);
+  const [projects, setProjects] = useState<Project[]>([]);
+  const [issues, setIssues] = useState<Issue[]>([]);
   const [carouselWidth, setCarouselWidth] = useState(0)
   const carousel = useRef<HTMLDivElement>(null);
 
   const handleProjectsMenuOpen = (event: MouseEvent<HTMLElement>): void => setProjectsAnchorEl(event.currentTarget);
-  const handleChange = (e: SyntheticEvent, newValue: string): void => setValue(newValue)
+
 
 
   useEffect(() => ***REMOVED***
+    const issues = ["Task1", "Task1", "Bug fix", "wireframe1", "landing page", "Tracker", "Contact page", "loading page"]
+    const actions = ["Comment On Issue", "Comment On project", "Updated Issue", "Updated project", "Created Issue", "Created project", "Deleted Issue", "Assigned people"]
+    const issueActions = ["Comment On Issue", "Updated Issue", "Created Issue", "Deleted Issue", "Assigned people"]
     const priority = ["lowest", "low", "medium", "high", "highest"]
     const projects = ["Wireframe", "NewsApp", "Ecommerce", "Web scraper", "Mario game", "Chat app", "Social app", "Figma plugin", "Android Browser", "Fix security Issue", "Add Newsletter feature"]
     const Names = ["John Meguel", "Avigar Adrai", "Tarek Ben Ahmed", "Wei Xi Pong", "Barrack Obama", "Naftaly Benett", "Boris Johnson"]
-    const items: CardDetails[] = Array.from(Array(10)).map((k, i) => (***REMOVED***
+    const items: IProjectCard[] = Array.from(Array(10)).map((k, i) => (***REMOVED***
         Reporter: Names[random(0, Names.length)],
-        Assignees: random(0, 45),
-        BoardNumber: random(0, 5),
-        DoneIssues: random(0, 20),
-        OpenIssues: random(0, 40),
+        Assignees: random(9, 45),
+        BoardNumber: random(1, 5),
+        DoneIssues: random(5, 20),
+        OpenIssues: random(4, 40),
         ProjectName: projects[random(0, projects.length)],
         CardPriority: priority[random(0, priority.length)] as keyof Priority,
-        CardTitle: `$***REMOVED***alpha[random(0, 26)]***REMOVED***$***REMOVED***alpha[random(1, 26)]***REMOVED***$***REMOVED***random(1, 10)***REMOVED***`,
-        ActiveItemsNumber: random(0, 30),
-        EventDate: `$***REMOVED***random(0, 32)***REMOVED***/$***REMOVED***random(0, 13)***REMOVED***/20$***REMOVED***random(14, 23)***REMOVED***`
+        CardTitle: `$***REMOVED***alpha[random(0, 26)]***REMOVED***$***REMOVED***alpha[random(0, 26)]***REMOVED***$***REMOVED***random(1, 10)***REMOVED***`,
+        ActiveItemsNumber: random(5, 30),
+        EventDate: `20$***REMOVED***random(14, 23)***REMOVED***-$***REMOVED***random(1, 13)***REMOVED***-$***REMOVED***random(1, 32)***REMOVED***`
+***REMOVED***))
+    const issuesObj: Issue[] = Array.from(Array(5)).map((k, i) => (***REMOVED***
+      id: random(1, 25),
+      name: issues[random(0, issues.length)],
+      createdOn: `20$***REMOVED***random(14, 23)***REMOVED***-$***REMOVED***random(1, 13)***REMOVED***-$***REMOVED***random(1, 32)***REMOVED***`,
+      action: issueActions[random(0, issueActions.length)],
+      actionDate: `20$***REMOVED***random(14, 23)***REMOVED***-$***REMOVED***random(1, 13)***REMOVED***-$***REMOVED***random(1, 32)***REMOVED***`,
+      reporter: items[i].Reporter
+***REMOVED***))
+    const project: Project[] = Array.from(Array(5)).map((k, i) => (***REMOVED***
+      id: random(1, 99),
+      name: items[i].ProjectName,
+      createdOn: items[i].EventDate,
+      lastAction: actions[random(0, actions.length)],
+      by: Names[random(0, Names.length)],
+      lastActionDate: `20$***REMOVED***random(14, 23)***REMOVED***-$***REMOVED***random(1, 13)***REMOVED***-$***REMOVED***random(1, 32)***REMOVED***`,
+      reporter: items[i].Reporter,
+      issues: issuesObj
 ***REMOVED***))
     setCards(items)
+    setProjects(project)
+    setIssues(issuesObj)
 ***REMOVED*** [])
 
   useEffect(() => ***REMOVED***
     if (carousel.current !== null) ***REMOVED***
       setCarouselWidth(window.innerWidth - carousel.current.scrollWidth)
-      console.log(carouselWidth)
 ***REMOVED***
 ***REMOVED*** [cards])
 
   return (
-    <>
+    <Fragment>
       <div className=***REMOVED***"cards__container__menu"***REMOVED***>
         <Typography sx=***REMOVED******REMOVED***fontSize: 18, color: "#2196f3", width: "auto"***REMOVED******REMOVED***>
           Manage Your Projects
@@ -71,40 +97,22 @@ const Projects: FunctionComponent = () => ***REMOVED***
           className='cards__container'
           ref=***REMOVED***carousel***REMOVED***
           drag=***REMOVED***carouselWidth > 0 ? false : "x"***REMOVED*** dragConstraints=***REMOVED******REMOVED***
-          left: carouselWidth,
+          left: carouselWidth - 10,
           right: 0,
     ***REMOVED******REMOVED***>
           ***REMOVED***
             cards.map((card, index) =>
-              <ProjectCard
-                key=***REMOVED***index***REMOVED***
-                CardPriority=***REMOVED***card.CardPriority***REMOVED***
-                ActiveItemsNumber=***REMOVED***card.ActiveItemsNumber***REMOVED***
-                CardTitle=***REMOVED***card.CardTitle***REMOVED***
-                EventDate=***REMOVED***card.EventDate***REMOVED***
-                Assignees=***REMOVED***card.Assignees***REMOVED***
-                BoardNumber=***REMOVED***card.BoardNumber***REMOVED***
-                DoneIssues=***REMOVED***card.DoneIssues***REMOVED***
-                OpenIssues=***REMOVED***card.OpenIssues***REMOVED***
-                ProjectName=***REMOVED***card.ProjectName***REMOVED***
-                Reporter=***REMOVED***card.Reporter***REMOVED***
-              />)
+              <ProjectCard key=***REMOVED***index***REMOVED*** projects=***REMOVED***card***REMOVED*** />
+            )
       ***REMOVED***
         </motion.div>
+        <span style=***REMOVED******REMOVED*** height: "272px", width: "10px", position: "absolute", backgroundColor: "#F2F4F5", top: 0, right: 0 ***REMOVED******REMOVED***></span>
       </div>
-      <TabContext value=***REMOVED***value***REMOVED***>
-        <Box sx=***REMOVED******REMOVED***borderBottom: 1, borderColor: 'divider', margin: "2rem 0 0 0"***REMOVED******REMOVED***>
-          <TabList onChange=***REMOVED***handleChange***REMOVED*** aria-label="lab API tabs example">
-            <Tab label="Worked On" value="1"/>
-            <Tab label="Assigned to me" value="2"/>
-            <Tab label="Item Three" value="3"/>
-          </TabList>
-        </Box>
-        <TabPanel value="1">Item One</TabPanel>
-        <TabPanel value="2">Item Two</TabPanel>
-        <TabPanel value="3">Item Three</TabPanel>
-      </TabContext>
-    </>
+      <Tabs>
+        <WorkedOnTab projects=***REMOVED***projects***REMOVED*** />
+        <MyIssuesTab issues=***REMOVED***issues***REMOVED*** />
+      </Tabs>
+    </Fragment>
   )
 ***REMOVED***
 

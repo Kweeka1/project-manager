@@ -12,7 +12,7 @@ export interface CardColors ***REMOVED***
   cardDetailsInfo: string;
 ***REMOVED***
 
-export interface CardDetails ***REMOVED***
+export interface IProjectCard ***REMOVED***
   CardPriority: keyof Priority;
   CardTitle: string;
   ActiveItemsNumber: number;

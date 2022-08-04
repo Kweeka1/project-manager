@@ -9,7 +9,7 @@ import Project from "./pages/Project/Project";
 function App () ***REMOVED***
 
   return (
-    <div className="App" style=***REMOVED******REMOVED*** width: "100%", ***REMOVED******REMOVED***>
+    <div className="App" style=***REMOVED******REMOVED*** width: "100%" ***REMOVED******REMOVED***>
       <Header />
       <BrowserRouter>
         <Routes>
