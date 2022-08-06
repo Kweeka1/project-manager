@@ -17,12 +17,12 @@ const MyIssuesTabRow: FunctionComponent<Props> = (props) => ***REMOVED***
 
   return (
     <React.Fragment>
-      <TableRow sx=***REMOVED******REMOVED***'& > *': ***REMOVED***borderBottom: 'unset'***REMOVED***, cursor: "pointer", border: 0, "& > td": ***REMOVED***padding: "26px"***REMOVED******REMOVED******REMOVED***>
+      <TableRow sx=***REMOVED******REMOVED***'& > *': ***REMOVED***borderBottom: 'unset'***REMOVED***, cursor: "pointer", border: 0, "& > td": ***REMOVED***padding: "20px"***REMOVED******REMOVED******REMOVED***>
         <TableCell scope="row">***REMOVED***issue.name***REMOVED***</TableCell>
         <TableCell align="left">***REMOVED***issue.createdOn***REMOVED***</TableCell>
         <TableCell align="left">***REMOVED***issue.action***REMOVED***</TableCell>
         <TableCell align="left">***REMOVED***issue.actionDate***REMOVED***</TableCell>
-        <TableCell align="left">***REMOVED***issue.reporter***REMOVED***</TableCell>
+        <TableCell colSpan=***REMOVED***2***REMOVED*** align="left">***REMOVED***issue.reporter***REMOVED***</TableCell>
       </TableRow>
     </React.Fragment>
   )

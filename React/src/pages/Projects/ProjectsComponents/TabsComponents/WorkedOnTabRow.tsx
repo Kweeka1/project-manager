@@ -1,4 +1,4 @@
-import React, ***REMOVED***FunctionComponent, useEffect, useState***REMOVED*** from "react"
+import React, ***REMOVED***Fragment, FunctionComponent, useEffect, useState***REMOVED*** from "react"
 import TableRow from "@mui/material/TableRow";
 import TableCell from "@mui/material/TableCell";
 import IconButton from "@mui/material/IconButton";
@@ -11,6 +11,7 @@ import Table from "@mui/material/Table";
 import TableHead from "@mui/material/TableHead";
 import TableBody from "@mui/material/TableBody";
 import ***REMOVED***Project***REMOVED*** from "../../interface/IProjectTabs";
+import Tabs from "../../../../SharedComponents/Tabs";
 
 interface Props ***REMOVED***
   project: Project;
@@ -18,6 +19,7 @@ interface Props ***REMOVED***
 
 const WorkedOnTabRow: FunctionComponent<Props> = (props) => ***REMOVED***
   const ***REMOVED*** project ***REMOVED*** = props;
+  const boardNames = project.boards.map(board => board.name)
   const [projects, setProjects] = useState<Project>(project)
   const [isTabOpen, setTabOpen] = useState<boolean>(false)
 
@@ -27,7 +29,7 @@ const WorkedOnTabRow: FunctionComponent<Props> = (props) => ***REMOVED***
 
 return (
   <React.Fragment>
-    <TableRow sx=***REMOVED******REMOVED***'& > *': ***REMOVED***borderBottom: 'unset'***REMOVED***, cursor: "pointer"***REMOVED******REMOVED***>
+    <TableRow sx=***REMOVED******REMOVED***cursor: "pointer"***REMOVED******REMOVED***>
       <TableCell>
         <IconButton
           size="small"
@@ -37,45 +39,51 @@ return (
         </IconButton>
       </TableCell>
       <TableCell  component="th" scope="row">***REMOVED***project.name***REMOVED***</TableCell>
-      <TableCell align="left">***REMOVED***project.createdOn***REMOVED***</TableCell>
+      <TableCell align="left">***REMOVED***project.createdOn.replace(/-/g, "/")***REMOVED***</TableCell>
       <TableCell align="left">***REMOVED***project.lastAction***REMOVED***</TableCell>
       <TableCell align="left">***REMOVED***project.by***REMOVED***</TableCell>
-      <TableCell align="left">***REMOVED***project.lastActionDate***REMOVED***</TableCell>
+      <TableCell align="left">***REMOVED***project.lastActionDate.replace(/-/g, "/")***REMOVED***</TableCell>
       <TableCell align="left">***REMOVED***project.reporter***REMOVED***</TableCell>
     </TableRow>
     <TableRow>
-      <TableCell sx=***REMOVED******REMOVED*** border: 0 ***REMOVED******REMOVED*** style=***REMOVED******REMOVED***paddingBottom: 0, paddingTop: 0***REMOVED******REMOVED*** colSpan=***REMOVED***8***REMOVED***>
+      <TableCell sx=***REMOVED******REMOVED*** border: 0 ***REMOVED******REMOVED*** style=***REMOVED******REMOVED***paddingBottom: 0, paddingTop: 0***REMOVED******REMOVED*** colSpan=***REMOVED***7***REMOVED***>
         <Collapse in=***REMOVED***isTabOpen***REMOVED*** timeout="auto">
           <Box sx=***REMOVED******REMOVED***margin: 1***REMOVED******REMOVED***>
-            <Typography variant="h6" gutterBottom component="div">
-              Issues
-            </Typography>
-            <Table size="medium">
-              <TableHead>
-                <TableRow>
-                  <TableCell>Name</TableCell>
-                  <TableCell>Created On</TableCell>
-                  <TableCell align="left">Action</TableCell>
-                  <TableCell align="left">Action Time</TableCell>
-                  <TableCell align="left">Reporter</TableCell>
-                </TableRow>
-              </TableHead>
-              <TableBody>
-                ***REMOVED***project.issues.map(issue => (
-                  <TableRow key=***REMOVED***issue.id***REMOVED***>
-                    <TableCell component="th" scope="row">
-                      ***REMOVED***issue.name***REMOVED***
-                    </TableCell>
-                    <TableCell>***REMOVED***issue.createdOn***REMOVED***</TableCell>
-                    <TableCell align="left">***REMOVED***issue.action***REMOVED***</TableCell>
-                    <TableCell align="left">***REMOVED***issue.actionDate***REMOVED***</TableCell>
-                    <TableCell align="left">
-                      ***REMOVED***issue.reporter***REMOVED***
-                    </TableCell>
-                  </TableRow>
-                ))***REMOVED***
-              </TableBody>
-            </Table>
+              ***REMOVED***
+                  <Tabs tabNames=***REMOVED***boardNames***REMOVED***>
+                      ***REMOVED***
+                        project.boards.map(board => (
+                          <Table size="medium">
+                            <TableHead>
+                              <TableRow >
+                                <TableCell>Issues</TableCell>
+                                <TableCell>Created On</TableCell>
+                                <TableCell align="left">Action</TableCell>
+                                <TableCell align="left">Action Time</TableCell>
+                                <TableCell align="left">Reporter</TableCell>
+                                <TableCell sx=***REMOVED******REMOVED*** border: 0 ***REMOVED******REMOVED*** />
+                                <TableCell sx=***REMOVED******REMOVED*** border: 0 ***REMOVED******REMOVED*** />
+                              </TableRow>
+                            </TableHead>
+                            <TableBody sx=***REMOVED******REMOVED*** "& > tr:last-child > *": ***REMOVED*** border: 0 ***REMOVED***, ***REMOVED******REMOVED***>
+                            ***REMOVED***
+                              board.issues.map(issue => (
+                                  <TableRow key=***REMOVED***issue.id***REMOVED***>
+                                    <TableCell component="th" scope="row">***REMOVED***issue.name***REMOVED***</TableCell>
+                                    <TableCell>***REMOVED***issue.createdOn.replace(/-/g, "/")***REMOVED***</TableCell>
+                                    <TableCell align="left">***REMOVED***issue.action***REMOVED***</TableCell>
+                                    <TableCell align="left">***REMOVED***issue.actionDate.replace(/-/g, "/")***REMOVED***</TableCell>
+                                    <TableCell align="left">***REMOVED***issue.reporter***REMOVED***</TableCell>
+                                    <TableCell sx=***REMOVED******REMOVED*** border: 0 ***REMOVED******REMOVED*** />
+                                    <TableCell sx=***REMOVED******REMOVED*** border: 0 ***REMOVED******REMOVED*** />
+                                  </TableRow>
+                              ))
+                        ***REMOVED***
+                            </TableBody>
+                            </Table>
+                        ))***REMOVED***
+                  </Tabs>
+          ***REMOVED***
           </Box>
         </Collapse>
       </TableCell>

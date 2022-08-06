@@ -6,7 +6,12 @@ export interface Project ***REMOVED***
   by: string
   lastActionDate: string;
   reporter: string;
-  issues: Issue[];
+  boards: Board[];
+***REMOVED***
+
+export interface Board ***REMOVED***
+  name: string;
+  issues: Issue[]
 ***REMOVED***
 
 export interface Issue ***REMOVED***
@@ -16,9 +21,5 @@ export interface Issue ***REMOVED***
   action: string;
   actionDate: string;
   reporter: string;
-***REMOVED***
-
-export interface Assigned ***REMOVED***
-
 ***REMOVED***
 

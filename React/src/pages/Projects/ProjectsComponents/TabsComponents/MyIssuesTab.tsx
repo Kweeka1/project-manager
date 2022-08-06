@@ -15,28 +15,7 @@ interface Props ***REMOVED***
 ***REMOVED***
 
 const MyIssuesTab: FunctionComponent<Props> = (props) => ***REMOVED***
-  let last2Years = []
-  let last4Years = []
-  let last6Years = []
-  const now = new Date(Date.now()).getFullYear()
   const ***REMOVED*** issues ***REMOVED*** = props
-  for (let i = 0; i < issues.length; i++) ***REMOVED***
-    const diff = now - new Date(Date.parse(issues[i].createdOn)).getFullYear()
-    switch (diff) ***REMOVED***
-      case 0:
-      case 1:
-      case 2:
-        last2Years.push(issues[i])
-        break;
-      case 3:
-      case 4:
-        last4Years.push(issues[i])
-        break;
-      default:
-        last6Years.push(issues[i])
-        break;
-***REMOVED***
-***REMOVED***
 
   return (
     <TableContainer sx=***REMOVED******REMOVED*** borderRadius: 0 ***REMOVED******REMOVED*** component=***REMOVED***Paper***REMOVED***>
@@ -51,40 +30,13 @@ const MyIssuesTab: FunctionComponent<Props> = (props) => ***REMOVED***
             <TableCell />
           </TableRow>
         </TableHead>
-        <TableBody>
-          ***REMOVED***
-            last2Years.length ?
-              <Fragment>
-                  <Typography variant="h6" gutterBottom component="div" sx=***REMOVED******REMOVED*** padding: "1rem 1rem" ***REMOVED******REMOVED***>
-                      Last 2 Years
-                  </Typography>
-                  ***REMOVED*** last2Years.map(issue => (
-                    <MyIssuesTabRow key=***REMOVED***issue.id***REMOVED*** issue=***REMOVED***issue***REMOVED*** />
-                  ))***REMOVED***
-              </Fragment> : ""
-      ***REMOVED***
-          ***REMOVED***
-            last4Years.length ?
-              <Fragment>
-                  <Typography variant="h6" gutterBottom component="div" sx=***REMOVED******REMOVED*** padding: "1rem 1rem" ***REMOVED******REMOVED***>
-                      Last 4 Years
-                  </Typography>
-                ***REMOVED*** last4Years.map(issue => (
-                  <MyIssuesTabRow key=***REMOVED***issue.id***REMOVED*** issue=***REMOVED***issue***REMOVED*** />
-                ))***REMOVED***
-              </Fragment> : ""
-      ***REMOVED***
-          ***REMOVED***
-            last6Years.length ?
-              <Fragment>
-                  <Typography variant="h6" gutterBottom component="div" sx=***REMOVED******REMOVED*** padding: "1rem 1rem" ***REMOVED******REMOVED***>
-                      More than 6 Years
-                  </Typography>
-                ***REMOVED*** last6Years.map(issue => (
-                  <MyIssuesTabRow key=***REMOVED***issue.id***REMOVED*** issue=***REMOVED***issue***REMOVED*** />
-                ))***REMOVED***
-              </Fragment> : ""
-      ***REMOVED***
+        <TableBody sx=***REMOVED******REMOVED***
+          "& > tr": ***REMOVED***backgroundColor: "#eff0f4"***REMOVED***,
+          "& > tr:nth-of-type(even)": ***REMOVED*** backgroundColor: "#f8f9fd" ***REMOVED***
+    ***REMOVED******REMOVED***>
+          ***REMOVED*** issues.map(issue => (
+            <MyIssuesTabRow key=***REMOVED***issue.id***REMOVED*** issue=***REMOVED***issue***REMOVED*** />
+          ))***REMOVED***
         </TableBody>
       </Table>
     </TableContainer>

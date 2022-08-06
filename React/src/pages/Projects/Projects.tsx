@@ -4,7 +4,7 @@ import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import ***REMOVED***motion***REMOVED*** from "framer-motion";
 import ***REMOVED***IProjectCard, Priority***REMOVED*** from "./interface/IProjectCard";
 import ***REMOVED***alpha, random***REMOVED*** from "../../Extensions/UsefulFunctions";
-import Tabs from "./ProjectsComponents/Tabs";
+import Tabs from "../../SharedComponents/Tabs";
 import WorkedOnTab from "./ProjectsComponents/TabsComponents/WorkedOnTab";
 import ProjectCard from "./ProjectsComponents/ProjectCard";
 import ***REMOVED***Issue, Project***REMOVED*** from "./interface/IProjectTabs";
@@ -29,7 +29,7 @@ const Projects: FunctionComponent = () => ***REMOVED***
     const priority = ["lowest", "low", "medium", "high", "highest"]
     const projects = ["Wireframe", "NewsApp", "Ecommerce", "Web scraper", "Mario game", "Chat app", "Social app", "Figma plugin", "Android Browser", "Fix security Issue", "Add Newsletter feature"]
     const Names = ["John Meguel", "Avigar Adrai", "Tarek Ben Ahmed", "Wei Xi Pong", "Barrack Obama", "Naftaly Benett", "Boris Johnson"]
-    const items: IProjectCard[] = Array.from(Array(10)).map((k, i) => (***REMOVED***
+    const items: IProjectCard[] = Array.from(Array(10)).map(() => (***REMOVED***
         Reporter: Names[random(0, Names.length)],
         Assignees: random(9, 45),
         BoardNumber: random(1, 5),
@@ -39,25 +39,30 @@ const Projects: FunctionComponent = () => ***REMOVED***
         CardPriority: priority[random(0, priority.length)] as keyof Priority,
         CardTitle: `$***REMOVED***alpha[random(0, 26)]***REMOVED***$***REMOVED***alpha[random(0, 26)]***REMOVED***$***REMOVED***random(1, 10)***REMOVED***`,
         ActiveItemsNumber: random(5, 30),
-        EventDate: `20$***REMOVED***random(14, 23)***REMOVED***-$***REMOVED***random(1, 13)***REMOVED***-$***REMOVED***random(1, 32)***REMOVED***`
+        EventDate: `2022-$***REMOVED***random(1, 8)***REMOVED***-$***REMOVED***random(1, 32)***REMOVED***`
 ***REMOVED***))
-    const issuesObj: Issue[] = Array.from(Array(5)).map((k, i) => (***REMOVED***
-      id: random(1, 25),
-      name: issues[random(0, issues.length)],
-      createdOn: `20$***REMOVED***random(14, 23)***REMOVED***-$***REMOVED***random(1, 13)***REMOVED***-$***REMOVED***random(1, 32)***REMOVED***`,
-      action: issueActions[random(0, issueActions.length)],
-      actionDate: `20$***REMOVED***random(14, 23)***REMOVED***-$***REMOVED***random(1, 13)***REMOVED***-$***REMOVED***random(1, 32)***REMOVED***`,
-      reporter: items[i].Reporter
-***REMOVED***))
+    const issuesObj = () : Issue[] => ***REMOVED***
+      return Array.from(Array(5)).map((k, i) => (***REMOVED***
+        id: random(1, 10000),
+        name: issues[random(0, issues.length)],
+        createdOn: `2022-$***REMOVED***random(1, 8)***REMOVED***-$***REMOVED***random(1, 32)***REMOVED***`,
+        action: issueActions[random(0, issueActions.length)],
+        actionDate: `2022-$***REMOVED***random(1, 8)***REMOVED***-$***REMOVED***random(1, 32)***REMOVED***`,
+        reporter: items[i].Reporter
+  ***REMOVED***))
+***REMOVED***
     const project: Project[] = Array.from(Array(5)).map((k, i) => (***REMOVED***
-      id: random(1, 99),
+      id: random(1, 100000),
       name: items[i].ProjectName,
       createdOn: items[i].EventDate,
       lastAction: actions[random(0, actions.length)],
       by: Names[random(0, Names.length)],
       lastActionDate: `20$***REMOVED***random(14, 23)***REMOVED***-$***REMOVED***random(1, 13)***REMOVED***-$***REMOVED***random(1, 32)***REMOVED***`,
       reporter: items[i].Reporter,
-      issues: issuesObj
+      boards: Array.from(Array(random(1, 4))).map(() => (***REMOVED***
+        name: `$***REMOVED***alpha[random(0, 26)]***REMOVED***$***REMOVED***alpha[random(0, 26)]***REMOVED***$***REMOVED***random(1, 10)***REMOVED***`,
+        issues: issuesObj()
+  ***REMOVED***))
 ***REMOVED***))
     setCards(items)
     setProjects(project)
@@ -108,7 +113,7 @@ const Projects: FunctionComponent = () => ***REMOVED***
         </motion.div>
         <span style=***REMOVED******REMOVED*** height: "272px", width: "10px", position: "absolute", backgroundColor: "#F2F4F5", top: 0, right: 0 ***REMOVED******REMOVED***></span>
       </div>
-      <Tabs>
+      <Tabs tabNames=***REMOVED***["Worked On", "Assigned To Me"]***REMOVED*** sx=***REMOVED******REMOVED*** borderBottom: 1, borderColor: 'divider', margin: "1rem 0 0 0" ***REMOVED******REMOVED*** >
         <WorkedOnTab projects=***REMOVED***projects***REMOVED*** />
         <MyIssuesTab issues=***REMOVED***issues***REMOVED*** />
       </Tabs>
