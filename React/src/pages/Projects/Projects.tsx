@@ -1,5 +1,5 @@
 import React, ***REMOVED***Fragment, FunctionComponent, MouseEvent, SyntheticEvent, useEffect, useRef, useState***REMOVED*** from "react"
-import ***REMOVED***Button, Typography***REMOVED*** from "@mui/material";
+import ***REMOVED***Box, Button, Paper, Typography, useTheme***REMOVED*** from "@mui/material";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import ***REMOVED***motion***REMOVED*** from "framer-motion";
 import ***REMOVED***IProjectCard, Priority***REMOVED*** from "./interface/IProjectCard";
@@ -9,6 +9,7 @@ import WorkedOnTab from "./ProjectsComponents/TabsComponents/WorkedOnTab";
 import ProjectCard from "./ProjectsComponents/ProjectCard";
 import ***REMOVED***Issue, Project***REMOVED*** from "./interface/IProjectTabs";
 import MyIssuesTab from "./ProjectsComponents/TabsComponents/MyIssuesTab";
+import ***REMOVED***CustomTheme***REMOVED*** from "../../Contexts/ThemeContext";
 
 const Projects: FunctionComponent = () => ***REMOVED***
   const [ProjectsAnchorEl, setProjectsAnchorEl] = useState<null | HTMLElement>(null);
@@ -19,8 +20,6 @@ const Projects: FunctionComponent = () => ***REMOVED***
   const carousel = useRef<HTMLDivElement>(null);
 
   const handleProjectsMenuOpen = (event: MouseEvent<HTMLElement>): void => setProjectsAnchorEl(event.currentTarget);
-
-
 
   useEffect(() => ***REMOVED***
     const issues = ["Task1", "Task1", "Bug fix", "wireframe1", "landing page", "Tracker", "Contact page", "loading page"]
@@ -75,13 +74,15 @@ const Projects: FunctionComponent = () => ***REMOVED***
 ***REMOVED***
 ***REMOVED*** [cards])
 
+  const theme = useTheme<CustomTheme>();
+
   return (
     <Fragment>
-      <div className=***REMOVED***"cards__container__menu"***REMOVED***>
+      <Paper sx=***REMOVED******REMOVED*** borderRadius: 0, boxShadow: "none" ***REMOVED******REMOVED*** className=***REMOVED***"cards__container__menu"***REMOVED***>
         <Typography sx=***REMOVED******REMOVED***fontSize: 18, color: "#2196f3", width: "auto"***REMOVED******REMOVED***>
           Manage Your Projects
         </Typography>
-        <div className=***REMOVED***"menu__buttons"***REMOVED***>
+        <Box className=***REMOVED***"menu__buttons"***REMOVED***>
           <Button
             className=***REMOVED***"sort__button"***REMOVED***
             variant="outlined"
@@ -95,11 +96,12 @@ const Projects: FunctionComponent = () => ***REMOVED***
             onClick=***REMOVED***handleProjectsMenuOpen***REMOVED***
             endIcon=***REMOVED***<KeyboardArrowDownIcon/>***REMOVED***
           >Sort By</Button>
-        </div>
-      </div>
-      <div style=***REMOVED******REMOVED***position: "relative", backgroundColor: "#F2F4F5"***REMOVED******REMOVED***>
+        </Box>
+      </Paper>
+      <Box sx=***REMOVED******REMOVED***position: "relative", backgroundColor: `$***REMOVED***theme.palette.background.default***REMOVED***` ***REMOVED******REMOVED***>
         <motion.div
           className='cards__container'
+          style=***REMOVED******REMOVED*** backgroundColor: `$***REMOVED***theme.palette.background.default***REMOVED***` ***REMOVED******REMOVED***
           ref=***REMOVED***carousel***REMOVED***
           drag=***REMOVED***carouselWidth > 0 ? false : "x"***REMOVED*** dragConstraints=***REMOVED******REMOVED***
           left: carouselWidth - 10,
@@ -111,9 +113,9 @@ const Projects: FunctionComponent = () => ***REMOVED***
             )
       ***REMOVED***
         </motion.div>
-        <span style=***REMOVED******REMOVED*** height: "272px", width: "10px", position: "absolute", backgroundColor: "#F2F4F5", top: 0, right: 0 ***REMOVED******REMOVED***></span>
-      </div>
-      <Tabs tabNames=***REMOVED***["Worked On", "Assigned To Me"]***REMOVED*** sx=***REMOVED******REMOVED*** borderBottom: 1, borderColor: 'divider', margin: "1rem 0 0 0" ***REMOVED******REMOVED*** >
+        <span style=***REMOVED******REMOVED*** height: "272px", width: "10px", position: "absolute", backgroundColor: `$***REMOVED***theme.palette.background.default***REMOVED***`, top: 0, right: 0 ***REMOVED******REMOVED***></span>
+      </Box>
+      <Tabs tabNames=***REMOVED***["Worked On", "Assigned To Me"]***REMOVED*** sx=***REMOVED******REMOVED*** paddingTop: "1rem", borderColor: 'divider', backgroundColor:  theme.palette.background.paper***REMOVED******REMOVED*** >
         <WorkedOnTab projects=***REMOVED***projects***REMOVED*** />
         <MyIssuesTab issues=***REMOVED***issues***REMOVED*** />
       </Tabs>

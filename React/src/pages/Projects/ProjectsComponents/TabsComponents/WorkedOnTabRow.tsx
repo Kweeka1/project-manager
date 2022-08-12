@@ -12,6 +12,8 @@ import TableHead from "@mui/material/TableHead";
 import TableBody from "@mui/material/TableBody";
 import ***REMOVED***Project***REMOVED*** from "../../interface/IProjectTabs";
 import Tabs from "../../../../SharedComponents/Tabs";
+import ***REMOVED***useTheme***REMOVED*** from "@mui/material";
+import ***REMOVED***CustomTheme***REMOVED*** from "../../../../Contexts/ThemeContext";
 
 interface Props ***REMOVED***
   project: Project;
@@ -19,6 +21,7 @@ interface Props ***REMOVED***
 
 const WorkedOnTabRow: FunctionComponent<Props> = (props) => ***REMOVED***
   const ***REMOVED*** project ***REMOVED*** = props;
+  const theme = useTheme<CustomTheme>();
   const boardNames = project.boards.map(board => board.name)
   const [projects, setProjects] = useState<Project>(project)
   const [isTabOpen, setTabOpen] = useState<boolean>(false)
@@ -65,7 +68,7 @@ return (
                                 <TableCell sx=***REMOVED******REMOVED*** border: 0 ***REMOVED******REMOVED*** />
                               </TableRow>
                             </TableHead>
-                            <TableBody sx=***REMOVED******REMOVED*** "& > tr:last-child > *": ***REMOVED*** border: 0 ***REMOVED***, ***REMOVED******REMOVED***>
+                            <TableBody sx=***REMOVED******REMOVED*** "& > tr:last-child > *": ***REMOVED*** border: 0 ***REMOVED***, "& > tr": ***REMOVED*** backgroundColor: theme.palette.background.default ***REMOVED*** ***REMOVED******REMOVED***>
                             ***REMOVED***
                               board.issues.map(issue => (
                                   <TableRow key=***REMOVED***issue.id***REMOVED***>

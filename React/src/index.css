@@ -25,6 +25,7 @@ body ***REMOVED***
   margin: 0;
   overflow-y: scroll;
   overflow-x: hidden;
+  background-color: inherit;
 ***REMOVED***
 
 @media (prefers-color-scheme: dark) ***REMOVED***

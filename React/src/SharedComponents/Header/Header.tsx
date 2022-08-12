@@ -1,5 +1,5 @@
-import React, ***REMOVED***FunctionComponent, MouseEvent, SyntheticEvent, useState***REMOVED*** from "react"
-import ***REMOVED***AppBar, Badge, Box, Button, IconButton, Menu, MenuItem, Toolbar, Typography***REMOVED*** from "@mui/material";
+import React, ***REMOVED***FunctionComponent, MouseEvent, SyntheticEvent, useContext, useState***REMOVED*** from "react"
+import ***REMOVED***AppBar, Badge, Box, Button, IconButton, Menu, MenuItem, Toolbar, Typography, useTheme***REMOVED*** from "@mui/material";
 import ***REMOVED***Search, SearchIconWrapper, StyledInputBase***REMOVED*** from "../StyledComponents";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import MailIcon from "@mui/icons-material/Mail";
@@ -8,6 +8,17 @@ import AccountCircle from "@mui/icons-material/AccountCircle";
 import MoreIcon from "@mui/icons-material/MoreVert";
 import MobileMenu from "./HeaderComponents/MobileMenu";
 import ProjectsDropdown from "./HeaderComponents/ProjectsDropdown";
+import ***REMOVED***
+  DarkMode,
+  ShieldMoon,
+  WbIncandescent,
+  WbIridescent,
+  WbShade,
+  WbShadeSharp,
+  WbSunny,
+  WbTwilight
+***REMOVED*** from "@mui/icons-material";
+import ***REMOVED***ColorModeContext***REMOVED*** from "../../Contexts/ThemeContext";
 
 
 
@@ -29,6 +40,9 @@ const Header: FunctionComponent = () => ***REMOVED***
     setAnchorEl(null);
     handleMobileMenuClose();
 ***REMOVED***;
+
+  const colorModeContext = useContext(ColorModeContext);
+  const theme = useTheme();
 
   const renderMenu = (
     <Menu
@@ -71,20 +85,25 @@ const Header: FunctionComponent = () => ***REMOVED***
             inputProps=***REMOVED******REMOVED*** 'aria-label': 'search' ***REMOVED******REMOVED***
           />
         </Search>
-        <Button
-          variant="contained"
-          disableElevation
-          onClick=***REMOVED***handleProjectsMenuOpen***REMOVED***
-          endIcon=***REMOVED***<KeyboardArrowDownIcon />***REMOVED***
-        >My Projects</Button>
-        <Button
-          variant="contained"
-          disableElevation
-          onClick=***REMOVED***handleProjectsMenuOpen***REMOVED***
-          endIcon=***REMOVED***<KeyboardArrowDownIcon />***REMOVED***
-        >Invite people</Button>
+        <Box sx=***REMOVED******REMOVED*** display: "flex", gap: "1rem" ***REMOVED******REMOVED***>
+          <Button
+            variant="contained"
+            disableElevation
+            onClick=***REMOVED***handleProjectsMenuOpen***REMOVED***
+            endIcon=***REMOVED***<KeyboardArrowDownIcon />***REMOVED***
+          >My Projects</Button>
+          <Button
+            variant="contained"
+            disableElevation
+            onClick=***REMOVED***handleProjectsMenuOpen***REMOVED***
+            endIcon=***REMOVED***<KeyboardArrowDownIcon />***REMOVED***
+          >Invite people</Button>
+        </Box>
         <Box sx=***REMOVED******REMOVED*** flexGrow: 1 ***REMOVED******REMOVED*** />
         <Box sx=***REMOVED******REMOVED*** display: ***REMOVED*** xs: 'none', md: 'flex' ***REMOVED*** ***REMOVED******REMOVED***>
+          <IconButton size="large" color="inherit" onClick=***REMOVED***() => colorModeContext.toggleColorMode()***REMOVED*** >
+            ***REMOVED*** theme.palette.mode === "light" ? <WbSunny /> : <DarkMode /> ***REMOVED***
+          </IconButton>
           <IconButton size="large" aria-label="show 4 new mails" color="inherit">
             <Badge badgeContent=***REMOVED***4***REMOVED*** color="error">
               <MailIcon />

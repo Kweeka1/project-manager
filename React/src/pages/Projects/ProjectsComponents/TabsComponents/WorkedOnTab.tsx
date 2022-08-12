@@ -1,7 +1,4 @@
-import React, ***REMOVED***Fragment, FunctionComponent, useEffect, useLayoutEffect, useState***REMOVED*** from "react"
-import Box from '@mui/material/Box';
-import Collapse from '@mui/material/Collapse';
-import IconButton from '@mui/material/IconButton';
+import React, ***REMOVED***Fragment, FunctionComponent***REMOVED*** from "react"
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -10,12 +7,10 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Typography from '@mui/material/Typography';
 import Paper from '@mui/material/Paper';
-import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
-import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
-import ***REMOVED***Issue, Project***REMOVED*** from "../../interface/IProjectTabs";
-import ***REMOVED*** StyledTableRow, StyledTableCell ***REMOVED*** from "../../../../SharedComponents/StyledComponents";
+import ***REMOVED***Project***REMOVED*** from "../../interface/IProjectTabs";
 import WorkedOnTabRow from "./WorkedOnTabRow";
-import MyIssuesTabRow from "./MyIssuesTabRow";
+import ***REMOVED***useTheme***REMOVED*** from "@mui/material";
+import ***REMOVED***CustomTheme***REMOVED*** from "../../../../Contexts/ThemeContext";
 
 interface Props ***REMOVED***
   projects: Project[]
@@ -71,30 +66,35 @@ const WorkedOnTab: FunctionComponent<Props> = (props) => ***REMOVED***
 ***REMOVED***
 ***REMOVED***
 
+  const theme = useTheme<CustomTheme>();
+
   return (
     <TableContainer sx=***REMOVED******REMOVED*** borderRadius: 0 ***REMOVED******REMOVED*** component=***REMOVED***Paper***REMOVED***>
       <Table>
         <TableHead>
-          <TableRow sx=***REMOVED******REMOVED*** backgroundColor: "#1976d2", color: "#eaeaea" ***REMOVED******REMOVED***>
+          <TableRow sx=***REMOVED******REMOVED***
+            backgroundColor: theme.palette.background.paper,
+            color: "#eaeaea",
+            "& > th": ***REMOVED*** color: "#eaeaea" ***REMOVED***
+      ***REMOVED******REMOVED***>
             <TableCell />
-            <TableCell sx=***REMOVED******REMOVED*** color: "#eaeaea" ***REMOVED******REMOVED***>Projects</TableCell>
-            <TableCell sx=***REMOVED******REMOVED*** color: "#eaeaea" ***REMOVED******REMOVED*** align="left">Created On</TableCell>
-            <TableCell sx=***REMOVED******REMOVED*** color: "#eaeaea" ***REMOVED******REMOVED*** align="left">Last Action</TableCell>
-            <TableCell sx=***REMOVED******REMOVED*** color: "#eaeaea" ***REMOVED******REMOVED*** align="left">By</TableCell>
-            <TableCell sx=***REMOVED******REMOVED*** color: "#eaeaea" ***REMOVED******REMOVED*** align="left">Action Date</TableCell>
-            <TableCell sx=***REMOVED******REMOVED*** color: "#eaeaea" ***REMOVED******REMOVED*** align="left">Reporter</TableCell>
+            <TableCell>Projects</TableCell>
+            <TableCell align="left">Created On</TableCell>
+            <TableCell align="left">Last Action</TableCell>
+            <TableCell align="left">By</TableCell>
+            <TableCell align="left">Action Date</TableCell>
+            <TableCell align="left">Reporter</TableCell>
           </TableRow>
         </TableHead>
         <TableBody sx=***REMOVED******REMOVED***
-          "& > tr:nth-of-type(odd)": ***REMOVED***backgroundColor: "rgba(227,232,255,0.78)"***REMOVED***,
-          "& > tr:nth-of-type(4n+3)": ***REMOVED***backgroundColor: "rgba(237,241,255,0.69)"***REMOVED***,
-          "& > tr > *": ***REMOVED*** border: 0, color: "#0d163d" ***REMOVED***,
+          "& > tr:nth-of-type(odd)": ***REMOVED***backgroundColor: theme.tableRowColors.odd***REMOVED***,
+          "& > tr:nth-of-type(4n+3)": ***REMOVED***backgroundColor: theme.tableRowColors.even***REMOVED***,
+          "& > tr > *": ***REMOVED*** border: 0, color: theme.tableRowColors.text ***REMOVED***,
           "& > h6": ***REMOVED*** padding: "1rem 1rem",
             fontSize: "16px",
             fontWeight: 500,
-            color: "#1f4d98",
+            color: theme.tableRowColors.text,
             fontFamily: "Open sans",
-
       ***REMOVED***,
 
     ***REMOVED******REMOVED***>

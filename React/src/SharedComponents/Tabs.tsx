@@ -1,6 +1,7 @@
 import React, ***REMOVED***FunctionComponent, ReactNode, SyntheticEvent, useEffect, useState***REMOVED*** from "react"
-import ***REMOVED***Box, Tab***REMOVED*** from "@mui/material";
+import ***REMOVED***Box, Tab, useTheme***REMOVED*** from "@mui/material";
 import ***REMOVED***TabContext, TabList, TabPanel***REMOVED*** from "@mui/lab";
+import ***REMOVED***CustomTheme***REMOVED*** from "../Contexts/ThemeContext";
 
 interface Props ***REMOVED***
   children: ReactNode[];
@@ -10,6 +11,7 @@ interface Props ***REMOVED***
 
 const Tabs: FunctionComponent<Props> = (***REMOVED***children, sx, tabNames***REMOVED***) => ***REMOVED***
   const [value, setValue] = useState('0');
+  const theme = useTheme<CustomTheme>();
 
 
   const handleChange = (e: SyntheticEvent, newValue: string): void => setValue(newValue)
@@ -29,7 +31,7 @@ const Tabs: FunctionComponent<Props> = (***REMOVED***children, sx, tabNames***RE
         </Box>
         ***REMOVED***
           children.map((child, index) => (
-            <TabPanel sx=***REMOVED******REMOVED*** padding: "1rem 0 0 0" ***REMOVED******REMOVED*** value=***REMOVED***`$***REMOVED***index***REMOVED***`***REMOVED***>
+            <TabPanel sx=***REMOVED******REMOVED*** padding: "0", backgroundColor: theme.palette.background.default ***REMOVED******REMOVED*** value=***REMOVED***`$***REMOVED***index***REMOVED***`***REMOVED***>
               ***REMOVED***children[index]***REMOVED***
             </TabPanel>
           ))
