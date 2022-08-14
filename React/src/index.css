@@ -1,8 +1,8 @@
-*, *:after, *:before ***REMOVED***
+*, *:after, *:before {
   box-sizing: border-box;
-***REMOVED***
+}
 
-:root ***REMOVED***
+:root {
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
   font-size: 16px;
   line-height: 24px;
@@ -15,28 +15,28 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
-***REMOVED***
+}
 
-#Lobby ***REMOVED***
+#Lobby {
   width: 100%;
-***REMOVED***
+}
 
-body ***REMOVED***
+body {
   margin: 0;
   overflow-y: scroll;
   overflow-x: hidden;
   background-color: inherit;
-***REMOVED***
+}
 
-@media (prefers-color-scheme: dark) ***REMOVED***
-  :root ***REMOVED***
+@media (prefers-color-scheme: dark) {
+  :root {
     color: #213547;
     background-color: #ffffff;
-***REMOVED***
+  }
 
-  a:hover ***REMOVED***
+  a:hover {
     color: #747bff;
-***REMOVED***
-***REMOVED***
+  }
+}
 
 /*# sourceMappingURL=index.css.map */

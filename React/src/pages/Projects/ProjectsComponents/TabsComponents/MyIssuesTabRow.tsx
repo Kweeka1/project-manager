@@ -1,31 +1,31 @@
-import React, ***REMOVED***FunctionComponent, useEffect, useState***REMOVED*** from "react"
+import React, {FunctionComponent, useEffect, useState} from "react"
 import TableRow from "@mui/material/TableRow";
 import TableCell from "@mui/material/TableCell";
-import ***REMOVED***Issue***REMOVED*** from "../../interface/IProjectTabs";
+import {Issue} from "../../interface/IProjectTabs";
 
-interface Props ***REMOVED***
+interface Props {
   issue: Issue;
-***REMOVED***
+}
 
-const MyIssuesTabRow: FunctionComponent<Props> = (props) => ***REMOVED***
-  const ***REMOVED*** issue ***REMOVED*** = props;
+const MyIssuesTabRow: FunctionComponent<Props> = (props) => {
+  const { issue } = props;
   const [issues, setIssue] = useState<Issue>(issue)
 
-  useEffect(() => ***REMOVED***
+  useEffect(() => {
     setIssue(issues)
-***REMOVED*** [issue])
+  }, [issue])
 
   return (
     <React.Fragment>
-      <TableRow sx=***REMOVED******REMOVED***'& > *': ***REMOVED***borderBottom: 'unset'***REMOVED***, cursor: "pointer", border: 0, "& > td": ***REMOVED***padding: "20px"***REMOVED******REMOVED******REMOVED***>
-        <TableCell scope="row">***REMOVED***issue.name***REMOVED***</TableCell>
-        <TableCell align="left">***REMOVED***issue.createdOn***REMOVED***</TableCell>
-        <TableCell align="left">***REMOVED***issue.action***REMOVED***</TableCell>
-        <TableCell align="left">***REMOVED***issue.actionDate***REMOVED***</TableCell>
-        <TableCell colSpan=***REMOVED***2***REMOVED*** align="left">***REMOVED***issue.reporter***REMOVED***</TableCell>
+      <TableRow sx={{'& > *': {borderBottom: 'unset'}, cursor: "pointer", border: 0, "& > td": {padding: "20px"}}}>
+        <TableCell scope="row">{issue.name}</TableCell>
+        <TableCell align="left">{issue.createdOn}</TableCell>
+        <TableCell align="left">{issue.action}</TableCell>
+        <TableCell align="left">{issue.actionDate}</TableCell>
+        <TableCell colSpan={2} align="left">{issue.reporter}</TableCell>
       </TableRow>
     </React.Fragment>
   )
-***REMOVED***
+}
 
 export default MyIssuesTabRow;

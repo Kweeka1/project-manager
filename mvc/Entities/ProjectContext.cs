@@ -5,10 +5,10 @@ using mvc.Entities.UserEntity;
 namespace mvc.Entities;
 
 public class ProjectContext : DbContext
-***REMOVED***
+{
     public ProjectContext(DbContextOptions<ProjectContext> options) : base(options)
-    ***REMOVED***
+    {
         
-***REMOVED***
-    public DbSet<User> Users ***REMOVED*** get; set; ***REMOVED***
-***REMOVED***
+    }
+    public DbSet<User> Users { get; set; }
+}

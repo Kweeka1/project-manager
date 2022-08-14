@@ -18,9 +18,9 @@ builder.Services.AddControllersWithViews();
 var config = builder.Configuration;
 builder.Services.AddDbContext<ProjectContext>(options => options.UseNpgsql(config.GetConnectionString("Npgsql")));
 builder.Services.AddStackExchangeRedisCache(options =>
-***REMOVED***
-    options.Configuration = $"***REMOVED***config.GetValue<string>("Redis:Server")***REMOVED***:***REMOVED***config.GetValue<string>("Redis:Port")***REMOVED***";
-***REMOVED***);
+{
+    options.Configuration = $"{config.GetValue<string>("Redis:Server")}:{config.GetValue<string>("Redis:Port")}";
+});
 //builder.Services.AddMemoryCache();
 builder.Services.AddSingleton<ICacheService, CacheService>();
 // add cron job with DI as scoped
@@ -30,14 +30,14 @@ builder.Services.AddTransient<IUserServices, UserServices>();
 builder.Services.AddAutoMapper(typeof(Program));
 
 builder.Services.AddSingleton<IScheduler>(provider =>
-***REMOVED***
+{
     var factory = new StdSchedulerFactory();
     var scheduler = factory.GetScheduler().Result;
 
     scheduler.JobFactory = new JobFactory(provider);
     
     return scheduler;
-***REMOVED***);
+});
 
 builder.Services.AddHostedService<QuartzHostedService>();
 
@@ -45,11 +45,11 @@ var app = builder.Build();
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
-***REMOVED***
+{
     //app.UseExceptionHandler("/Home/Error");
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
-***REMOVED***
+}
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();

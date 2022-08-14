@@ -1,10 +1,10 @@
 @using Microsoft.AspNetCore.Mvc.TagHelpers
 @model mvc.Models.User.Request.Login
 
-@***REMOVED***
+@{
     Layout = null;
     ViewData["Title"] = "Login";
-***REMOVED***
+}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -27,37 +27,37 @@
                     </div>
 
                     <div class="mt-10">
-                        @using (Html.BeginForm("Index", "Login", FormMethod.Post, new ***REMOVED***  
+                        @using (Html.BeginForm("Index", "Login", FormMethod.Post, new {  
                                 @id = "form_login", 
                                 @class = "flex flex-col" 
-                        ***REMOVED***)
-                            ) ***REMOVED***
+                            })
+                            ) {
                             @Html.AntiForgeryToken()
                             <div id="emailField_container" class="mb-6 pt-3 rounded bg-slate-200 relative">
-                                @Html.LabelFor(x => x.Email, new ***REMOVED*** @class = "block text-gray-700 text-sm font-bold mb-2 ml-3"***REMOVED***)
-                                @Html.TextBoxFor(x => x.Email, new ***REMOVED*** @id = "email", @class= "focus:outline-none bg-slate-200 rounded w-full text-gray-700 border-b-4 border-gray-300 transition duration-500 px-3 pb-3" ***REMOVED***)
+                                @Html.LabelFor(x => x.Email, new { @class = "block text-gray-700 text-sm font-bold mb-2 ml-3"})
+                                @Html.TextBoxFor(x => x.Email, new { @id = "email", @class= "focus:outline-none bg-slate-200 rounded w-full text-gray-700 border-b-4 border-gray-300 transition duration-500 px-3 pb-3" })
                                 <div id="InvalidEmail" class="absolute top-3 right-2 text-thin text-red-700 text-center hidden">
-                                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"><style>@('@')keyframes n-info-tri***REMOVED***0%,to***REMOVED***transform:rotate(0deg);transform-origin:center***REMOVED***10%,90%***REMOVED***transform:rotate(2deg)***REMOVED***20%,40%,60%***REMOVED***transform:rotate(-6deg)***REMOVED***30%,50%,70%***REMOVED***transform:rotate(6deg)***REMOVED***80%***REMOVED***transform:rotate(-2deg)***REMOVED******REMOVED***.prefix__n-info-tri***REMOVED***animation:n-info-tri .8s cubic-bezier(.455,.03,.515,.955) both***REMOVED***</style><path class="prefix__n-info-tri" style="animation-delay:1s; display: inline-block;" stroke="#bc0a0a" stroke-width="1.5" d="M11.134 6.844a1 1 0 011.732 0l5.954 10.312a1 1 0 01-.866 1.5H6.046a1 1 0 01-.866-1.5l5.954-10.312z"/><g class="prefix__n-info-tri"><path stroke="#265BFF" stroke-linecap="round" stroke-width="1.5" d="M12 10.284v3.206"/><circle cx="12" cy="15.605" r=".832" fill="#265BFF"/></g></svg>
+                                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"><style>@('@')keyframes n-info-tri{0%,to{transform:rotate(0deg);transform-origin:center}10%,90%{transform:rotate(2deg)}20%,40%,60%{transform:rotate(-6deg)}30%,50%,70%{transform:rotate(6deg)}80%{transform:rotate(-2deg)}}.prefix__n-info-tri{animation:n-info-tri .8s cubic-bezier(.455,.03,.515,.955) both}</style><path class="prefix__n-info-tri" style="animation-delay:1s; display: inline-block;" stroke="#bc0a0a" stroke-width="1.5" d="M11.134 6.844a1 1 0 011.732 0l5.954 10.312a1 1 0 01-.866 1.5H6.046a1 1 0 01-.866-1.5l5.954-10.312z"/><g class="prefix__n-info-tri"><path stroke="#265BFF" stroke-linecap="round" stroke-width="1.5" d="M12 10.284v3.206"/><circle cx="12" cy="15.605" r=".832" fill="#265BFF"/></g></svg>
                                     <span>Invalid email</span>
                                 </div>
                             </div>
                             <div id="passwordField_container" class="mb-6 pt-3 rounded bg-slate-200 relative">
-                                @Html.LabelFor(x => x.Password, new ***REMOVED*** @class = "block text-gray-700 text-sm font-bold mb-2 ml-3"***REMOVED***)
-                                @Html.TextBoxFor(x => x.Password, new ***REMOVED*** @id = "password", @type = "password", @class = "focus:outline-none bg-slate-200 rounded w-full text-gray-700 border-b-4 border-gray-300 transition duration-500 px-3 pb-3" ***REMOVED***)
+                                @Html.LabelFor(x => x.Password, new { @class = "block text-gray-700 text-sm font-bold mb-2 ml-3"})
+                                @Html.TextBoxFor(x => x.Password, new { @id = "password", @type = "password", @class = "focus:outline-none bg-slate-200 rounded w-full text-gray-700 border-b-4 border-gray-300 transition duration-500 px-3 pb-3" })
                                 <div id="InvalidPassword" class="absolute top-3 right-2 text-thin text-red-700 text-center hidden">
-                                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"><style>@('@')keyframes n-info-tri***REMOVED***0%,to***REMOVED***transform:rotate(0deg);transform-origin:center***REMOVED***10%,90%***REMOVED***transform:rotate(2deg)***REMOVED***20%,40%,60%***REMOVED***transform:rotate(-6deg)***REMOVED***30%,50%,70%***REMOVED***transform:rotate(6deg)***REMOVED***80%***REMOVED***transform:rotate(-2deg)***REMOVED******REMOVED***.prefix__n-info-tri***REMOVED***animation:n-info-tri .8s cubic-bezier(.455,.03,.515,.955) both***REMOVED***</style><path class="prefix__n-info-tri" style="animation-delay:1s; display: inline-block;" stroke="#bc0a0a" stroke-width="1.5" d="M11.134 6.844a1 1 0 011.732 0l5.954 10.312a1 1 0 01-.866 1.5H6.046a1 1 0 01-.866-1.5l5.954-10.312z"/><g class="prefix__n-info-tri"><path stroke="#265BFF" stroke-linecap="round" stroke-width="1.5" d="M12 10.284v3.206"/><circle cx="12" cy="15.605" r=".832" fill="#265BFF"/></g></svg>
+                                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"><style>@('@')keyframes n-info-tri{0%,to{transform:rotate(0deg);transform-origin:center}10%,90%{transform:rotate(2deg)}20%,40%,60%{transform:rotate(-6deg)}30%,50%,70%{transform:rotate(6deg)}80%{transform:rotate(-2deg)}}.prefix__n-info-tri{animation:n-info-tri .8s cubic-bezier(.455,.03,.515,.955) both}</style><path class="prefix__n-info-tri" style="animation-delay:1s; display: inline-block;" stroke="#bc0a0a" stroke-width="1.5" d="M11.134 6.844a1 1 0 011.732 0l5.954 10.312a1 1 0 01-.866 1.5H6.046a1 1 0 01-.866-1.5l5.954-10.312z"/><g class="prefix__n-info-tri"><path stroke="#265BFF" stroke-linecap="round" stroke-width="1.5" d="M12 10.284v3.206"/><circle cx="12" cy="15.605" r=".832" fill="#265BFF"/></g></svg>
                                     <span>Invalid password</span>
                                 </div>
                             </div>
                             <div class="flex justify-between mb-10">
                                 <div class="">
                                     @Html.CheckBoxFor(x => x.LongSession)
-                                    @Html.LabelFor(x => x.LongSession, new ***REMOVED*** @class = "text-gray-700 text-sm font-bold ml-1 cursor-pointer"***REMOVED***)
+                                    @Html.LabelFor(x => x.LongSession, new { @class = "text-gray-700 text-sm font-bold ml-1 cursor-pointer"})
                                 </div>                
                                 <a href="#" class="phone:pt-1 text-sm text-gray-700 hover:underline">Forgot your password?</a>
                             </div>
                             <button id="submit" class="bg-[#4097F5] hover:bg-[#2C85EF] text-white font-medium font-poppins py-2 rounded shadow-lg hover:shadow-xl transition duration-200" type="submit">Sign In</button>
-                    ***REMOVED***
+                        }
                     </div>
                 </div>
                 <div class="w-2/4 flex flex-col text-center justify-center align-middle blue_gradient rounded-r-lg gap-4">

@@ -1,4 +1,4 @@
-import React, ***REMOVED***
+import React, {
   Fragment,
   FunctionComponent,
   MouseEvent,
@@ -7,20 +7,20 @@ import React, ***REMOVED***
   useEffect,
   useRef,
   useState
-***REMOVED*** from "react"
-import ***REMOVED***Box, Button, Paper, Typography, useMediaQuery, useTheme***REMOVED*** from "@mui/material";
+} from "react"
+import {Box, Button, Paper, Typography, useMediaQuery, useTheme} from "@mui/material";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
-import ***REMOVED***motion***REMOVED*** from "framer-motion";
-import ***REMOVED***IProjectCard, Priority***REMOVED*** from "./interface/IProjectCard";
-import ***REMOVED***alpha, random***REMOVED*** from "../../Extensions/UsefulFunctions";
+import {motion} from "framer-motion";
+import {IProjectCard, Priority} from "./interface/IProjectCard";
+import {alpha, random} from "../../Extensions/UsefulFunctions";
 import Tabs from "../../SharedComponents/Tabs";
 import WorkedOnTab from "./ProjectsComponents/TabsComponents/WorkedOnTab";
 import ProjectCard from "./ProjectsComponents/ProjectCard";
-import ***REMOVED***Issue, Project***REMOVED*** from "./interface/IProjectTabs";
+import {Issue, Project} from "./interface/IProjectTabs";
 import MyIssuesTab from "./ProjectsComponents/TabsComponents/MyIssuesTab";
-import ***REMOVED***ColorModeContext, CustomTheme***REMOVED*** from "../../Contexts/ThemeContext";
+import {ColorModeContext, CustomTheme} from "../../Contexts/ThemeContext";
 
-const Projects: FunctionComponent = () => ***REMOVED***
+const Projects: FunctionComponent = () => {
   const [ProjectsAnchorEl, setProjectsAnchorEl] = useState<null | HTMLElement>(null);
   const [cards, setCards] = useState<IProjectCard[]>([]);
   const [projects, setProjects] = useState<Project[]>([]);
@@ -33,14 +33,14 @@ const Projects: FunctionComponent = () => ***REMOVED***
   const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
   const colorModeContext = useContext(ColorModeContext);
 
-  useEffect(() => ***REMOVED***
+  useEffect(() => {
     const issues = ["Task1", "Task2", "Bug fix", "wireframe1", "landing page", "Tracker", "Contact page", "loading page"]
     const actions = ["Comment On Issue", "Comment On project", "Updated Issue", "Updated project", "Created Issue", "Created project", "Deleted Issue", "Assigned people"]
     const issueActions = ["Comment On Issue", "Updated Issue", "Created Issue", "Deleted Issue", "Assigned people"]
     const priority = ["lowest", "low", "medium", "high", "highest"]
     const projects = ["Wireframe", "NewsApp", "Ecommerce", "Web scraper", "Mario game", "Chat app", "Social app", "Figma plugin", "Android Browser", "Fix security Issue", "Add Newsletter feature"]
     const Names = ["Hogan Beaman", "Connie Seale", "Anselm Byham", "Boris Cescoti", "Jennilee Hatley", "Ernst Berntsson", "Bennie Courcey", "Miguel Mosten", "Ferd Leethem", "Osborn Lidierth"]
-    const items: IProjectCard[] = Array.from(Array(10)).map(() => (***REMOVED***
+    const items: IProjectCard[] = Array.from(Array(10)).map(() => ({
         Reporter: Names[random(0, Names.length)],
         Assignees: random(9, 45),
         BoardNumber: random(1, 5),
@@ -48,92 +48,92 @@ const Projects: FunctionComponent = () => ***REMOVED***
         OpenIssues: random(4, 40),
         ProjectName: projects[random(0, projects.length)],
         CardPriority: priority[random(0, priority.length)] as keyof Priority,
-        CardTitle: `$***REMOVED***alpha[random(0, 26)]***REMOVED***$***REMOVED***alpha[random(0, 26)]***REMOVED***$***REMOVED***random(1, 10)***REMOVED***`,
+        CardTitle: `${alpha[random(0, 26)]}${alpha[random(0, 26)]}${random(1, 10)}`,
         ActiveItemsNumber: random(5, 30),
-        EventDate: `2022-$***REMOVED***random(1, 8)***REMOVED***-$***REMOVED***random(1, 32)***REMOVED***`
-***REMOVED***))
-    const issuesObj = () : Issue[] => ***REMOVED***
-      return Array.from(Array(5)).map((k, i) => (***REMOVED***
+        EventDate: `2022-${random(1, 8)}-${random(1, 32)}`
+    }))
+    const issuesObj = () : Issue[] => {
+      return Array.from(Array(5)).map((k, i) => ({
         id: random(1, 10000),
         name: issues[random(0, issues.length)],
-        createdOn: `2022-$***REMOVED***random(1, 8)***REMOVED***-$***REMOVED***random(1, 32)***REMOVED***`,
+        createdOn: `2022-${random(1, 8)}-${random(1, 32)}`,
         action: issueActions[random(0, issueActions.length)],
-        actionDate: `2022-$***REMOVED***random(1, 8)***REMOVED***-$***REMOVED***random(1, 32)***REMOVED***`,
+        actionDate: `2022-${random(1, 8)}-${random(1, 32)}`,
         reporter: items[i].Reporter
-  ***REMOVED***))
-***REMOVED***
-    const project: Project[] = Array.from(Array(5)).map((k, i) => (***REMOVED***
+      }))
+    }
+    const project: Project[] = Array.from(Array(5)).map((k, i) => ({
       id: random(1, 100000),
       name: items[i].ProjectName,
       createdOn: items[i].EventDate,
       lastAction: actions[random(0, actions.length)],
       by: Names[random(0, Names.length)],
-      lastActionDate: `20$***REMOVED***random(14, 23)***REMOVED***-$***REMOVED***random(1, 13)***REMOVED***-$***REMOVED***random(1, 32)***REMOVED***`,
+      lastActionDate: `20${random(14, 23)}-${random(1, 13)}-${random(1, 32)}`,
       reporter: items[i].Reporter,
-      boards: Array.from(Array(random(1, 4))).map(() => (***REMOVED***
-        name: `$***REMOVED***alpha[random(0, 26)]***REMOVED***$***REMOVED***alpha[random(0, 26)]***REMOVED***$***REMOVED***random(1, 10)***REMOVED***`,
+      boards: Array.from(Array(random(1, 4))).map(() => ({
+        name: `${alpha[random(0, 26)]}${alpha[random(0, 26)]}${random(1, 10)}`,
         issues: issuesObj()
-  ***REMOVED***))
-***REMOVED***))
+      }))
+    }))
     setCards(items)
     setProjects(project)
     setIssues(issuesObj)
     if (prefersDarkMode) colorModeContext.toggleColorMode();
-***REMOVED*** [])
+  }, [])
 
-  useEffect(() => ***REMOVED***
-    if (carousel.current !== null) ***REMOVED***
+  useEffect(() => {
+    if (carousel.current !== null) {
       setCarouselWidth(window.innerWidth - carousel.current.scrollWidth)
-***REMOVED***
-***REMOVED*** [cards])
+    }
+  }, [cards])
 
   const theme = useTheme<CustomTheme>();
 
   return (
     <Fragment>
-      <Paper sx=***REMOVED******REMOVED*** borderRadius: 0, boxShadow: "none" ***REMOVED******REMOVED*** className=***REMOVED***"cards__container__menu"***REMOVED***>
-        <Typography sx=***REMOVED******REMOVED***fontSize: 18, color: "#2196f3", width: "auto"***REMOVED******REMOVED***>
+      <Paper sx={{ borderRadius: 0, boxShadow: "none" }} className={"cards__container__menu"}>
+        <Typography sx={{fontSize: 18, color: "#2196f3", width: "auto"}}>
           Manage Your Projects
         </Typography>
-        <Box className=***REMOVED***"menu__buttons"***REMOVED***>
+        <Box className={"menu__buttons"}>
           <Button
-            className=***REMOVED***"sort__button"***REMOVED***
+            className={"sort__button"}
             variant="outlined"
             disableElevation
-            onClick=***REMOVED***handleProjectsMenuOpen***REMOVED***
+            onClick={handleProjectsMenuOpen}
           >VIEW ALL</Button>
           <Button
-            className=***REMOVED***"sort__button"***REMOVED***
+            className={"sort__button"}
             variant="outlined"
             disableElevation
-            onClick=***REMOVED***handleProjectsMenuOpen***REMOVED***
-            endIcon=***REMOVED***<KeyboardArrowDownIcon/>***REMOVED***
+            onClick={handleProjectsMenuOpen}
+            endIcon={<KeyboardArrowDownIcon/>}
           >Sort By</Button>
         </Box>
       </Paper>
-      <Box sx=***REMOVED******REMOVED***position: "relative", backgroundColor: `$***REMOVED***theme.palette.mode === "light" ? "#d7d8dc" : theme.palette.background.default***REMOVED***` ***REMOVED******REMOVED***>
+      <Box sx={{position: "relative", backgroundColor: `${theme.palette.mode === "light" ? "#d7d8dc" : theme.palette.background.default}` }}>
         <motion.div
           className='cards__container'
-          style=***REMOVED******REMOVED*** backgroundColor: `$***REMOVED***theme.palette.mode === "light" ? "#d7d8dc" : theme.palette.background.default***REMOVED***` ***REMOVED******REMOVED***
-          ref=***REMOVED***carousel***REMOVED***
-          drag=***REMOVED***carouselWidth > 0 ? false : "x"***REMOVED*** dragConstraints=***REMOVED******REMOVED***
+          style={{ backgroundColor: `${theme.palette.mode === "light" ? "#d7d8dc" : theme.palette.background.default}` }}
+          ref={carousel}
+          drag={carouselWidth > 0 ? false : "x"} dragConstraints={{
           left: carouselWidth - 10,
           right: 0,
-    ***REMOVED******REMOVED***>
-          ***REMOVED***
+        }}>
+          {
             cards.map((card, index) =>
-              <ProjectCard key=***REMOVED***index***REMOVED*** projects=***REMOVED***card***REMOVED*** />
+              <ProjectCard key={index} projects={card} />
             )
-      ***REMOVED***
+          }
         </motion.div>
-        <span style=***REMOVED******REMOVED*** height: "272px", width: "10px", position: "absolute", backgroundColor: `$***REMOVED***theme.palette.mode === "light" ? "#d7d8dc" : theme.palette.background.default***REMOVED***`, top: 0, right: 0 ***REMOVED******REMOVED***></span>
+        <span style={{ height: "272px", width: "10px", position: "absolute", backgroundColor: `${theme.palette.mode === "light" ? "#d7d8dc" : theme.palette.background.default}`, top: 0, right: 0 }}></span>
       </Box>
-      <Tabs tabNames=***REMOVED***["Worked On", "Assigned To Me"]***REMOVED*** sx=***REMOVED******REMOVED*** paddingTop: "1rem", borderColor: 'divider', backgroundColor:  theme.palette.background.paper***REMOVED******REMOVED*** >
-        <WorkedOnTab projects=***REMOVED***projects***REMOVED*** />
-        <MyIssuesTab issues=***REMOVED***issues***REMOVED*** />
+      <Tabs tabNames={["Worked On", "Assigned To Me"]} sx={{ paddingTop: "1rem", borderColor: 'divider', backgroundColor:  theme.palette.background.paper}} >
+        <WorkedOnTab projects={projects} />
+        <MyIssuesTab issues={issues} />
       </Tabs>
     </Fragment>
   )
-***REMOVED***
+}
 
 export default Projects;

@@ -21,16 +21,16 @@
                 <span class="circle"></span>
                 <span class="chevron-right"></span>
                 @Html.ActionLink("Get Started", "Lobby", "Main", 
-                    htmlAttributes: new ***REMOVED*** @class="text-[#fff] pl-1 font-small text-md font-roboto cursor-pointer getstarted__link" ***REMOVED*** )
+                    htmlAttributes: new { @class="text-[#fff] pl-1 font-small text-md font-roboto cursor-pointer getstarted__link" } )
             </div>
             <div class="flex flex-row gap-8 relative links__container w-2/5 justify-center pr-4">
                 <span class="line absolute h-1 w-0 bg-slate-200 top-11 left-0 menu-transition"></span>
                 @Html.ActionLink("Contact", "Lobby", "Main", 
-                    htmlAttributes: new ***REMOVED*** @class="py-[0.5rem] px-3 text-[#fff] font-small text-md font-roboto cursor-pointer transition duration-300 ease-in-out" ***REMOVED*** )
+                    htmlAttributes: new { @class="py-[0.5rem] px-3 text-[#fff] font-small text-md font-roboto cursor-pointer transition duration-300 ease-in-out" } )
                 @Html.ActionLink("Features", "Lobby", "Main", 
-                    htmlAttributes: new ***REMOVED*** @class="py-[0.5rem] px-3 text-[#fff] font-small text-md font-roboto cursor-pointer transition duration-300 ease-in-out" ***REMOVED*** )
+                    htmlAttributes: new { @class="py-[0.5rem] px-3 text-[#fff] font-small text-md font-roboto cursor-pointer transition duration-300 ease-in-out" } )
                 @Html.ActionLink("About", "Lobby", "Main", 
-                    htmlAttributes: new ***REMOVED*** @class="py-[0.5rem] px-3 text-[#fff] font-small text-md font-roboto cursor-pointer transition duration-300 ease-in-out" ***REMOVED*** )
+                    htmlAttributes: new { @class="py-[0.5rem] px-3 text-[#fff] font-small text-md font-roboto cursor-pointer transition duration-300 ease-in-out" } )
             </div>
         </div>
         <div class="flex flex-row cursor-pointer gap-4 pr-2">
@@ -42,24 +42,24 @@
         @RenderBody()
     </main>
     <script>
-        $(function() ***REMOVED***
-            window.onscroll = function() ***REMOVED***
+        $(function() {
+            window.onscroll = function() {
                 if (window.pageYOffset !== 0) $(".header").toggleClass("sticky__header", true)
                 else $(".header").toggleClass("sticky__header", false)
-        ***REMOVED***
-            $(".links__container a").each(function(index, elem) ***REMOVED***
-                $(elem).on("mouseenter", function() ***REMOVED***
-                    $(".line").css(***REMOVED***
+            }
+            $(".links__container a").each(function(index, elem) {
+                $(elem).on("mouseenter", function() {
+                    $(".line").css({
                         opacity: 1, 
                         width: elem.offsetWidth + 13, 
                         left: elem.offsetLeft - 6
-                ***REMOVED***)
-            ***REMOVED***)
-        ***REMOVED***)
-            $(".menu-container").on("mouseleave", function() ***REMOVED***
-                $(".line").css(***REMOVED***opacity: 0***REMOVED***)
-        ***REMOVED***)
-    ***REMOVED***)
+                    })
+                })
+            })
+            $(".menu-container").on("mouseleave", function() {
+                $(".line").css({opacity: 0})
+            })
+        })
     </script>
 </body>
 </html>

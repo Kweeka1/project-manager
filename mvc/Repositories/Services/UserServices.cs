@@ -18,9 +18,9 @@ using mvc.Repositories.Interfaces;
 using bcrypt = BCrypt.Net.BCrypt;
 
 namespace mvc.Repositories.Services
-***REMOVED***
+{
     class UserServices : IUserServices
-    ***REMOVED***
+    {
         private readonly ILogger<UserServices> _logger;
         private readonly ICacheService _cacheService;
         private readonly ProjectContext _context;
@@ -28,15 +28,15 @@ namespace mvc.Repositories.Services
         private readonly IConfiguration _config;
         public UserServices(ILogger<UserServices> logger, ProjectContext context, IMapper mapper, IConfiguration config,
             ICacheService cacheService)
-        ***REMOVED***
+        {
             _context = context;
             _logger = logger;
             _mapper = mapper;
             _config = config.GetSection("EmailConfig");
             _cacheService = cacheService;
-    ***REMOVED***
+        }
         public async Task<string?> RegisterUser(Registration request)
-        ***REMOVED***
+        {
             User? isAlreadyRegistered = await _context.Users.FirstOrDefaultAsync(user => user.Email == request.Email);
 
             if (isAlreadyRegistered is not null) return null;
@@ -48,7 +48,7 @@ namespace mvc.Repositories.Services
             if (pass1 != pass2) return null;
 
             ToConfirm userInfo = new ToConfirm()
-            ***REMOVED***
+            {
                 Email = request.Email,
                 Username = request.Username,
                 Password = pass1,
@@ -56,15 +56,15 @@ namespace mvc.Repositories.Services
                 FirstName = request.FirstName,
                 LastName = request.LastName,
                 UserId = Guid.NewGuid(),
-        ***REMOVED***;
+            };
             
             await _cacheService.Set(userInfo.Email, userInfo);
             
             return userInfo.Email;
-    ***REMOVED***
+        }
 
         public async Task<bool> ActivateAccount(string email, string token)
-        ***REMOVED***
+        {
             ToConfirm? userInfo = await _cacheService.Get<ToConfirm>(email);
 
             if (userInfo is null || userInfo.Token != token) return false;
@@ -79,31 +79,31 @@ namespace mvc.Repositories.Services
             await _context.Users.AddAsync(newUser);
             await _context.SaveChangesAsync();
             return true;
-    ***REMOVED***
+        }
 
         public async Task<UserDetails?> AuthenticateUser(Login request)
-        ***REMOVED***
+        {
             var user = await _context.Users.FirstOrDefaultAsync(user => user.Email == request.Email);
 
             if (user is not null || bcrypt.Verify(request.Password, user?.Password))
-            ***REMOVED***
+            {
                 return _mapper.Map<UserDetails>(user);
-        ***REMOVED***
+            }
 
             return null;
-    ***REMOVED***
+        }
 
         public async Task<ToConfirm?> CheckUserForConfirmation(string email)
-        ***REMOVED***
+        {
             ToConfirm? userInfo = await _cacheService.Get<ToConfirm>(email);
-            _logger.LogInformation($"From check email ***REMOVED***userInfo?.Email***REMOVED***");
+            _logger.LogInformation($"From check email {userInfo?.Email}");
             if (userInfo is null) return null;
 
             return userInfo;
-    ***REMOVED***
+        }
 
         public async Task<bool> DeleteUser(Guid userId)
-        ***REMOVED***
+        {
             var user = await _context.Users.FirstOrDefaultAsync(user => user.UserId == userId);
 
             if (user is null) return false;
@@ -114,10 +114,10 @@ namespace mvc.Repositories.Services
             _context.Users.Remove(user);
             await _context.SaveChangesAsync();
             return true;
-    ***REMOVED***
+        }
 
         public async Task<UserDetails?> UpdateUser(Update request)
-        ***REMOVED***
+        {
             User? user = await _context.Users.FirstOrDefaultAsync(user => user.Email == request.Email);
 
             if (user is null) return null;
@@ -125,7 +125,7 @@ namespace mvc.Repositories.Services
             User newUser = _mapper.Map<User>(request);
 
             if (!string.IsNullOrEmpty(request.Password))
-            ***REMOVED***
+            {
                 var salt = bcrypt.GenerateSalt();
                 var pass1 = bcrypt.HashPassword(request.Password, salt);
                 var pass2 = bcrypt.HashPassword(request.ConfirmPassword, salt);
@@ -133,7 +133,7 @@ namespace mvc.Repositories.Services
                 if (pass1 != pass2) return null;
 
                 newUser.Password = pass1;
-        ***REMOVED***
+            }
 
             newUser.CreatedOn = user.CreatedOn;
             newUser.UserId = user.UserId;
@@ -142,6 +142,6 @@ namespace mvc.Repositories.Services
             await _context.SaveChangesAsync();
 
             return _mapper.Map<UserDetails>(newUser);
-    ***REMOVED***
-***REMOVED***
-***REMOVED***
+        }
+    }
+}

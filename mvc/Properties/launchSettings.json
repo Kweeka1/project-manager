@@ -1,28 +1,28 @@
-﻿***REMOVED***
-  "iisSettings": ***REMOVED***
+﻿{
+  "iisSettings": {
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
-    "iisExpress": ***REMOVED***
+    "iisExpress": {
       "applicationUrl": "http://localhost:11791",
       "sslPort": 44371
-***REMOVED***
-***REMOVED***
-  "profiles": ***REMOVED***
-    "linux_project": ***REMOVED***
+    }
+  },
+  "profiles": {
+    "linux_project": {
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": false,
       "applicationUrl": "https://localhost:7035;http://localhost:5116",
-      "environmentVariables": ***REMOVED***
+      "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
-  ***REMOVED***
-***REMOVED***,
-    "IIS Express": ***REMOVED***
+      }
+    },
+    "IIS Express": {
       "commandName": "IISExpress",
       "launchBrowser": true,
-      "environmentVariables": ***REMOVED***
+      "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
-  ***REMOVED***
-***REMOVED***
-***REMOVED***
-***REMOVED***
+      }
+    }
+  }
+}

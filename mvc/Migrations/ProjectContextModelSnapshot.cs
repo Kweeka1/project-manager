@@ -9,12 +9,12 @@ using mvc.Entities;
 #nullable disable
 
 namespace mvc.Migrations
-***REMOVED***
+{
     [DbContext(typeof(ProjectContext))]
     partial class ProjectContextModelSnapshot : ModelSnapshot
-    ***REMOVED***
+    {
         protected override void BuildModel(ModelBuilder modelBuilder)
-        ***REMOVED***
+        {
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("ProductVersion", "6.0.6")
@@ -23,7 +23,7 @@ namespace mvc.Migrations
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
             modelBuilder.Entity("mvc.Entities.UserEntity.User", b =>
-                ***REMOVED***
+                {
                     b.Property<Guid>("UserId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uuid");
@@ -66,8 +66,8 @@ namespace mvc.Migrations
                     b.HasKey("UserId");
 
                     b.ToTable("Users");
-            ***REMOVED***);
+                });
 #pragma warning restore 612, 618
-    ***REMOVED***
-***REMOVED***
-***REMOVED***
+        }
+    }
+}

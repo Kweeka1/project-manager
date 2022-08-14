@@ -1,27 +1,27 @@
-import React, ***REMOVED***FunctionComponent***REMOVED*** from "react"
-import ***REMOVED***Menu, MenuItem***REMOVED*** from "@mui/material";
-import ***REMOVED***ProjectsDropdownProps***REMOVED*** from "../interface";
+import React, {FunctionComponent} from "react"
+import {Menu, MenuItem} from "@mui/material";
+import {ProjectsDropdownProps} from "../interface";
 
-const ProjectsDropdown: FunctionComponent<ProjectsDropdownProps> = (***REMOVED***ProjectsAnchorEl, isProjectsDropdownOpen, handleProjectsMenuClose***REMOVED***) => ***REMOVED***
+const ProjectsDropdown: FunctionComponent<ProjectsDropdownProps> = ({ProjectsAnchorEl, isProjectsDropdownOpen, handleProjectsMenuClose}) => {
   return (
     <Menu
-      anchorEl=***REMOVED***ProjectsAnchorEl***REMOVED***
-      anchorOrigin=***REMOVED******REMOVED***
+      anchorEl={ProjectsAnchorEl}
+      anchorOrigin={{
         vertical: 'bottom',
         horizontal: 'left',
-  ***REMOVED******REMOVED***
+      }}
       keepMounted
-      transformOrigin=***REMOVED******REMOVED***
+      transformOrigin={{
         vertical: 'top',
         horizontal: 'left',
-  ***REMOVED******REMOVED***
-      open=***REMOVED***isProjectsDropdownOpen***REMOVED***
-      onClose=***REMOVED***handleProjectsMenuClose***REMOVED***
+      }}
+      open={isProjectsDropdownOpen}
+      onClose={handleProjectsMenuClose}
     >
-      <MenuItem onClick=***REMOVED***handleProjectsMenuClose***REMOVED***>Profile</MenuItem>
-      <MenuItem onClick=***REMOVED***handleProjectsMenuClose***REMOVED***>My account</MenuItem>
+      <MenuItem onClick={handleProjectsMenuClose}>Profile</MenuItem>
+      <MenuItem onClick={handleProjectsMenuClose}>My account</MenuItem>
     </Menu>
   )
-***REMOVED***
+}
 
 export default ProjectsDropdown;

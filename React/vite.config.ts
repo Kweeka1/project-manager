@@ -1,23 +1,23 @@
-import ***REMOVED*** defineConfig ***REMOVED*** from 'vite'
+import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
 // https://vitejs.dev/config/
-export default defineConfig(***REMOVED***
+export default defineConfig({
   plugins: [react()],
   //base: '/dist/',
-  build: ***REMOVED***
+  build: {
     outDir: '../mvc/wwwroot/dist',
     emptyOutDir: true,
     manifest: false,
-    rollupOptions: ***REMOVED***
-      input: ***REMOVED***
+    rollupOptions: {
+      input: {
         main: './src/main.tsx',
-  ***REMOVED***
-***REMOVED***
-***REMOVED***
-  server: ***REMOVED***
-    hmr: ***REMOVED***
+      }
+    }
+  },
+  server: {
+    hmr: {
       protocol: 'ws'
-***REMOVED***
-***REMOVED***
-***REMOVED***)
+    }
+  }
+})

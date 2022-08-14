@@ -1,4 +1,4 @@
-export interface Project ***REMOVED***
+export interface Project {
   id: number;
   name: string;
   createdOn: string;
@@ -7,19 +7,19 @@ export interface Project ***REMOVED***
   lastActionDate: string;
   reporter: string;
   boards: Board[];
-***REMOVED***
+}
 
-export interface Board ***REMOVED***
+export interface Board {
   name: string;
   issues: Issue[]
-***REMOVED***
+}
 
-export interface Issue ***REMOVED***
+export interface Issue {
   id: number;
   name: string;
   createdOn: string;
   action: string;
   actionDate: string;
   reporter: string;
-***REMOVED***
+}
 

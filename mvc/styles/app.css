@@ -1,11 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-* ***REMOVED***
+* {
   box-sizing: border-box;
-***REMOVED***
+}
 
-body, html ***REMOVED***
+body, html {
   padding: 0;
   margin: 0;
   min-width: 100% !important;
@@ -13,84 +13,84 @@ body, html ***REMOVED***
   min-height: 100% !important;
   height: 100%;
   scroll-behavior: smooth;
-***REMOVED***
+}
 
-@-webkit-keyframes shake ***REMOVED***
-  0% ***REMOVED***
+@-webkit-keyframes shake {
+  0% {
     transform: translate(1px, 1px);
-***REMOVED***
-  10% ***REMOVED***
+  }
+  10% {
     transform: translate(-1px, -1px);
-***REMOVED***
-  20% ***REMOVED***
+  }
+  20% {
     transform: translate(-1px, 0px);
-***REMOVED***
-  30% ***REMOVED***
+  }
+  30% {
     transform: translate(1px, 1px);
-***REMOVED***
-  40% ***REMOVED***
+  }
+  40% {
     transform: translate(1px, -1px);
-***REMOVED***
-  50% ***REMOVED***
+  }
+  50% {
     transform: translate(-1px, 1px);
-***REMOVED***
-  60% ***REMOVED***
+  }
+  60% {
     transform: translate(-1px, 1px);
-***REMOVED***
-  70% ***REMOVED***
+  }
+  70% {
     transform: translate(1px, 1px);
-***REMOVED***
-  80% ***REMOVED***
+  }
+  80% {
     transform: translate(-1px, -1px);
-***REMOVED***
-  90% ***REMOVED***
+  }
+  90% {
     transform: translate(1px, 1px);
-***REMOVED***
-  100% ***REMOVED***
+  }
+  100% {
     transform: translate(1px, -1px);
-***REMOVED***
-***REMOVED***
+  }
+}
 
-@keyframes shake ***REMOVED***
-  0% ***REMOVED***
+@keyframes shake {
+  0% {
     transform: translate(1px, 1px);
-***REMOVED***
-  10% ***REMOVED***
+  }
+  10% {
     transform: translate(-1px, -1px);
-***REMOVED***
-  20% ***REMOVED***
+  }
+  20% {
     transform: translate(-1px, 0px);
-***REMOVED***
-  30% ***REMOVED***
+  }
+  30% {
     transform: translate(1px, 1px);
-***REMOVED***
-  40% ***REMOVED***
+  }
+  40% {
     transform: translate(1px, -1px);
-***REMOVED***
-  50% ***REMOVED***
+  }
+  50% {
     transform: translate(-1px, 1px);
-***REMOVED***
-  60% ***REMOVED***
+  }
+  60% {
     transform: translate(-1px, 1px);
-***REMOVED***
-  70% ***REMOVED***
+  }
+  70% {
     transform: translate(1px, 1px);
-***REMOVED***
-  80% ***REMOVED***
+  }
+  80% {
     transform: translate(-1px, -1px);
-***REMOVED***
-  90% ***REMOVED***
+  }
+  90% {
     transform: translate(1px, 1px);
-***REMOVED***
-  100% ***REMOVED***
+  }
+  100% {
     transform: translate(1px, -1px);
-***REMOVED***
-***REMOVED***
-.transition ***REMOVED***
+  }
+}
+.transition {
   transition: all 0.3s ease-in-out;
-***REMOVED***
+}
 
-.getstarted .circle ***REMOVED***
+.getstarted .circle {
   transition: all 0.3s cubic-bezier(0.65, 0, 0.076, 1);
   width: 0px;
   position: absolute;
@@ -101,8 +101,8 @@ body, html ***REMOVED***
   padding: 1.2rem;
   z-index: 0;
   border-radius: 1.625rem;
-***REMOVED***
-.getstarted .circle::before ***REMOVED***
+}
+.getstarted .circle::before {
   content: " ";
   position: absolute;
   display: inline-block;
@@ -114,73 +114,73 @@ body, html ***REMOVED***
   width: 10px;
   transform: rotate(-45deg);
   transition: all 0.3s cubic-bezier(0.65, 0, 0.076, 1);
-***REMOVED***
-.getstarted .getstarted__link ***REMOVED***
+}
+.getstarted .getstarted__link {
   position: absolute;
   transition: all 0.35s cubic-bezier(0.65, 0, 0.076, 1);
-***REMOVED***
-.getstarted:hover .circle ***REMOVED***
+}
+.getstarted:hover .circle {
   width: 9rem;
-***REMOVED***
-.getstarted:hover .circle::before ***REMOVED***
+}
+.getstarted:hover .circle::before {
   transform: translateX(6.5rem) rotate(-45deg);
-***REMOVED***
-.getstarted:hover .getstarted__link ***REMOVED***
+}
+.getstarted:hover .getstarted__link {
   transition: all 0.35s cubic-bezier(0.65, 0, 0.076, 1);
   z-index: 10;
   color: #f1f1f1;
   transform: translateX(-1.8rem);
-***REMOVED***
+}
 
-.sticky__header ***REMOVED***
+.sticky__header {
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
   background-color: #F0F3FA;
   opacity: 0.98;
-***REMOVED***
-.sticky__header a ***REMOVED***
+}
+.sticky__header a {
   color: rgb(51, 65, 85);
-***REMOVED***
-.sticky__header a:hover ***REMOVED***
+}
+.sticky__header a:hover {
   color: "#fff";
-***REMOVED***
-.sticky__header h1 ***REMOVED***
+}
+.sticky__header h1 {
   color: rgb(71, 85, 105);
-***REMOVED***
-.sticky__header .line ***REMOVED***
+}
+.sticky__header .line {
   background-color: #5EB0FC;
-***REMOVED***
+}
 
-.home__gradient ***REMOVED***
+.home__gradient {
   background: linear-gradient(140deg, #5EB0FC 0%, #736EFE 100%);
-***REMOVED***
+}
 
-.menu-transition ***REMOVED***
+.menu-transition {
   transition: all 0.3s ease-in-out;
   border-radius: 15px;
-***REMOVED***
+}
 
-a ***REMOVED***
+a {
   letter-spacing: 1px;
-***REMOVED***
+}
 
-.body-bg ***REMOVED***
+.body-bg {
   /* background: linear-gradient(90deg, #d53369 0%, #daae51 100%); */
   background-size: cover;
-***REMOVED***
+}
 
-.blue_gradient ***REMOVED***
+.blue_gradient {
   padding: 0;
   background: linear-gradient(45deg, #5EB0FC 0%, #736EFE 100%);
-***REMOVED***
+}
 
-.filter ***REMOVED***
+.filter {
   filter: blur(5px);
-***REMOVED***
+}
 
-.border-danger ***REMOVED***
+.border-danger {
   border-color: rgb(221, 18, 18);
-***REMOVED***
+}
 
-.border-primary ***REMOVED***
+.border-primary {
   border-color: rgb(6, 187, 0);
-***REMOVED***
+}

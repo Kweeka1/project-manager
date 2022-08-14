@@ -3,25 +3,25 @@
 namespace mvc.Models.User.Response;
 
 public class UserDetails
-***REMOVED***
+{
     [Required] 
-    public DateTime CreatedOn ***REMOVED*** get; set; ***REMOVED***
+    public DateTime CreatedOn { get; set; }
 
     [Required]
     [MaxLength(15)]
     [MinLength(3)]
-    public string Username ***REMOVED*** get; set; ***REMOVED***
+    public string Username { get; set; }
 
     [Required]
-    public string Email ***REMOVED*** get; set; ***REMOVED***
+    public string Email { get; set; }
 
     [Required]
     [MaxLength(15)]
     [MinLength(2)]
-    public string FirstName ***REMOVED*** get; set; ***REMOVED***
+    public string FirstName { get; set; }
 
     [Required]
     [MaxLength(20)]
     [MinLength(2)]
-    public string LastName ***REMOVED*** get; set; ***REMOVED***
-***REMOVED***
+    public string LastName { get; set; }
+}

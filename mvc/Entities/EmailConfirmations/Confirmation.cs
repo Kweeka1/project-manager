@@ -5,29 +5,29 @@ using mvc.Entities.UserEntity;
 namespace mvc.Entities.EmailConfirmations;
 
 public class ToConfirm
-***REMOVED***
+{
     [Key]
     [Required]
-    public Guid UserId ***REMOVED*** get; set; ***REMOVED***
+    public Guid UserId { get; set; }
 
     [Required]
     [MaxLength(16)]
     [MinLength(3)]
-    public string Username ***REMOVED*** get; set; ***REMOVED***
+    public string Username { get; set; }
 
     [Required]
-    public string Email ***REMOVED*** get; set; ***REMOVED***
+    public string Email { get; set; }
     [Required]
-    public string Password ***REMOVED*** get; set; ***REMOVED***
+    public string Password { get; set; }
     
     [Required]
-    public string FirstName ***REMOVED*** get; set; ***REMOVED***
+    public string FirstName { get; set; }
     
     [Required]
-    public string LastName ***REMOVED*** get; set; ***REMOVED***
+    public string LastName { get; set; }
 
     [Required]
     [StringLength(88)]
-    public string Token ***REMOVED*** get; set; ***REMOVED***
+    public string Token { get; set; }
     
-***REMOVED***
+}

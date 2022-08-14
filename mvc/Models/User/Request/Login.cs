@@ -2,22 +2,22 @@ using System.ComponentModel.DataAnnotations;
 using mvc.ValidationAttributes;
 
 namespace mvc.Models.User.Request
-***REMOVED***
+{
     public class Login
-    ***REMOVED***
+    {
         [Required]
         [EmailField]
         [Display(Name = "Email")]
-        public string Email ***REMOVED*** get; set; ***REMOVED***
+        public string Email { get; set; }
 
         [Required]
         [PasswordField]
         [Display(Name = "Password")]
-        public string Password ***REMOVED*** get; set; ***REMOVED***
+        public string Password { get; set; }
 
         [Required]
         [Display(Name = "Remember me")]
-        public bool LongSession ***REMOVED*** get; set; ***REMOVED***
+        public bool LongSession { get; set; }
 
-***REMOVED***
-***REMOVED***
+    }
+}

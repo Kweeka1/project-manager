@@ -1,40 +1,40 @@
-//#root ***REMOVED***
+//#root {
 //    max-width: 1280px;
 //    margin: 0 auto;
 //    padding: 2rem;
 //    text-align: center;
-//***REMOVED***
+//}
 
-// .logo:hover ***REMOVED***
+// .logo:hover {
 //     filter: drop-shadow(0 0 2em #646cffaa);
-// ***REMOVED***
+// }
 
-// .logo.react:hover ***REMOVED***
+// .logo.react:hover {
 //     filter: drop-shadow(0 0 2em #61dafbaa);
-// ***REMOVED***
+// }
 
-.cards__container__menu ***REMOVED***
+.cards__container__menu {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1.5rem 2rem;
-***REMOVED***
-.menu__buttons ***REMOVED***
+}
+.menu__buttons {
     width: 40%;
     display: flex;
     gap: 1rem;
     justify-content: flex-end;
-    .menu__search ***REMOVED***
+    .menu__search {
         height: 2.5rem;
         //border: 1px rgba(25, 118, 210, 0.5) solid;
-***REMOVED***
-    .sort__button ***REMOVED***
+    }
+    .sort__button {
         height: 2.5rem;
-***REMOVED***
-***REMOVED***
+    }
+}
 
 
-.cards__container ***REMOVED***
+.cards__container {
     justify-content: flex-start;
     padding: 1.7rem 20px;
     display: inline-flex;
@@ -43,106 +43,106 @@
     overflow-x: auto;
     height: 17rem;
     align-items: center;
-    .card ***REMOVED***
+    .card {
         overflow: visible;
         position: relative;
         border-radius: 0 0.38rem 0.38rem 0;
         width: 20rem; 
         height: 13rem;
         padding: 0 0 1rem 0;
-        .card__header ***REMOVED***
+        .card__header {
             border-radius: 0 0.38rem 0 0;
-            .card__menu ***REMOVED***
+            .card__menu {
                 display: flex; 
                 padding: 0.3rem 0.3rem 0.3rem 1rem; 
                 justify-content: space-between;
                 width: 100%;
-        ***REMOVED***
-    ***REMOVED***
-        .card__details ***REMOVED***
+            }
+        }
+        .card__details {
             color: #4f6a8d;
             border-radius: 0.2rem;
             display: flex;
 
-            .event__value ***REMOVED***
+            .event__value {
                 background-color: #e5f2ff;
                 padding: 0.3rem 0.3rem;
                 margin-left: 0.3rem;
-        ***REMOVED***
-    ***REMOVED***
-***REMOVED***
-***REMOVED***
+            }
+        }
+    }
+}
 
-.border__left ***REMOVED***
+.border__left {
     position: absolute;
     border-radius: 0.38rem 0 0 0.38rem;
     left: -9px;
     height: 209px;
     width: 10px;
-***REMOVED***
+}
 
-.active__issues ***REMOVED***
+.active__issues {
     color: #F2F4F5;
     padding: 0.5rem 0.6rem;
     margin-left: 0.5rem;
     border-radius: 1.625rem;
-***REMOVED***
+}
 
-.menu__items ***REMOVED***
+.menu__items {
     display: flex; 
     justify-content: space-between;
     align-items: center;
     width: 60%;
-***REMOVED***
+}
 
-.project__name ***REMOVED***
+.project__name {
     color: #040615;
     font-family: Lato, sans-serif;
     font-weight: 400;
     padding: 0.1rem 0;
-    .name ***REMOVED***
+    .name {
         font-size: medium;
         color: #070a25;
         font-family: "Roboto", sans-serif;
         font-weight: 300;
         padding: 0 0.5rem 0 0;
-***REMOVED***
-    .project__title ***REMOVED***
+    }
+    .project__title {
         font-size: medium;
         color: #040615;
         font-family: "Open sans";
-***REMOVED***
-***REMOVED***
+    }
+}
 
-.card__header ***REMOVED***
+.card__header {
     display: flex;
-    span ***REMOVED***
+    span {
         line-height: 1.8rem;
-***REMOVED***
-***REMOVED***
+    }
+}
 
-p ***REMOVED***
+p {
     font-family: "Open sans", sans-serif;
     margin-bottom: 0.3rem;
     margin-top: 0.3rem;
-***REMOVED***
+}
 
-span ***REMOVED***
+span {
     font-family: "Open sans", sans-serif;
-***REMOVED***
+}
 
-@keyframes logo-spin ***REMOVED***
-    from ***REMOVED***
+@keyframes logo-spin {
+    from {
         transform: rotate(0deg);
-***REMOVED***
+    }
 
-    to ***REMOVED***
+    to {
         transform: rotate(360deg);
-***REMOVED***
-***REMOVED***
+    }
+}
 
-//@media (prefers-reduced-motion: no-preference) ***REMOVED***
-//    a:nth-of-type(2) .logo ***REMOVED***
+//@media (prefers-reduced-motion: no-preference) {
+//    a:nth-of-type(2) .logo {
 //        animation: logo-spin infinite 20s linear;
-//***REMOVED***
-//***REMOVED***
+//    }
+//}

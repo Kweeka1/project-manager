@@ -1,8 +1,8 @@
-module.exports = ***REMOVED***
+module.exports = {
   mode: "jit",
   content: ["./Views/**/*.cshtml"],
-  theme: ***REMOVED***
-    screens: ***REMOVED***
+  theme: {
+    screens: {
       "phone": "300px",
       "sm-tablet": "600px",
       "md-tablet": "768px",
@@ -11,9 +11,9 @@ module.exports = ***REMOVED***
       "sm-md-desk": "1200px",
       "md-desk": "1368px",
       "lg-desk": "1600px"
-***REMOVED***,
-    extend: ***REMOVED***
-      fontFamily:***REMOVED***
+    },
+    extend: {
+      fontFamily:{
         poppins: ["Poppins", "sans-serif"],
         lato: ["Lato", "sans-serif"],
         cairo: ["Cairo", "sans-serif"],
@@ -22,8 +22,8 @@ module.exports = ***REMOVED***
         opensans: ["Open Sans", "sans-serif"],
         roboto: ["Roboto", "sans-serif"],
         rajdhani: ['Rajdhani', "sans-serif"]
-  ***REMOVED***
-***REMOVED***,
-***REMOVED***
+      }
+    },
+  },
   plugins: [],
-***REMOVED***
+}

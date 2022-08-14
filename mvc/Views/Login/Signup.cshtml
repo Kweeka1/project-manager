@@ -1,10 +1,10 @@
 ﻿@using Microsoft.AspNetCore.Mvc.TagHelpers
 @model mvc.Models.User.Request.Registration
 
-@***REMOVED***
+@{
     Layout = null;
     ViewData["Title"] = "Register";
-***REMOVED***
+}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -27,41 +27,41 @@
             <div class="lg-tablet:w-[45%] sm-desk:w-[42%] md-desk:w-[42%] pl-10 pb-10 pt-5 pr-10 md-tablet:w-full sm-tablet:w-full phone:w-full">
                 <div>
                     @using (Html.BeginForm("Signup", "Login", FormMethod.Post, new
-                    ***REMOVED***
+                    {
                         @id = "form_register",
                         @class = "flex flex-col"
-                ***REMOVED***)
+                    })
                         )
-                    ***REMOVED***
+                    {
                         @Html.AntiForgeryToken()
                         <div id="usernameField_container" class="mb-6 rounded bg-slate-200 relative w-full">
-                            @Html.LabelFor(x => x.Username, new ***REMOVED*** @class = "block text-gray-700 text-sm font-bold mb-2 ml-1" ***REMOVED***)
-                            @Html.TextBoxFor(x => x.Username, new ***REMOVED*** @id = "username", @class = "focus:outline-none bg-slate-200 rounded w-full text-gray-700 border-b-4 border-gray-300 transition duration-500 px-3 pb-3" ***REMOVED***)
+                            @Html.LabelFor(x => x.Username, new { @class = "block text-gray-700 text-sm font-bold mb-2 ml-1" })
+                            @Html.TextBoxFor(x => x.Username, new { @id = "username", @class = "focus:outline-none bg-slate-200 rounded w-full text-gray-700 border-b-4 border-gray-300 transition duration-500 px-3 pb-3" })
                         </div>
                         <div class="flex flex-row gap-6">
                             <div id="firstNameField_container" class="mb-6 pt-3 rounded bg-slate-200 relative w-full">
-                                @Html.LabelFor(x => x.FirstName, new ***REMOVED*** @class = "block text-gray-700 text-sm font-bold mb-2 ml-1" ***REMOVED***)
-                                @Html.TextBoxFor(x => x.FirstName, new ***REMOVED*** @id = "firstname", @class = "focus:outline-none bg-slate-200 rounded w-full text-gray-700 border-b-4 border-gray-300 transition duration-500 px-3 pb-3" ***REMOVED***)
+                                @Html.LabelFor(x => x.FirstName, new { @class = "block text-gray-700 text-sm font-bold mb-2 ml-1" })
+                                @Html.TextBoxFor(x => x.FirstName, new { @id = "firstname", @class = "focus:outline-none bg-slate-200 rounded w-full text-gray-700 border-b-4 border-gray-300 transition duration-500 px-3 pb-3" })
                             </div>
                             <div id="lastNameField_container" class="mb-6 pt-3 rounded bg-slate-200 relative w-full">
-                                @Html.LabelFor(x => x.LastName, new ***REMOVED*** @class = "block text-gray-700 text-sm font-bold mb-2 ml-1" ***REMOVED***)
-                                @Html.TextBoxFor(x => x.LastName, new ***REMOVED*** @id = "lastname", @class = "focus:outline-none bg-slate-200 rounded w-full text-gray-700 border-b-4 border-gray-300 transition duration-500 px-3 pb-3" ***REMOVED***)
+                                @Html.LabelFor(x => x.LastName, new { @class = "block text-gray-700 text-sm font-bold mb-2 ml-1" })
+                                @Html.TextBoxFor(x => x.LastName, new { @id = "lastname", @class = "focus:outline-none bg-slate-200 rounded w-full text-gray-700 border-b-4 border-gray-300 transition duration-500 px-3 pb-3" })
                             </div>
                         </div>
                         <div id="emailField_container" class="mb-6 pt-3 rounded bg-slate-200 relative">
-                            @Html.LabelFor(x => x.Email, new ***REMOVED*** @class = "block text-gray-700 text-sm font-bold mb-2 ml-1" ***REMOVED***)
-                            @Html.TextBoxFor(x => x.Email, new ***REMOVED*** @id = "email", @class = "focus:outline-none bg-slate-200 rounded w-full text-gray-700 border-b-4 border-gray-300 transition duration-500 px-3 pb-3" ***REMOVED***)
+                            @Html.LabelFor(x => x.Email, new { @class = "block text-gray-700 text-sm font-bold mb-2 ml-1" })
+                            @Html.TextBoxFor(x => x.Email, new { @id = "email", @class = "focus:outline-none bg-slate-200 rounded w-full text-gray-700 border-b-4 border-gray-300 transition duration-500 px-3 pb-3" })
                         </div>
                         <div id="passwordField_container" class="mb-6 pt-3 pb-3 rounded bg-slate-200 relative">
-                            @Html.LabelFor(x => x.Password, new ***REMOVED*** @class = "block text-gray-700 text-sm font-bold mb-2 ml-1" ***REMOVED***)
-                            @Html.TextBoxFor(x => x.Password, new ***REMOVED*** @id = "password", @type = "password", @class = "focus:outline-none bg-slate-200 rounded w-full text-gray-700 border-b-4 border-gray-300 transition duration-500 px-3 pb-3" ***REMOVED***)
+                            @Html.LabelFor(x => x.Password, new { @class = "block text-gray-700 text-sm font-bold mb-2 ml-1" })
+                            @Html.TextBoxFor(x => x.Password, new { @id = "password", @type = "password", @class = "focus:outline-none bg-slate-200 rounded w-full text-gray-700 border-b-4 border-gray-300 transition duration-500 px-3 pb-3" })
                         </div>
                         <div id="cpasswordField_container" class="mb-6 pt-3 pb-3 rounded bg-slate-200 relative">
-                            @Html.LabelFor(x => x.ConfirmPassword, new ***REMOVED*** @class = "block text-gray-700 text-sm font-bold mb-2 ml-1" ***REMOVED***)
-                            @Html.TextBoxFor(x => x.ConfirmPassword, new ***REMOVED*** @id = "cpassword", @type = "password", @class = "focus:outline-none bg-slate-200 rounded w-full text-gray-700 border-b-4 border-gray-300 transition duration-500 px-3 pb-3" ***REMOVED***)
+                            @Html.LabelFor(x => x.ConfirmPassword, new { @class = "block text-gray-700 text-sm font-bold mb-2 ml-1" })
+                            @Html.TextBoxFor(x => x.ConfirmPassword, new { @id = "cpassword", @type = "password", @class = "focus:outline-none bg-slate-200 rounded w-full text-gray-700 border-b-4 border-gray-300 transition duration-500 px-3 pb-3" })
                         </div>
                         <button id="submit" class="bg-slate-500 hover:bg-slate-600 text-white font-bold py-2 rounded shadow-lg hover:shadow-xl transition duration-200" type="submit">Sign Up</button>
-                ***REMOVED***
+                    }
                 </div>
             </div>
             <div class="sm-desk:w-[58%] md-desk:w-[58%] lg-tablet:w-[55%] lg-tablet:flex sm-desk:flex md-desk:flex md-tablet:hidden sm-tablet:hidden phone:hidden">

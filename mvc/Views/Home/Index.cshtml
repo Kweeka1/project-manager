@@ -1,7 +1,7 @@
 ﻿@using Microsoft.AspNetCore.Mvc.TagHelpers
-@***REMOVED***
+@{
     ViewData["Title"] = "Home Page";
-***REMOVED***
+}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -21,11 +21,11 @@
         <p class="text-xl font-poppins text-[#f1f1f1] pt-10 pb-10 leading-8">
           Break the big ideas down into manageable chunks across teams with user stories, issues, and tasks.
         </p>
-        @using (@Html.BeginForm("signOnlyEmail", "Login", FormMethod.Post, new ***REMOVED*** @id = "form_sign_email", @class = "flex gap-4" ***REMOVED***)) ***REMOVED***
+        @using (@Html.BeginForm("signOnlyEmail", "Login", FormMethod.Post, new { @id = "form_sign_email", @class = "flex gap-4" })) {
           @Html.AntiForgeryToken()
-          @Html.TextBox("Email", "", new ***REMOVED*** @class = "p-3 w-[64%] rounded-[0.25rem] focus-visible:outline-none", @placeholder = "Enter email" ***REMOVED***)
+          @Html.TextBox("Email", "", new { @class = "p-3 w-[64%] rounded-[0.25rem] focus-visible:outline-none", @placeholder = "Enter email" })
           <button type="submit" class="px-3 py-3 text-[#f1f1f1] rounded-[0.25rem] bg-blue-500">Get started - <small>It's free</small></button>
-    ***REMOVED***
+        }
       </div>
       <div class="absolute top-[8rem] right-16">
         <img src="/images/main.svg" alt="Header image" width="650px" srcset="">

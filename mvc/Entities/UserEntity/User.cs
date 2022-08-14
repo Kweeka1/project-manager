@@ -3,52 +3,52 @@ using System.ComponentModel.DataAnnotations.Schema;
 using mvc.ValidationAttributes;
 
 namespace mvc.Entities.UserEntity
-***REMOVED***
+{
     public class User 
-    ***REMOVED***
+    {
         [Key]
         [Required]
-        public Guid UserId ***REMOVED***get; set;***REMOVED***
+        public Guid UserId {get; set;}
 
         [Required]
-        public DateTime CreatedOn ***REMOVED***get; set;***REMOVED***
+        public DateTime CreatedOn {get; set;}
 
         [Required]
         [MaxLength(16)]
         [MinLength(3)]
-        public string Username ***REMOVED*** get; set; ***REMOVED***
+        public string Username { get; set; }
         
         [Required]
         [EmailField]
-        public string Email ***REMOVED*** get; set; ***REMOVED***
+        public string Email { get; set; }
         
         [Required]
         [MaxLength(15)]
         [MinLength(2)]
-        public string FirstName ***REMOVED*** get; set; ***REMOVED***
+        public string FirstName { get; set; }
         
         [Required]
         [MaxLength(20)]
         [MinLength(2)]
-        public string LastName ***REMOVED*** get; set; ***REMOVED***
+        public string LastName { get; set; }
         
         [Required]
         [PasswordField]
-        public string Password ***REMOVED*** get; set; ***REMOVED***
+        public string Password { get; set; }
         
         [Required]
-        public bool IsConfirmed ***REMOVED*** get; set; ***REMOVED***
+        public bool IsConfirmed { get; set; }
 
         [Required] 
-        public bool IsDeactivationRequested ***REMOVED*** get; set; ***REMOVED***
+        public bool IsDeactivationRequested { get; set; }
         
         [Required]
-        public DateTime DeactivationRequestedOn ***REMOVED*** get; set; ***REMOVED***
+        public DateTime DeactivationRequestedOn { get; set; }
 
         [Required] 
         public DateTime IsDeactivatedOn => DeactivationRequestedOn.AddDays(14);
 
         [Required] 
         public bool Deactivate => IsDeactivationRequested && DateTime.UtcNow > IsDeactivatedOn;
-***REMOVED***
-***REMOVED***
+    }
+}

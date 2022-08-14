@@ -1,6 +1,6 @@
-import React, ***REMOVED***FunctionComponent, MouseEvent, SyntheticEvent, useContext, useState***REMOVED*** from "react"
-import ***REMOVED***AppBar, Badge, Box, Button, IconButton, Menu, MenuItem, Toolbar, Typography, useTheme***REMOVED*** from "@mui/material";
-import ***REMOVED***Search, SearchIconWrapper, StyledInputBase***REMOVED*** from "../StyledComponents";
+import React, {FunctionComponent, MouseEvent, SyntheticEvent, useContext, useState} from "react"
+import {AppBar, Badge, Box, Button, IconButton, Menu, MenuItem, Toolbar, Typography, useTheme} from "@mui/material";
+import {Search, SearchIconWrapper, StyledInputBase} from "../StyledComponents";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import MailIcon from "@mui/icons-material/Mail";
 import NotificationsIcon from "@mui/icons-material/Notifications";
@@ -8,7 +8,7 @@ import AccountCircle from "@mui/icons-material/AccountCircle";
 import MoreIcon from "@mui/icons-material/MoreVert";
 import MobileMenu from "./HeaderComponents/MobileMenu";
 import ProjectsDropdown from "./HeaderComponents/ProjectsDropdown";
-import ***REMOVED***
+import {
   DarkMode,
   ShieldMoon,
   WbIncandescent,
@@ -17,12 +17,12 @@ import ***REMOVED***
   WbShadeSharp,
   WbSunny,
   WbTwilight
-***REMOVED*** from "@mui/icons-material";
-import ***REMOVED***ColorModeContext***REMOVED*** from "../../Contexts/ThemeContext";
+} from "@mui/icons-material";
+import {ColorModeContext} from "../../Contexts/ThemeContext";
 
 
 
-const Header: FunctionComponent = () => ***REMOVED***
+const Header: FunctionComponent = () => {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = useState<null | HTMLElement>(null);
   const [ProjectsAnchorEl, setProjectsAnchorEl] = useState<null | HTMLElement>(null);
@@ -36,76 +36,76 @@ const Header: FunctionComponent = () => ***REMOVED***
   const handleMobileMenuOpen = (event: MouseEvent<HTMLElement>) : void => setMobileMoreAnchorEl(event.currentTarget);
   const handleProjectsMenuClose = () : void => setProjectsAnchorEl(null);
   const handleMobileMenuClose = () : void => setMobileMoreAnchorEl(null);
-  const handleMenuClose = () : void => ***REMOVED***
+  const handleMenuClose = () : void => {
     setAnchorEl(null);
     handleMobileMenuClose();
-***REMOVED***;
+  };
 
   const colorModeContext = useContext(ColorModeContext);
   const theme = useTheme();
 
   const renderMenu = (
     <Menu
-      anchorEl=***REMOVED***anchorEl***REMOVED***
-      anchorOrigin=***REMOVED******REMOVED***
+      anchorEl={anchorEl}
+      anchorOrigin={{
         vertical: 'bottom',
         horizontal: 'right',
-  ***REMOVED******REMOVED***
+      }}
       keepMounted
-      transformOrigin=***REMOVED******REMOVED***
+      transformOrigin={{
         vertical: 'top',
         horizontal: 'right',
-  ***REMOVED******REMOVED***
-      open=***REMOVED***isMenuOpen***REMOVED***
-      onClose=***REMOVED***handleMenuClose***REMOVED***
+      }}
+      open={isMenuOpen}
+      onClose={handleMenuClose}
     >
-      <MenuItem onClick=***REMOVED***handleMenuClose***REMOVED***>Profile</MenuItem>
-      <MenuItem onClick=***REMOVED***handleMenuClose***REMOVED***>My account</MenuItem>
+      <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
+      <MenuItem onClick={handleMenuClose}>My account</MenuItem>
     </Menu>
   );
 
   return (
-    <Box sx=***REMOVED******REMOVED*** flexGrow: 1 ***REMOVED******REMOVED***>
+    <Box sx={{ flexGrow: 1 }}>
     <AppBar position="static">
       <Toolbar>
         <Typography
           variant="h6"
           noWrap
           component="div"
-          sx=***REMOVED******REMOVED*** display: ***REMOVED*** xs: 'none', sm: 'block' ***REMOVED*** ***REMOVED******REMOVED***
+          sx={{ display: { xs: 'none', sm: 'block' } }}
         >
           Pro Collab
         </Typography>
         <Search>
           <SearchIconWrapper>
-            ***REMOVED***/* <SearchIcon /> */***REMOVED***
+            {/* <SearchIcon /> */}
           </SearchIconWrapper>
           <StyledInputBase
             placeholder="Search…"
-            inputProps=***REMOVED******REMOVED*** 'aria-label': 'search' ***REMOVED******REMOVED***
+            inputProps={{ 'aria-label': 'search' }}
           />
         </Search>
-        <Box sx=***REMOVED******REMOVED*** display: "flex", gap: "1rem" ***REMOVED******REMOVED***>
+        <Box sx={{ display: "flex", gap: "1rem" }}>
           <Button
             variant="contained"
             disableElevation
-            onClick=***REMOVED***handleProjectsMenuOpen***REMOVED***
-            endIcon=***REMOVED***<KeyboardArrowDownIcon />***REMOVED***
+            onClick={handleProjectsMenuOpen}
+            endIcon={<KeyboardArrowDownIcon />}
           >My Projects</Button>
           <Button
             variant="contained"
             disableElevation
-            onClick=***REMOVED***handleProjectsMenuOpen***REMOVED***
-            endIcon=***REMOVED***<KeyboardArrowDownIcon />***REMOVED***
+            onClick={handleProjectsMenuOpen}
+            endIcon={<KeyboardArrowDownIcon />}
           >Invite people</Button>
         </Box>
-        <Box sx=***REMOVED******REMOVED*** flexGrow: 1 ***REMOVED******REMOVED*** />
-        <Box sx=***REMOVED******REMOVED*** display: ***REMOVED*** xs: 'none', md: 'flex' ***REMOVED*** ***REMOVED******REMOVED***>
-          <IconButton size="large" color="inherit" onClick=***REMOVED***() => colorModeContext.toggleColorMode()***REMOVED*** >
-            ***REMOVED*** theme.palette.mode === "light" ? <WbSunny /> : <DarkMode /> ***REMOVED***
+        <Box sx={{ flexGrow: 1 }} />
+        <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
+          <IconButton size="large" color="inherit" onClick={() => colorModeContext.toggleColorMode()} >
+            { theme.palette.mode === "light" ? <WbSunny /> : <DarkMode /> }
           </IconButton>
           <IconButton size="large" aria-label="show 4 new mails" color="inherit">
-            <Badge badgeContent=***REMOVED***4***REMOVED*** color="error">
+            <Badge badgeContent={4} color="error">
               <MailIcon />
             </Badge>
           </IconButton>
@@ -114,23 +114,23 @@ const Header: FunctionComponent = () => ***REMOVED***
             aria-label="show 17 new notifications"
             color="inherit"
           >
-            <Badge badgeContent=***REMOVED***17***REMOVED*** color="error">
+            <Badge badgeContent={17} color="error">
               <NotificationsIcon />
             </Badge>
           </IconButton>
           <IconButton
             size="large"
             edge="end"
-            onClick=***REMOVED***handleProfileMenuOpen***REMOVED***
+            onClick={handleProfileMenuOpen}
             color="inherit"
           >
             <AccountCircle />
           </IconButton>
         </Box>
-        <Box sx=***REMOVED******REMOVED*** display: ***REMOVED*** xs: 'flex', md: 'none' ***REMOVED*** ***REMOVED******REMOVED***>
+        <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
           <IconButton
             size="large"
-            onClick=***REMOVED***handleMobileMenuOpen***REMOVED***
+            onClick={handleMobileMenuOpen}
             color="inherit"
           >
             <MoreIcon />
@@ -138,18 +138,18 @@ const Header: FunctionComponent = () => ***REMOVED***
         </Box>
       </Toolbar>
     </AppBar>
-      ***REMOVED***<ProjectsDropdown
-        handleProjectsMenuClose=***REMOVED***handleProjectsMenuClose***REMOVED***
-        isProjectsDropdownOpen=***REMOVED***isProjectsDropdownOpen***REMOVED***
-        ProjectsAnchorEl=***REMOVED***ProjectsAnchorEl***REMOVED*** />***REMOVED***
-      ***REMOVED***<MobileMenu
-        handleMobileMenuClose=***REMOVED***handleMobileMenuClose***REMOVED***
-        handleProfileMenuOpen=***REMOVED***handleProfileMenuOpen***REMOVED***
-        isMobileMenuOpen=***REMOVED***isMobileMenuOpen***REMOVED***
-        mobileMoreAnchorEl=***REMOVED***mobileMoreAnchorEl***REMOVED*** />***REMOVED***
-      ***REMOVED***renderMenu***REMOVED***
+      {<ProjectsDropdown
+        handleProjectsMenuClose={handleProjectsMenuClose}
+        isProjectsDropdownOpen={isProjectsDropdownOpen}
+        ProjectsAnchorEl={ProjectsAnchorEl} />}
+      {<MobileMenu
+        handleMobileMenuClose={handleMobileMenuClose}
+        handleProfileMenuOpen={handleProfileMenuOpen}
+        isMobileMenuOpen={isMobileMenuOpen}
+        mobileMoreAnchorEl={mobileMoreAnchorEl} />}
+      {renderMenu}
     </Box>
   )
-***REMOVED***
+}
 
 export default Header;

@@ -4,37 +4,37 @@ using mvc.ValidationAttributes;
 namespace mvc.Models.User.Request;
 
 public class Registration
-***REMOVED***
+{
     [Required]
     [MaxLength(15)]
     [MinLength(3)]
     [Display(Name = "Username")]
-    public string Username ***REMOVED*** get; set; ***REMOVED***
+    public string Username { get; set; }
     
     [Required]
     [EmailField]
     [Display(Name = "Email")]
-    public string Email ***REMOVED*** get; set; ***REMOVED***
+    public string Email { get; set; }
     
     [Required]
     [MaxLength(15)]
     [MinLength(2)]
     [Display(Name = "First name")]
-    public string FirstName ***REMOVED*** get; set; ***REMOVED***
+    public string FirstName { get; set; }
     
     [Required]
     [MaxLength(20)]
     [MinLength(2)]
     [Display(Name = "Last name")]
-    public string LastName ***REMOVED*** get; set; ***REMOVED***
+    public string LastName { get; set; }
     
     [Required]
     [PasswordField]
     [Display(Name = "Password")]
-    public string Password ***REMOVED*** get; set; ***REMOVED***
+    public string Password { get; set; }
     
     [Required]
     [PasswordField]
     [Display(Name = "Confirm password")]
-    public string ConfirmPassword ***REMOVED*** get; set; ***REMOVED***
-***REMOVED***
+    public string ConfirmPassword { get; set; }
+}

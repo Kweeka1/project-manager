@@ -1,18 +1,18 @@
-export interface Priority ***REMOVED***
+export interface Priority {
   lowest: CardColors;
   low: CardColors;
   medium: CardColors;
   high: CardColors;
   highest: CardColors;
-***REMOVED***
+}
 
-export interface CardColors ***REMOVED***
+export interface CardColors {
   cardHeaderBg: string;
   cardDetailsIssues: string;
   cardDetailsInfo: string;
-***REMOVED***
+}
 
-export interface IProjectCard ***REMOVED***
+export interface IProjectCard {
   CardPriority: keyof Priority;
   CardTitle: string;
   ActiveItemsNumber: number;
@@ -23,4 +23,4 @@ export interface IProjectCard ***REMOVED***
   OpenIssues: number;
   DoneIssues: number;
   BoardNumber: number
-***REMOVED***
+}

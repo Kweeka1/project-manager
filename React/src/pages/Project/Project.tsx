@@ -1,9 +1,9 @@
-import React, ***REMOVED***FunctionComponent***REMOVED*** from "react";
+import React, {FunctionComponent} from "react";
 
-const Project: FunctionComponent = () => ***REMOVED***
+const Project: FunctionComponent = () => {
   return (
     <h1>Project</h1>
   )
-***REMOVED***
+}
 
 export default Project;

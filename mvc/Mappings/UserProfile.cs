@@ -8,9 +8,9 @@ using mvc.Models.User.Response;
 namespace mvc.Mappings;
 
 public class UserProfile : Profile
-***REMOVED***
+{
     public UserProfile()
-    ***REMOVED***
+    {
         CreateMap<User, UserDetails>();
         CreateMap<ToConfirm, EmailArgs>();
         CreateMap<ToConfirm, User>();
@@ -23,5 +23,5 @@ public class UserProfile : Profile
             .ForMember(user => user.Password, opt => opt.Ignore())
             .ForMember(user => user.CreatedOn, opt => opt.Ignore())
             .ForMember(user => user.UserId, opt => opt.Ignore());
-***REMOVED***
-***REMOVED***
+    }
+}

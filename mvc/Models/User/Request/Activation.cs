@@ -5,11 +5,11 @@ namespace mvc.Models.User.Request;
 
 [BindProperties]
 public class Activation
-***REMOVED***
+{
     [Required]
     [EmailAddress]
-    public string Email ***REMOVED*** get; set; ***REMOVED***
+    public string Email { get; set; }
     [Required]
     [StringLength(88)]
-    public string Token ***REMOVED*** get; set; ***REMOVED***
-***REMOVED***
+    public string Token { get; set; }
+}

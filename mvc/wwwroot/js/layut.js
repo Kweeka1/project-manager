@@ -1,5 +1,5 @@
-$(function() ***REMOVED***
-    $("#line").on("mouseenter", function() ***REMOVED***
+$(function() {
+    $("#line").on("mouseenter", function() {
         console.log($(this))
-***REMOVED***)
-***REMOVED***)
+    })
+})
