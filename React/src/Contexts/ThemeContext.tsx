@@ -47,8 +47,8 @@ const ColorModeProvider: FunctionComponent<Props> = (props) => {
         mode,
         ...(mode === "light" ? {
           text: "#060b1c",
-          odd: "rgba(227,232,255,0.78)",
-          even: "rgba(237,241,255,0.69)"
+          odd: "rgba(237,242,255,0.78)",
+          even: "rgba(247,249,255,0.69)"
         } : {
           text: "#bfc8ea",
           odd: "rgba(183,183,255,0.1)",
@@ -86,29 +86,29 @@ const ColorModeProvider: FunctionComponent<Props> = (props) => {
           }
         } : {
           lowest: {
-            cardHeaderBg: "rgba(68,94,147,0.5)",
-            cardDetailsIssues: "rgba(58,117,229,0.5)",
-            cardDetailsInfo: "rgba(0,66,180,0.5)"
+            cardHeaderBg: "rgba(68,94,147,0.6)",
+            cardDetailsIssues: "rgba(58,117,229,0.7)",
+            cardDetailsInfo: "rgba(0,66,180,1)"
           },
           low: {
-            cardHeaderBg: "rgba(102,143,128,0.5)",
-            cardDetailsIssues: "rgba(0,131,89,0.5)",
-            cardDetailsInfo: "rgba(14,112,73,0.5)"
+            cardHeaderBg: "rgba(102,143,128,0.6)",
+            cardDetailsIssues: "rgba(0,131,89,0.7)",
+            cardDetailsInfo: "rgba(14,112,73,0.7)"
           },
           medium: {
-            cardHeaderBg: "rgba(113,126,13,0.5)",
-            cardDetailsIssues: "rgba(125,133,29,0.5)",
-            cardDetailsInfo: "rgba(92,107,5,0.5)"
+            cardHeaderBg: "rgba(113,126,13,0.6)",
+            cardDetailsIssues: "rgba(125,133,29,0.7)",
+            cardDetailsInfo: "rgba(92,107,5,0.7)"
           },
           high: {
-            cardHeaderBg: "rgba(203,93,45,0.5)",
-            cardDetailsIssues: "rgba(176,88,51,0.5)",
-            cardDetailsInfo: "rgba(175,68,19,0.5)"
+            cardHeaderBg: "rgba(203,93,45,0.6)",
+            cardDetailsIssues: "rgba(176,88,51,0.7)",
+            cardDetailsInfo: "rgba(175,68,19,0.7)"
           },
           highest: {
-            cardHeaderBg: "rgba(163,11,55,0.5)",
-            cardDetailsIssues: "rgba(197,69,105,0.5)",
-            cardDetailsInfo: "rgba(152,5,42,0.5)"
+            cardHeaderBg: "rgba(163,11,55,0.6)",
+            cardDetailsIssues: "rgba(197,69,105,0.7)",
+            cardDetailsInfo: "rgba(152,5,42,0.7)"
           }
             }
         )
@@ -124,9 +124,9 @@ const ColorModeProvider: FunctionComponent<Props> = (props) => {
             dark: "#1565c0",
             contrastText: "#fff"
           },
-          divider: grey[200],
+          divider: grey[700],
           text: {
-            primary: grey[200],
+            primary: grey[900],
             secondary: grey[700],
           },
         }
@@ -138,7 +138,7 @@ const ColorModeProvider: FunctionComponent<Props> = (props) => {
           secondary: {
             main: grey[200]
           },
-          divider: grey[600],
+          divider: grey[300],
           background: {
             default: "rgba(19,19,28,0.74)",
             paper: "rgba(37,37,45,0.98)",

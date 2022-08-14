@@ -73,7 +73,7 @@ const WorkedOnTab: FunctionComponent<Props> = (props) => {
       <Table>
         <TableHead>
           <TableRow sx={{
-            backgroundColor: theme.palette.background.paper,
+            backgroundColor: `${theme.palette.mode === "dark" ? theme.palette.background.paper : theme.palette.primary.main}`,
             color: "#eaeaea",
             "& > th": { color: "#eaeaea" }
           }}>

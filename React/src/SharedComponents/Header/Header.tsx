@@ -72,19 +72,10 @@ const Header: FunctionComponent = () => {
           variant="h6"
           noWrap
           component="div"
-          sx={{ display: { xs: 'none', sm: 'block' } }}
+          sx={{ display: { xs: 'none', sm: 'block' }, paddingRight: "2rem" }}
         >
           Pro Collab
         </Typography>
-        <Search>
-          <SearchIconWrapper>
-            {/* <SearchIcon /> */}
-          </SearchIconWrapper>
-          <StyledInputBase
-            placeholder="Search…"
-            inputProps={{ 'aria-label': 'search' }}
-          />
-        </Search>
         <Box sx={{ display: "flex", gap: "1rem" }}>
           <Button
             variant="contained"
@@ -98,6 +89,11 @@ const Header: FunctionComponent = () => {
             onClick={handleProjectsMenuOpen}
             endIcon={<KeyboardArrowDownIcon />}
           >Invite people</Button>
+          <Button
+            variant="contained"
+            disableElevation
+            onClick={handleProjectsMenuOpen}
+          >Create</Button>
         </Box>
         <Box sx={{ flexGrow: 1 }} />
         <Box sx={{ display: { xs: 'none', md: 'flex' } }}>

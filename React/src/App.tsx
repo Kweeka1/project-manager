@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useContext, useEffect} from 'react'
 import './App.css'
 import Header from "./SharedComponents/Header/Header";
 import Projects from "./pages/Projects/Projects";
@@ -6,15 +6,14 @@ import {BrowserRouter, Route, Routes} from "react-router-dom";
 import Board from "./pages/Board/Board";
 import Project from "./pages/Project/Project";
 import {useMediaQuery, useTheme} from "@mui/material";
-import ColorModeProvider from "./Contexts/ThemeContext";
+import ColorModeProvider, {ColorModeContext} from "./Contexts/ThemeContext";
 
 function App () {
-  const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
   const theme = useTheme();
 
   return (
     <ColorModeProvider>
-      <div className="App" style={{ width: "100%", backgroundColor: theme.palette.background.default }}>
+      <div className="App" style={{ width: "100%", backgroundColor: theme.palette.background.paper }}>
         <Header />
         <BrowserRouter>
           <Routes>

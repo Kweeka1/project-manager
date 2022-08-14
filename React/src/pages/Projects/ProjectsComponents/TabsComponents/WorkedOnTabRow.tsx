@@ -68,7 +68,7 @@ return (
                                 <TableCell sx={{ border: 0 }} />
                               </TableRow>
                             </TableHead>
-                            <TableBody sx={{ "& > tr:last-child > *": { border: 0 }, "& > tr": { backgroundColor: theme.palette.background.default } }}>
+                            <TableBody sx={{ "& > tr:last-child > *": { border: 0 }, "& > tr": { backgroundColor: `${theme.palette.mode === "dark" ? "#313138" : theme.palette.background.default}` } }}>
                             {
                               board.issues.map(issue => (
                                   <TableRow key={issue.id}>

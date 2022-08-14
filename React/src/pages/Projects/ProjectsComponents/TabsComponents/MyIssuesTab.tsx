@@ -24,7 +24,7 @@ const MyIssuesTab: FunctionComponent<Props> = (props) => {
     <TableContainer sx={{ borderRadius: 0 }} component={Paper}>
       <Table>
         <TableHead>
-          <TableRow sx={{ backgroundColor: theme.palette.primary.main, color: theme.tableRowColors.text }}>
+          <TableRow sx={{ backgroundColor: `${theme.palette.mode === "dark" ? theme.palette.background.paper : theme.palette.primary.main}`, color: theme.tableRowColors.text }}>
             <TableCell sx={{ color: "#eaeaea" }}>Issues</TableCell>
             <TableCell sx={{ color: "#eaeaea" }} align="left">Created On</TableCell>
             <TableCell sx={{ color: "#eaeaea" }} align="left">Last Action</TableCell>
