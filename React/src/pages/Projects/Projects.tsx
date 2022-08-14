@@ -1,5 +1,14 @@
-import React, ***REMOVED***Fragment, FunctionComponent, MouseEvent, SyntheticEvent, useEffect, useRef, useState***REMOVED*** from "react"
-import ***REMOVED***Box, Button, Paper, Typography, useTheme***REMOVED*** from "@mui/material";
+import React, ***REMOVED***
+  Fragment,
+  FunctionComponent,
+  MouseEvent,
+  SyntheticEvent,
+  useContext,
+  useEffect,
+  useRef,
+  useState
+***REMOVED*** from "react"
+import ***REMOVED***Box, Button, Paper, Typography, useMediaQuery, useTheme***REMOVED*** from "@mui/material";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import ***REMOVED***motion***REMOVED*** from "framer-motion";
 import ***REMOVED***IProjectCard, Priority***REMOVED*** from "./interface/IProjectCard";
@@ -9,7 +18,7 @@ import WorkedOnTab from "./ProjectsComponents/TabsComponents/WorkedOnTab";
 import ProjectCard from "./ProjectsComponents/ProjectCard";
 import ***REMOVED***Issue, Project***REMOVED*** from "./interface/IProjectTabs";
 import MyIssuesTab from "./ProjectsComponents/TabsComponents/MyIssuesTab";
-import ***REMOVED***CustomTheme***REMOVED*** from "../../Contexts/ThemeContext";
+import ***REMOVED***ColorModeContext, CustomTheme***REMOVED*** from "../../Contexts/ThemeContext";
 
 const Projects: FunctionComponent = () => ***REMOVED***
   const [ProjectsAnchorEl, setProjectsAnchorEl] = useState<null | HTMLElement>(null);
@@ -21,13 +30,16 @@ const Projects: FunctionComponent = () => ***REMOVED***
 
   const handleProjectsMenuOpen = (event: MouseEvent<HTMLElement>): void => setProjectsAnchorEl(event.currentTarget);
 
+  const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
+  const colorModeContext = useContext(ColorModeContext);
+
   useEffect(() => ***REMOVED***
-    const issues = ["Task1", "Task1", "Bug fix", "wireframe1", "landing page", "Tracker", "Contact page", "loading page"]
+    const issues = ["Task1", "Task2", "Bug fix", "wireframe1", "landing page", "Tracker", "Contact page", "loading page"]
     const actions = ["Comment On Issue", "Comment On project", "Updated Issue", "Updated project", "Created Issue", "Created project", "Deleted Issue", "Assigned people"]
     const issueActions = ["Comment On Issue", "Updated Issue", "Created Issue", "Deleted Issue", "Assigned people"]
     const priority = ["lowest", "low", "medium", "high", "highest"]
     const projects = ["Wireframe", "NewsApp", "Ecommerce", "Web scraper", "Mario game", "Chat app", "Social app", "Figma plugin", "Android Browser", "Fix security Issue", "Add Newsletter feature"]
-    const Names = ["John Meguel", "Avigar Adrai", "Tarek Ben Ahmed", "Wei Xi Pong", "Barrack Obama", "Naftaly Benett", "Boris Johnson"]
+    const Names = ["Hogan Beaman", "Connie Seale", "Anselm Byham", "Boris Cescoti", "Jennilee Hatley", "Ernst Berntsson", "Bennie Courcey", "Miguel Mosten", "Ferd Leethem", "Osborn Lidierth"]
     const items: IProjectCard[] = Array.from(Array(10)).map(() => (***REMOVED***
         Reporter: Names[random(0, Names.length)],
         Assignees: random(9, 45),
@@ -66,6 +78,7 @@ const Projects: FunctionComponent = () => ***REMOVED***
     setCards(items)
     setProjects(project)
     setIssues(issuesObj)
+    if (prefersDarkMode) colorModeContext.toggleColorMode();
 ***REMOVED*** [])
 
   useEffect(() => ***REMOVED***
@@ -98,10 +111,10 @@ const Projects: FunctionComponent = () => ***REMOVED***
           >Sort By</Button>
         </Box>
       </Paper>
-      <Box sx=***REMOVED******REMOVED***position: "relative", backgroundColor: `$***REMOVED***theme.palette.background.default***REMOVED***` ***REMOVED******REMOVED***>
+      <Box sx=***REMOVED******REMOVED***position: "relative", backgroundColor: `$***REMOVED***theme.palette.mode === "light" ? "#d7d8dc" : theme.palette.background.default***REMOVED***` ***REMOVED******REMOVED***>
         <motion.div
           className='cards__container'
-          style=***REMOVED******REMOVED*** backgroundColor: `$***REMOVED***theme.palette.background.default***REMOVED***` ***REMOVED******REMOVED***
+          style=***REMOVED******REMOVED*** backgroundColor: `$***REMOVED***theme.palette.mode === "light" ? "#d7d8dc" : theme.palette.background.default***REMOVED***` ***REMOVED******REMOVED***
           ref=***REMOVED***carousel***REMOVED***
           drag=***REMOVED***carouselWidth > 0 ? false : "x"***REMOVED*** dragConstraints=***REMOVED******REMOVED***
           left: carouselWidth - 10,
@@ -113,7 +126,7 @@ const Projects: FunctionComponent = () => ***REMOVED***
             )
       ***REMOVED***
         </motion.div>
-        <span style=***REMOVED******REMOVED*** height: "272px", width: "10px", position: "absolute", backgroundColor: `$***REMOVED***theme.palette.background.default***REMOVED***`, top: 0, right: 0 ***REMOVED******REMOVED***></span>
+        <span style=***REMOVED******REMOVED*** height: "272px", width: "10px", position: "absolute", backgroundColor: `$***REMOVED***theme.palette.mode === "light" ? "#d7d8dc" : theme.palette.background.default***REMOVED***`, top: 0, right: 0 ***REMOVED******REMOVED***></span>
       </Box>
       <Tabs tabNames=***REMOVED***["Worked On", "Assigned To Me"]***REMOVED*** sx=***REMOVED******REMOVED*** paddingTop: "1rem", borderColor: 'divider', backgroundColor:  theme.palette.background.paper***REMOVED******REMOVED*** >
         <WorkedOnTab projects=***REMOVED***projects***REMOVED*** />
